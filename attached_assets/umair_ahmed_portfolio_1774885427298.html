@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Umair Ahmed — GTM Operator</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #0A0A0C;
+  --bg-elevated: #111114;
+  --bg-card: #16161A;
+  --bg-card-hover: #1C1C21;
+  --text-primary: #F0EDE6;
+  --text-secondary: #8A8A8E;
+  --text-muted: #5A5A5E;
+  --accent: #C8FF00;
+  --accent-dim: rgba(200, 255, 0, 0.08);
+  --accent-glow: rgba(200, 255, 0, 0.15);
+  --blue: #4DA3FF;
+  --orange: #FF8A4C;
+  --pink: #FF6B9D;
+  --green: #34D399;
+  --border: rgba(255,255,255,0.06);
+  --border-hover: rgba(255,255,255,0.12);
+  --radius: 12px;
+  --radius-lg: 20px;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-sans: 'DM Sans', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--text-muted); border-radius: 3px; }
+
+/* Selection */
+::selection { background: var(--accent); color: var(--bg); }
+
+/* ============ NAV ============ */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 20px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(10,10,12,0.8);
+  backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.nav-name {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.nav-links { display: flex; gap: 32px; align-items: center; }
+
+.nav-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--text-primary); }
+
+.nav-cta {
+  background: var(--accent) !important;
+  color: var(--bg) !important;
+  padding: 8px 20px;
+  border-radius: 100px;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+  transition: transform 0.2s, box-shadow 0.2s !important;
+}
+
+.nav-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 24px rgba(200,255,0,0.25);
+}
+
+/* ============ HERO ============ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 140px 48px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(200,255,0,0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.2s forwards;
+}
+
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  max-width: 900px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.4s forwards;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.hero-sub {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  max-width: 580px;
+  margin-top: 32px;
+  line-height: 1.7;
+  font-weight: 300;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.6s forwards;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 64px;
+  margin-top: 64px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.8s forwards;
+}
+
+.hero-stat-value {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.hero-stat-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 8px;
+}
+
+/* ============ SECTIONS ============ */
+.section {
+  padding: 120px 48px;
+  position: relative;
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--accent);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  max-width: 700px;
+  margin-bottom: 24px;
+}
+
+.section-desc {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 560px;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 0 48px;
+}
+
+/* ============ TICKER ============ */
+.ticker-wrap {
+  overflow: hidden;
+  padding: 40px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-elevated);
+}
+
+.ticker {
+  display: flex;
+  animation: scroll 30s linear infinite;
+  width: max-content;
+}
+
+.ticker-item {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.ticker-item .dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ============ CASE STUDIES ============ */
+.cases-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 64px;
+}
+
+.case-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 48px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.case-card:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-card-hover);
+  transform: translateY(-2px);
+}
+
+.case-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.case-card[data-accent="green"]::before { background: var(--green); }
+.case-card[data-accent="blue"]::before { background: var(--blue); }
+.case-card[data-accent="orange"]::before { background: var(--orange); }
+.case-card[data-accent="pink"]::before { background: var(--pink); }
+
+.case-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.case-company {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.case-role {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.case-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 32px;
+}
+
+.case-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.metric-box {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+
+.metric-value {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+.metric-label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 6px;
+}
+
+/* ============ EXPANDED CASE STUDY ============ */
+.case-expanded {
+  display: none;
+  margin-top: 64px;
+  padding-top: 64px;
+  border-top: 1px solid var(--border);
+}
+
+.case-expanded.active { display: block; }
+
+.case-expanded-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 48px;
+}
+
+.case-expanded-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.case-expanded-close {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.case-expanded-close:hover {
+  border-color: var(--text-secondary);
+  color: var(--text-primary);
+}
+
+.case-section-title {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+  margin-top: 48px;
+}
+
+.case-section-title:first-of-type { margin-top: 0; }
+
+.case-body p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 16px;
+  max-width: 680px;
+}
+
+.case-body ul {
+  list-style: none;
+  margin-bottom: 24px;
+}
+
+.case-body ul li {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.case-body ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+.metrics-grid-full {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 32px 0;
+}
+
+.metrics-grid-full .metric-box {
+  text-align: center;
+}
+
+/* ============ QUOTES ============ */
+.quotes-section {
+  background: var(--bg-elevated);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.quotes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.quote-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  position: relative;
+}
+
+.quote-mark {
+  font-family: var(--font-serif);
+  font-size: 4rem;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 8px;
+  opacity: 0.5;
+}
+
+.quote-text {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--text-primary);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.quote-attr {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.quote-attr strong {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* ============ COMPETENCIES ============ */
+.comp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+}
+
+.comp-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  transition: all 0.3s;
+}
+
+.comp-item:hover {
+  border-color: var(--accent);
+  background: var(--accent-dim);
+}
+
+.comp-icon {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+
+.comp-title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+
+.comp-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ============ TIMELINE ============ */
+.timeline {
+  margin-top: 48px;
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--border);
+}
+
+.timeline-item {
+  padding-left: 48px;
+  padding-bottom: 48px;
+  position: relative;
+}
+
+.timeline-item:last-child { padding-bottom: 0; }
+
+.timeline-dot {
+  position: absolute;
+  left: -5px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg);
+}
+
+.timeline-date {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.timeline-title {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  margin-bottom: 4px;
+}
+
+.timeline-role {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.timeline-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+.timeline-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 100px;
+  margin-top: 8px;
+}
+
+.badge-acquired {
+  background: rgba(77, 163, 255, 0.1);
+  color: var(--blue);
+  border: 1px solid rgba(77, 163, 255, 0.2);
+}
+
+.badge-promoted {
+  background: var(--accent-dim);
+  color: var(--accent);
+  border: 1px solid rgba(200,255,0,0.2);
+}
+
+.badge-cofounded {
+  background: rgba(255, 138, 76, 0.1);
+  color: var(--orange);
+  border: 1px solid rgba(255, 138, 76, 0.2);
+}
+
+/* ============ CTA ============ */
+.cta-section {
+  text-align: center;
+  padding: 160px 48px;
+  position: relative;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  bottom: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(200,255,0,0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.cta-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  letter-spacing: -0.03em;
+  margin-bottom: 20px;
+}
+
+.cta-desc {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 480px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--bg);
+  padding: 16px 36px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(200,255,0,0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-primary);
+  padding: 16px 36px;
+  border-radius: 100px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  border: 1px solid var(--border);
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+  border-color: var(--text-secondary);
+}
+
+/* ============ FOOTER ============ */
+.footer {
+  padding: 48px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-text {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ============ ANIMATIONS ============ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============ MOBILE ============ */
+@media (max-width: 1024px) {
+  .cases-grid { grid-template-columns: 1fr; }
+  .quotes-grid { grid-template-columns: 1fr; }
+  .comp-grid { grid-template-columns: 1fr 1fr; }
+  .metrics-grid-full { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .nav { padding: 16px 24px; }
+  .nav-links { display: none; }
+  .hero { padding: 120px 24px 60px; }
+  .section { padding: 80px 24px; }
+  .divider { margin: 0 24px; }
+  .hero-stats { flex-direction: column; gap: 32px; }
+  .case-card { padding: 32px; }
+  .comp-grid { grid-template-columns: 1fr; }
+  .metrics-grid-full { grid-template-columns: 1fr 1fr; }
+  .case-metrics { grid-template-columns: 1fr; }
+  .cta-buttons { flex-direction: column; align-items: center; }
+  .footer { flex-direction: column; gap: 16px; text-align: center; }
+  .cta-section { padding: 100px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-name">Umair Ahmed</div>
+  <div class="nav-links">
+    <a href="#work">Case Studies</a>
+    <a href="#approach">Approach</a>
+    <a href="#timeline">Timeline</a>
+    <a href="mailto:umairadilahmed@gmail.com" class="nav-cta">Get in Touch</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-label">GTM Operator &middot; Builder &middot; Revenue Architect</div>
+  <h1>I build revenue<br>engines from <em>zero.</em></h1>
+  <p class="hero-sub">
+    Senior go-to-market operator. I take companies from no revenue to scalable, 
+    predictable growth. Four times over. Across fintech, proptech, foodtech, and 
+    enterprise SaaS.
+  </p>
+  <div class="hero-stats">
+    <div>
+      <div class="hero-stat-value">$5.7M</div>
+      <div class="hero-stat-label">Single Month Deploy</div>
+    </div>
+    <div>
+      <div class="hero-stat-value">$878K</div>
+      <div class="hero-stat-label">Booked ARR (Co-founder)</div>
+    </div>
+    <div>
+      <div class="hero-stat-value">2</div>
+      <div class="hero-stat-label">Portfolio Acquisitions</div>
+    </div>
+    <div>
+      <div class="hero-stat-value">57%</div>
+      <div class="hero-stat-label">Peak Contribution Margin</div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker">
+    <div class="ticker-item"><span class="dot"></span> 0-to-1 GTM Build</div>
+    <div class="ticker-item"><span class="dot"></span> Pipeline Architecture</div>
+    <div class="ticker-item"><span class="dot"></span> Outbound Engine Design</div>
+    <div class="ticker-item"><span class="dot"></span> Channel & Partner GTM</div>
+    <div class="ticker-item"><span class="dot"></span> Enterprise Sales Cycles</div>
+    <div class="ticker-item"><span class="dot"></span> Revenue Forecasting</div>
+    <div class="ticker-item"><span class="dot"></span> ICP Discovery</div>
+    <div class="ticker-item"><span class="dot"></span> Pricing & Packaging</div>
+    <div class="ticker-item"><span class="dot"></span> Sales Hiring & Enablement</div>
+    <div class="ticker-item"><span class="dot"></span> Cross-Border Market Entry</div>
+    <div class="ticker-item"><span class="dot"></span> 0-to-1 GTM Build</div>
+    <div class="ticker-item"><span class="dot"></span> Pipeline Architecture</div>
+    <div class="ticker-item"><span class="dot"></span> Outbound Engine Design</div>
+    <div class="ticker-item"><span class="dot"></span> Channel & Partner GTM</div>
+    <div class="ticker-item"><span class="dot"></span> Enterprise Sales Cycles</div>
+    <div class="ticker-item"><span class="dot"></span> Revenue Forecasting</div>
+    <div class="ticker-item"><span class="dot"></span> ICP Discovery</div>
+    <div class="ticker-item"><span class="dot"></span> Pricing & Packaging</div>
+    <div class="ticker-item"><span class="dot"></span> Sales Hiring & Enablement</div>
+    <div class="ticker-item"><span class="dot"></span> Cross-Border Market Entry</div>
+  </div>
+</div>
+
+<!-- CASE STUDIES -->
+<section class="section" id="work">
+  <div class="section-label reveal">Selected Work</div>
+  <h2 class="section-title reveal">Four companies. Four GTM builds. Real numbers.</h2>
+  <p class="section-desc reveal">
+    Each case study represents a distinct GTM challenge. New market entry. Category creation. 
+    Enterprise motion from scratch. Hyper-growth sales management. All with receipts.
+  </p>
+
+  <div class="cases-grid">
+
+    <!-- DEFIGO -->
+    <div class="case-card reveal" data-accent="green" onclick="toggleCase('defigo')">
+      <div class="case-tag">Proptech &middot; US Market Entry</div>
+      <div class="case-company">Defigo</div>
+      <div class="case-role">RVP Sales &rarr; GM &rarr; CEO</div>
+      <div class="case-desc">
+        Built Defigo's entire US business from zero. No brand, no pipeline, no channel, 
+        no product-market fit for the US. Designed the full GTM stack and signed national 
+        distribution with Wesco/Anixter.
+      </div>
+      <div class="case-metrics">
+        <div class="metric-box">
+          <div class="metric-value">16</div>
+          <div class="metric-label">Buildings Deployed</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-value">20+</div>
+          <div class="metric-label">Integrator Partners</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-value">$96K</div>
+          <div class="metric-label">Recurring ARR</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-value">18mo</div>
+          <div class="metric-label">Zero to Revenue</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PERCY -->
+    <div class="case-card reveal" data-accent="blue" onclick="toggleCase('percy')">
+      <div class="case-tag">Foodtech &middot; Co-founder</div>
+      <div class="case-company">Percy</div>
+      <div class="case-role">Co-Founder & Head of Sales</div>
+      <div class="case-desc">
+        Co-founded a virtual cashier SaaS during peak QSR labor crisis. No category existed. 
+        Bootstrapped. Engineered every GTM system the company used. Featured on NPR's 
+        Planet Money as the #1 business podcast episode.
+      </div>
+      <div class="case-metrics">
+        <div class="metric-box">
+          <div class="metric-value">$331K</div>
+          <div class="metric-label">Live ARR</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-value">$878K</div>
+          <div class="metric-label">Booked ARR</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-value">38</div>
+          <div class="metric-label">Logos Signed</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-value">32%</div>
+          <div class="metric-label">Win Rate (from 20%)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LANE -->
+    <div class="case-card reveal" data-accent="orange" onclick="toggleCase('lane')">
+      <div class="case-tag">Enterprise SaaS &middot; Acquired by VTS</div>
+      <div class="case-company">Lane</div>
+      <div class="case-role">Director of Enterprise Sales</div>
+      <div class="case-desc">
+        Built Lane's first enterprise GTM motion from nothing. Zero ICP, zero outreach strategy, 
+        zero enterprise playbook. Advanced Adidas and American Express to contract stage before 
+        VTS acquired the company.
+      </div>
+      <div class="case-metrics">
+        <div class="metric-box">
+          <div class="metric-value">~$500K</div>
+          <div class="metric-label">Late-stage Pipeline</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-value">F500</div>
+          <div class="metric-label">Target Accounts</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-value">6-12mo</div>
+          <div class="metric-label">Enterprise Cycles</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-value">Acquired</div>
+          <div class="metric-label">Outcome &rarr; VTS</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CLEARCO -->
+    <div class="case-card reveal" data-accent="pink" onclick="toggleCase('clearco')">
+      <div class="case-tag">Fintech &middot; Hyper-growth</div>
+      <div class="case-company">Clearco</div>
+      <div class="case-role">Sales Manager</div>
+      <div class="case-desc">
+        Led the #1 performing sales pod at one of Canada's highest-profile fintechs. 
+        Flipped contribution margin from negative to 57%. Closed $5.7M in a single month. 
+        Recognized directly by co-founder Michele Romanow.
+      </div>
+      <div class="case-metrics">
+        <div class="metric-box">
+          <div class="metric-value">$5.7M</div>
+          <div class="metric-label">Monthly GP (Record)</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-value">57.3%</div>
+          <div class="metric-label">Contribution Margin</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-value">2.6%</div>
+          <div class="metric-label">CV Rate (vs 1.3% avg)</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-value">#1</div>
+          <div class="metric-label">Pod Rank (Company)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXPANDED: DEFIGO -->
+  <div class="case-expanded" id="defigo">
+    <div class="case-expanded-header">
+      <div class="case-expanded-title">Defigo: Building a US Business from Nothing</div>
+      <button class="case-expanded-close" onclick="toggleCase('defigo')">&times;</button>
+    </div>
+    <div class="case-body">
+      <div class="case-section-title">The Starting Point</div>
+      <p>Zero revenue. No active pipeline. No channel partners, no distributor relationships, no integrator network. A European product not adapted to US buying behavior, technical standards, or security market structure. Minimal brand awareness in a category dominated by 30-year incumbents.</p>
+
+      <div class="case-section-title">What I Built</div>
+      <ul>
+        <li>Designed the full ICP, positioning, messaging, sales, channel, enablement, pricing, and onboarding system</li>
+        <li>Signed national distribution with Wesco/Anixter: 8,000+ integrators, 100+ branch locations</li>
+        <li>Activated 20+ dealers including Everon (ADT's commercial division)</li>
+        <li>Built pipeline across NY, Massachusetts, Florida, and New Mexico</li>
+        <li>Operated as CEO with full P&L, pricing, supply chain, support, and board reporting</li>
+      </ul>
+
+      <div class="metrics-grid-full">
+        <div class="metric-box"><div class="metric-value">16</div><div class="metric-label">Buildings Live</div></div>
+        <div class="metric-box"><div class="metric-value">$80K</div><div class="metric-label">Hardware Revenue</div></div>
+        <div class="metric-box"><div class="metric-value">$96K</div><div class="metric-label">ARR Generated</div></div>
+        <div class="metric-box"><div class="metric-value">20+</div><div class="metric-label">Dealer Partners</div></div>
+      </div>
+
+      <div class="case-section-title">Why This Matters</div>
+      <p>Cross-border market entry with hardware-enabled SaaS is one of the hardest GTM problems. You're selling a physical product through a fragmented channel to skeptical buyers who've used the same vendor for decades. This is the work of building from absolute zero into a functioning revenue engine.</p>
+    </div>
+  </div>
+
+  <!-- EXPANDED: PERCY -->
+  <div class="case-expanded" id="percy">
+    <div class="case-expanded-header">
+      <div class="case-expanded-title">Percy: Category Creation, Bootstrapped</div>
+      <button class="case-expanded-close" onclick="toggleCase('percy')">&times;</button>
+    </div>
+    <div class="case-body">
+      <div class="case-section-title">The Starting Point</div>
+      <p>A category that did not exist. Virtual cashiers for QSR operators. No references, no case studies, no competitive benchmarks. Bootstrapped, capital-constrained, founder-led selling. Friction from franchisees, labor groups, and press. Featured on NPR Planet Money, hitting #1 on the business podcast charts.</p>
+
+      <div class="case-section-title">What I Built</div>
+      <ul>
+        <li>Defined ICP, segmentation, offer, and value prop for multi-location QSR operators</li>
+        <li>Built the entire outbound engine: targeting, messaging, cadences, demo flow, objection handling</li>
+        <li>Sourced 100% of all pipeline and revenue through the system I engineered</li>
+        <li>$0 to $50K in 3 months. $100K ARR by month 9. $331K live ARR across 17 locations by exit</li>
+        <li>Doubled Freshii locations 17 to 34 in 30 days. Added 30 new opportunities in the same window</li>
+        <li>Increased win rate from 20% to 32% in one month via qualification and pipeline hygiene</li>
+        <li>Built the SDR org, playbook, and partner referral program from scratch</li>
+      </ul>
+
+      <div class="metrics-grid-full">
+        <div class="metric-box"><div class="metric-value">$331K</div><div class="metric-label">Live ARR</div></div>
+        <div class="metric-box"><div class="metric-value">$878K</div><div class="metric-label">Total Booked ARR</div></div>
+        <div class="metric-box"><div class="metric-value">38</div><div class="metric-label">Logos Signed</div></div>
+        <div class="metric-box"><div class="metric-value">17</div><div class="metric-label">Active Locations</div></div>
+      </div>
+
+      <div class="case-section-title">Why This Matters</div>
+      <p>Percy is proof that a repeatable GTM engine can be engineered from first principles, even in markets most people consider impossible. No brand. No case studies. No money. No category. And still closed real ARR with real customers.</p>
+    </div>
+  </div>
+
+  <!-- EXPANDED: LANE -->
+  <div class="case-expanded" id="lane">
+    <div class="case-expanded-header">
+      <div class="case-expanded-title">Lane: Enterprise Motion, Built from Scratch</div>
+      <button class="case-expanded-close" onclick="toggleCase('lane')">&times;</button>
+    </div>
+    <div class="case-body">
+      <div class="case-section-title">The Starting Point</div>
+      <p>Lane had strong traction with landlords but zero structure for selling into global tenants. No enterprise ICP, no segmentation, no outreach strategy. No case studies in the occupier segment. Deals required alignment between landlord customers and global tenant buying committees. Long cycles with no existing playbook.</p>
+
+      <div class="case-section-title">What I Built</div>
+      <ul>
+        <li>Defined the enterprise ICP targeting global tenants inside commercial real estate portfolios</li>
+        <li>Created outbound sequences targeting workplace, facilities, CRE, HR, and digital transformation</li>
+        <li>Built multi-phase enterprise process: discovery, pilot, success criteria, rollout, portfolio expansion</li>
+        <li>Advanced Adidas (~$250K ARR) and American Express (~$250K ARR) to proposal/contract stage</li>
+        <li>Created the first Enterprise Deal Desk framework Lane ever used</li>
+        <li>Navigated 5-10 stakeholders per account across IT, security, legal, workplace, and CRE</li>
+      </ul>
+
+      <div class="case-section-title">Why This Matters</div>
+      <p>When VTS acquired Lane, they paused all tenant/occupier initiatives and later scrapped the vertical entirely. But the work proved Lane could sell enterprise, expanded the TAM story, and directly contributed to the acquisition narrative. The GTM architecture I built was working.</p>
+    </div>
+  </div>
+
+  <!-- EXPANDED: CLEARCO -->
+  <div class="case-expanded" id="clearco">
+    <div class="case-expanded-header">
+      <div class="case-expanded-title">Clearco: #1 Pod in Hyper-Growth Fintech</div>
+      <button class="case-expanded-close" onclick="toggleCase('clearco')">&times;</button>
+    </div>
+    <div class="case-body">
+      <div class="case-section-title">The Starting Point</div>
+      <p>Clearco was in hyper-scale mode. Hiring fast, setting aggressive monthly GP targets. The sales org was large and chaotic. Execution quality varied heavily across pods. Pipeline hygiene was inconsistent. Every manager and every pod was ranked in real time on public dashboards.</p>
+
+      <div class="case-section-title">What I Built</div>
+      <ul>
+        <li>Consistently ranked #1 across critical metrics: GP, contribution margin, conversion rate</li>
+        <li>Closed $5.7M in a single month (67 opportunities). One of the highest in Clearco history</li>
+        <li>Flipped contribution margin from 25.5% to 57.3%. The most profitable team in the org</li>
+        <li>Highest conversion rate among hybrid teams: 2.6% vs 1.3-2.1% company-wide</li>
+        <li>Built weekly performance reviews, script refinement loops, pipeline deep dives, daily micro-coaching</li>
+        <li>Highest talk time and daily activity discipline across all pods</li>
+      </ul>
+
+      <div class="metrics-grid-full">
+        <div class="metric-box"><div class="metric-value">$5.7M</div><div class="metric-label">Monthly GP</div></div>
+        <div class="metric-box"><div class="metric-value">57.3%</div><div class="metric-label">Contribution Margin</div></div>
+        <div class="metric-box"><div class="metric-value">2.6%</div><div class="metric-label">CV Rate</div></div>
+        <div class="metric-box"><div class="metric-value">67</div><div class="metric-label">Opps Closed (1 month)</div></div>
+      </div>
+
+      <div class="case-section-title">Why This Matters</div>
+      <p>Hyper-growth fintech is the harshest GTM environment: high volume, fast cycles, ruthless metrics. This proves I can build systems that scale, turn average reps into high performers, and produce revenue with strong unit economics simultaneously. Recognized directly by Michele Romanow (Dragon's Den) and awarded Manager of the Quarter.</p>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTES -->
+<section class="section quotes-section" id="quotes">
+  <div class="section-label reveal">What People Say</div>
+  <h2 class="section-title reveal">Direct from founders, execs, and teammates.</h2>
+
+  <div class="quotes-grid">
+    <div class="quote-card reveal">
+      <div class="quote-mark">&ldquo;</div>
+      <div class="quote-text">What incredible leadership. I'm so proud of what you are doing. You have SUCH a bright future here.</div>
+      <div class="quote-attr"><strong>Michele Romanow</strong><br>Co-Founder, Clearco (Dragon's Den)</div>
+    </div>
+    <div class="quote-card reveal">
+      <div class="quote-mark">&ldquo;</div>
+      <div class="quote-text">Your constant dedication to coaching and improving your reps is truly the sign of a great leader.</div>
+      <div class="quote-attr"><strong>Michele Romanow</strong><br>Manager Award Presentation</div>
+    </div>
+    <div class="quote-card reveal">
+      <div class="quote-mark">&ldquo;</div>
+      <div class="quote-text">One word for you Umair: visionary. You led the team with a clear vision and undeniable belief in our abilities.</div>
+      <div class="quote-attr"><strong>Max</strong><br>Senior Rep, Clearco</div>
+    </div>
+    <div class="quote-card reveal">
+      <div class="quote-mark">&ldquo;</div>
+      <div class="quote-text">Umair, holy shit dude, not just #1 in CM but ALSO IN GP, all while having the lowest tenure and fixed costs.</div>
+      <div class="quote-attr"><strong>Nicole Nelson</strong><br>Sales Leadership, Clearco</div>
+    </div>
+    <div class="quote-card reveal">
+      <div class="quote-mark">&ldquo;</div>
+      <div class="quote-text">Massive shoutout to Umair on being an absolute LEGEND. Now we are making Clearbanc history and #1.</div>
+      <div class="quote-attr"><strong>Vasiliki Belegrinis</strong><br>Team Member, Clearco</div>
+    </div>
+    <div class="quote-card reveal">
+      <div class="quote-mark">&ldquo;</div>
+      <div class="quote-text">This is an important milestone in Defigo's success story in North America.</div>
+      <div class="quote-attr"><strong>Hildur Smaradottir</strong><br>Leadership, Defigo</div>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section class="section" id="approach">
+  <div class="section-label reveal">How I Operate</div>
+  <h2 class="section-title reveal">Systems over heroics. Process over luck.</h2>
+  <p class="section-desc reveal">
+    I don't just "do sales." I architect the entire revenue machine. From ICP definition 
+    through closed-won, every step is designed to be repeatable and measurable.
+  </p>
+
+  <div class="comp-grid">
+    <div class="comp-item reveal">
+      <div class="comp-icon">&#9632;</div>
+      <div class="comp-title">0-to-1 GTM Build</div>
+      <div class="comp-desc">ICP discovery, positioning, messaging, sales process, pipeline architecture. I've done this four times from a blank page.</div>
+    </div>
+    <div class="comp-item reveal">
+      <div class="comp-icon">&#9650;</div>
+      <div class="comp-title">Outbound Engine Design</div>
+      <div class="comp-desc">Targeting, sequencing, cadences, scripts, enrichment, SDR hiring and enablement. The full stack for predictable pipeline generation.</div>
+    </div>
+    <div class="comp-item reveal">
+      <div class="comp-icon">&#9679;</div>
+      <div class="comp-title">Channel & Partner GTM</div>
+      <div class="comp-desc">Distribution agreements, integrator ecosystems, partner enablement, co-selling motions. Built from scratch at Defigo with Wesco and Everon.</div>
+    </div>
+    <div class="comp-item reveal">
+      <div class="comp-icon">&#9670;</div>
+      <div class="comp-title">Enterprise Deal Execution</div>
+      <div class="comp-desc">Multi-stakeholder choreography, procurement navigation, pilot frameworks, ROI narratives. 6-12 month cycles with Fortune 500 accounts.</div>
+    </div>
+    <div class="comp-item reveal">
+      <div class="comp-icon">&#9644;</div>
+      <div class="comp-title">Sales Team Build & Coaching</div>
+      <div class="comp-desc">Hiring profiles, onboarding, enablement, performance systems, coaching cadences. Turned average reps into top performers at Clearco.</div>
+    </div>
+    <div class="comp-item reveal">
+      <div class="comp-icon">&#9733;</div>
+      <div class="comp-title">Revenue Operations</div>
+      <div class="comp-desc">CRM architecture, pipeline standards, forecasting, unit economics, board reporting. The operating system behind every revenue engine I've built.</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TIMELINE -->
+<section class="section" id="timeline">
+  <div class="section-label reveal">Career Arc</div>
+  <h2 class="section-title reveal">A pattern of building, scaling, and outcomes.</h2>
+
+  <div class="timeline">
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">Nov 2023 - Mar 2026</div>
+      <div class="timeline-title">Defigo</div>
+      <div class="timeline-role">RVP Sales &rarr; GM Americas &rarr; CEO</div>
+      <div class="timeline-desc">Built the US business from zero. Full P&L ownership. National distribution, 16 buildings, 20+ dealer partners.</div>
+      <span class="timeline-badge badge-promoted">3x Promoted</span>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">Jun 2022 - Jul 2023</div>
+      <div class="timeline-title">Percy</div>
+      <div class="timeline-role">Co-Founder & Head of Sales</div>
+      <div class="timeline-desc">Co-founded and built GTM for a category-creating QSR automation startup. $0 to $331K live ARR.</div>
+      <span class="timeline-badge badge-cofounded">Co-founded</span>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">Jun 2021 - Jun 2022</div>
+      <div class="timeline-title">Lane Technologies</div>
+      <div class="timeline-role">Director of Enterprise Sales</div>
+      <div class="timeline-desc">Created first enterprise motion. Advanced Adidas + AmEx to proposal. GTM informed acquisition by VTS.</div>
+      <span class="timeline-badge badge-acquired">Acquired by VTS</span>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">Nov 2020 - May 2021</div>
+      <div class="timeline-title">Relay Financial</div>
+      <div class="timeline-role">Head of Sales</div>
+      <div class="timeline-desc">Built foundational sales infrastructure, playbook, onboarding, enablement, and outbound engine during high-growth phase.</div>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">Aug 2019 - Oct 2020</div>
+      <div class="timeline-title">Clearco</div>
+      <div class="timeline-role">Sales Manager</div>
+      <div class="timeline-desc">#1 pod company-wide. $5.7M single month. 57.3% contribution margin. Manager Award from Michele Romanow.</div>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">Jul 2017 - Aug 2019</div>
+      <div class="timeline-title">Hubdoc</div>
+      <div class="timeline-role">AE &rarr; Sales Manager</div>
+      <div class="timeline-desc">Top-performing AE. $750K+ ARR generated. Built and managed 12-person team. Acquired by Xero.</div>
+      <span class="timeline-badge badge-acquired">Acquired by Xero</span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="section-label reveal">Next Chapter</div>
+  <h2 class="cta-title reveal">Let's build your revenue engine.</h2>
+  <p class="cta-desc reveal">
+    I'm looking for my next operating role. Head of Sales, VP Revenue, CRO. 
+    If you need someone who can take you from zero to ten, or ten to a hundred, 
+    let's talk.
+  </p>
+  <div class="cta-buttons reveal">
+    <a href="mailto:umairadilahmed@gmail.com" class="btn-primary">umairadilahmed@gmail.com</a>
+    <a href="https://www.linkedin.com/in/umairadilahmed/" class="btn-secondary" target="_blank">LinkedIn</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-text">Umair Ahmed &middot; Toronto, ON &middot; (647) 389-7773</div>
+  <div class="footer-text">Built with intent.</div>
+</footer>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Toggle expanded case studies
+function toggleCase(id) {
+  const el = document.getElementById(id);
+  const isActive = el.classList.contains('active');
+  
+  // Close all
+  document.querySelectorAll('.case-expanded').forEach(e => e.classList.remove('active'));
+  
+  if (!isActive) {
+    el.classList.add('active');
+    setTimeout(() => {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
+  }
+}
+
+// Nav scroll effect
+const nav = document.querySelector('.nav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 100) {
+    nav.style.padding = '12px 48px';
+  } else {
+    nav.style.padding = '20px 48px';
+  }
+});
+</script>
+
+</body>
+</html>

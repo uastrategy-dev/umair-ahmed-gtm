@@ -4,6 +4,28 @@
 
 pnpm workspace monorepo using TypeScript. Each package manages its own dependencies.
 
+## Artifacts
+
+### `artifacts/portfolio` (`@workspace/portfolio`)
+
+Umair Ahmed's professional portfolio — a dark-themed, editorial single-page site.
+
+- Route: `/` (root)
+- Stack: React + Vite (no Tailwind — uses inline styles to match original design)
+- Design: Dark theme (#0A0A0C), Instrument Serif + DM Sans + JetBrains Mono, electric lime (#C8FF00) accent
+- Features:
+  - Expandable case study cards (Defigo, Percy, Lane, Clearco) with "Proof Points" image galleries
+  - Lightbox overlay with keyboard nav (arrow keys, Escape)
+  - Masonry-style 2-column image gallery with hover zoom
+  - PDF document cards (ready for Percy strategy doc + investment deck when uploaded)
+  - Resume download button in nav and CTA section
+  - Scroll reveal animations, ticker, testimonials, competency grid, career timeline
+- Assets: `artifacts/portfolio/public/assets/`
+  - `defigo/` — 5 Slack recognition screenshots
+  - `clearco/` — 11 images (Manager Award, performance dashboards, Slack recognition)
+  - `percy/` — placeholder (images + PDFs pending upload)
+  - `resume/` — placeholder (PDF pending upload)
+
 ## Stack
 
 - **Monorepo tool**: pnpm workspaces
