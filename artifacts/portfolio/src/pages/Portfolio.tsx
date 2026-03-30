@@ -110,6 +110,21 @@ const CASES: CaseStudy[] = [
     ],
     whyItMatters:
       "Percy is proof that a repeatable GTM engine can be engineered from first principles, even in markets most people consider impossible. No brand. No case studies. No money. No category. And still closed real ARR with real customers.",
+    images: [
+      { src: assetUrl("percy/linkedin-1.png"), caption: "Crazy Pita CEO Mehdi Zarhloul announcing Percy as their first-ever virtual cashier on LinkedIn" },
+      { src: assetUrl("percy/linkedin-2.png"), caption: "CTV News coverage of Percy at an Ontario Freshii location — national media pickup" },
+      { src: assetUrl("percy/linkedin-5.png"), caption: "Percy on NPR's Planet Money — #1 business podcast in the country the week of release" },
+      { src: assetUrl("percy/linkedin-3.png"), caption: "Percy at the 2022 International Pool Group Summit in Quebec City — channel expansion" },
+      { src: assetUrl("percy/linkedin-4.png"), caption: "Percy at the Gordon Food Service Back of House show — 58 reactions, top trade show presence" },
+      { src: assetUrl("percy/arr-dashboard.png"), caption: "Live + Booked ARR snapshot: 38 logos, $878,260 total booked ARR across 457 total locations in pipeline" },
+    ],
+    pdfs: [
+      {
+        name: "Percy_Investment_Deck.pdf",
+        label: "Percy Investor Deck",
+        url: assetUrl("percy/investment-deck.pdf"),
+      },
+    ],
   },
   {
     id: "lane",
