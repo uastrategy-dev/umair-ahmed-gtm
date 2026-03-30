@@ -443,7 +443,7 @@ function ImageGallery({ images }: { images: ProofImage[] }) {
               cursor: "pointer",
               borderRadius: 8,
               overflow: "hidden",
-              border: "1px solid rgba(255,200,230,0.12)",
+              border: "1px solid rgba(66,11,49,0.12)",
               transition: "transform 0.2s ease, border-color 0.2s ease",
             }}
             className="gallery-item"
@@ -500,8 +500,8 @@ function PdfCard({ doc }: { doc: PdfDoc }) {
         display: "flex",
         alignItems: "center",
         gap: 16,
-        background: "rgba(255,255,255,0.07)",
-        border: "1px solid rgba(255,200,230,0.12)",
+        background: "#FFFFFF",
+        border: "1px solid rgba(66,11,49,0.10)",
         borderRadius: 12,
         padding: "20px 24px",
         textDecoration: "none",
@@ -514,8 +514,8 @@ function PdfCard({ doc }: { doc: PdfDoc }) {
           width: 40,
           height: 40,
           borderRadius: 8,
-          background: "rgba(245,170,26,0.08)",
-          border: "1px solid rgba(245,170,26,0.15)",
+          background: "rgba(245,170,26,0.10)",
+          border: "1px solid rgba(245,170,26,0.20)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -530,7 +530,7 @@ function PdfCard({ doc }: { doc: PdfDoc }) {
           style={{
             fontFamily: "'DM Sans', sans-serif",
             fontSize: "0.9rem",
-            color: "#F0EDE6",
+            color: "#1E0A15",
             fontWeight: 500,
             marginBottom: 2,
           }}
@@ -541,7 +541,7 @@ function PdfCard({ doc }: { doc: PdfDoc }) {
           style={{
             fontFamily: "'JetBrains Mono', monospace",
             fontSize: "0.65rem",
-            color: "#84627A",
+            color: "#7A5568",
             letterSpacing: "0.05em",
             overflow: "hidden",
             textOverflow: "ellipsis",
@@ -555,7 +555,7 @@ function PdfCard({ doc }: { doc: PdfDoc }) {
         style={{
           fontFamily: "'JetBrains Mono', monospace",
           fontSize: "0.65rem",
-          color: "#F5AA1A",
+          color: "#B07A00",
           letterSpacing: "0.15em",
           textTransform: "uppercase",
           flexShrink: 0,
@@ -619,8 +619,8 @@ function CaseCard({ cs, isOpen, onToggle }: { cs: CaseStudy; isOpen: boolean; on
       <div
         className="case-card case-card-pad"
         style={{
-          background: isOpen ? "#5c1749" : "#501440",
-          border: `1px solid ${isOpen ? "rgba(255,200,230,0.22)" : "rgba(255,200,230,0.12)"}`,
+          background: isOpen ? "#F5EEF2" : "#FFFFFF",
+          border: `1px solid ${isOpen ? "rgba(66,11,49,0.18)" : "rgba(66,11,49,0.10)"}`,
           borderRadius: 20,
           padding: 48,
           position: "relative",
@@ -651,8 +651,8 @@ function CaseCard({ cs, isOpen, onToggle }: { cs: CaseStudy; isOpen: boolean; on
               textTransform: "uppercase",
               padding: "6px 14px",
               borderRadius: 100,
-              border: "1px solid rgba(255,200,230,0.10)",
-              color: "#BEA7B7",
+              border: "1px solid rgba(66,11,49,0.12)",
+              color: "#7A5568",
             }}
           >
             {cs.tag}
@@ -674,25 +674,25 @@ function CaseCard({ cs, isOpen, onToggle }: { cs: CaseStudy; isOpen: boolean; on
             {cs.mode}
           </div>
         </div>
-        <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "2rem", letterSpacing: "-0.02em", marginBottom: 4 }}>
+        <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "2rem", letterSpacing: "-0.02em", marginBottom: 4, color: "#1E0A15" }}>
           {cs.company}
         </div>
-        <div style={{ fontSize: "0.85rem", color: "#84627A", marginBottom: 20 }}>{cs.role}</div>
-        <div style={{ fontSize: "0.95rem", color: "#BEA7B7", lineHeight: 1.65, marginBottom: 32 }}>{cs.desc}</div>
+        <div style={{ fontSize: "0.85rem", color: "#7A5568", marginBottom: 20 }}>{cs.role}</div>
+        <div style={{ fontSize: "0.95rem", color: "#4A2C3A", lineHeight: 1.65, marginBottom: 32 }}>{cs.desc}</div>
 
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
           {cs.metrics.map((m) => (
             <div
               key={m.label}
               style={{
-                background: "rgba(255,255,255,0.07)",
-                border: "1px solid rgba(255,200,230,0.10)",
+                background: "rgba(66,11,49,0.04)",
+                border: "1px solid rgba(66,11,49,0.08)",
                 borderRadius: 12,
                 padding: 20,
               }}
             >
-              <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "1.6rem", lineHeight: 1.1 }}>{m.value}</div>
-              <div style={{ fontSize: "0.72rem", color: "#84627A", textTransform: "uppercase", letterSpacing: "0.08em", marginTop: 6 }}>
+              <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "1.6rem", lineHeight: 1.1, color: "#1E0A15" }}>{m.value}</div>
+              <div style={{ fontSize: "0.72rem", color: "#7A5568", textTransform: "uppercase", letterSpacing: "0.08em", marginTop: 6 }}>
                 {m.label}
               </div>
             </div>
@@ -722,8 +722,8 @@ function CaseCard({ cs, isOpen, onToggle }: { cs: CaseStudy; isOpen: boolean; on
           className="expanded-pad"
           style={{
             marginTop: 2,
-            background: "#481038",
-            border: "1px solid rgba(255,200,230,0.15)",
+            background: "#F0E8ED",
+            border: "1px solid rgba(66,11,49,0.12)",
             borderRadius: "0 0 20px 20px",
             padding: "48px 48px 56px",
           }}
@@ -746,9 +746,9 @@ function CaseCard({ cs, isOpen, onToggle }: { cs: CaseStudy; isOpen: boolean; on
                 width: 48,
                 height: 48,
                 borderRadius: "50%",
-                border: "1px solid rgba(255,200,230,0.10)",
+                border: "1px solid rgba(66,11,49,0.14)",
                 background: "transparent",
-                color: "#BEA7B7",
+                color: "#7A5568",
                 fontSize: "1.2rem",
                 cursor: "pointer",
                 flexShrink: 0,
@@ -764,7 +764,7 @@ function CaseCard({ cs, isOpen, onToggle }: { cs: CaseStudy; isOpen: boolean; on
 
           <div>
             <SectionLabel>The Starting Point</SectionLabel>
-            <p style={{ fontSize: "1rem", color: "#BEA7B7", lineHeight: 1.75, marginBottom: 16, maxWidth: 680 }}>
+            <p style={{ fontSize: "1rem", color: "#4A2C3A", lineHeight: 1.75, marginBottom: 16, maxWidth: 680 }}>
               {cs.startingPoint}
             </p>
 
@@ -775,7 +775,7 @@ function CaseCard({ cs, isOpen, onToggle }: { cs: CaseStudy; isOpen: boolean; on
                   key={i}
                   style={{
                     fontSize: "0.95rem",
-                    color: "#BEA7B7",
+                    color: "#4A2C3A",
                     lineHeight: 1.7,
                     paddingLeft: 20,
                     position: "relative",
@@ -813,15 +813,15 @@ function CaseCard({ cs, isOpen, onToggle }: { cs: CaseStudy; isOpen: boolean; on
                   <div
                     key={m.label}
                     style={{
-                      background: "rgba(255,255,255,0.07)",
-                      border: "1px solid rgba(255,200,230,0.10)",
+                      background: "rgba(66,11,49,0.04)",
+                      border: "1px solid rgba(66,11,49,0.08)",
                       borderRadius: 12,
                       padding: 20,
                       textAlign: "center",
                     }}
                   >
-                    <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "1.6rem", lineHeight: 1.1 }}>{m.value}</div>
-                    <div style={{ fontSize: "0.72rem", color: "#84627A", textTransform: "uppercase", letterSpacing: "0.08em", marginTop: 6 }}>
+                    <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "1.6rem", lineHeight: 1.1, color: "#1E0A15" }}>{m.value}</div>
+                    <div style={{ fontSize: "0.72rem", color: "#7A5568", textTransform: "uppercase", letterSpacing: "0.08em", marginTop: 6 }}>
                       {m.label}
                     </div>
                   </div>
@@ -846,24 +846,24 @@ function CaseCard({ cs, isOpen, onToggle }: { cs: CaseStudy; isOpen: boolean; on
             {cs.realStoryOnNumbers && (
               <>
                 <SectionLabel>The Real Story on the Numbers</SectionLabel>
-                <p style={{ fontSize: "1rem", color: "#BEA7B7", lineHeight: 1.75, maxWidth: 680 }}>{cs.realStoryOnNumbers}</p>
+                <p style={{ fontSize: "1rem", color: "#4A2C3A", lineHeight: 1.75, maxWidth: 680 }}>{cs.realStoryOnNumbers}</p>
               </>
             )}
 
             <SectionLabel>Why This Matters</SectionLabel>
-            <p style={{ fontSize: "1rem", color: "#BEA7B7", lineHeight: 1.75, maxWidth: 680 }}>{cs.whyItMatters}</p>
+            <p style={{ fontSize: "1rem", color: "#4A2C3A", lineHeight: 1.75, maxWidth: 680 }}>{cs.whyItMatters}</p>
 
             {cs.whatILearned && (
               <>
                 <SectionLabel>What I Learned</SectionLabel>
-                <p style={{ fontSize: "1rem", color: "#BEA7B7", lineHeight: 1.75, maxWidth: 680 }}>{cs.whatILearned}</p>
+                <p style={{ fontSize: "1rem", color: "#4A2C3A", lineHeight: 1.75, maxWidth: 680 }}>{cs.whatILearned}</p>
               </>
             )}
 
             {cs.honestAssessment && (
               <>
                 <SectionLabel>The Honest Assessment</SectionLabel>
-                <p style={{ fontSize: "1rem", color: "#BEA7B7", lineHeight: 1.75, maxWidth: 680 }}>{cs.honestAssessment}</p>
+                <p style={{ fontSize: "1rem", color: "#4A2C3A", lineHeight: 1.75, maxWidth: 680 }}>{cs.honestAssessment}</p>
               </>
             )}
           </div>
@@ -882,7 +882,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
         fontSize: "0.7rem",
         letterSpacing: "0.2em",
         textTransform: "uppercase",
-        color: "#F5AA1A",
+        color: "#420b31",
         marginBottom: 20,
         marginTop: 48,
       }}
@@ -929,7 +929,7 @@ export default function Portfolio() {
         
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        body { background: #420b31; color: #F0EDE6; font-family: 'DM Sans', -apple-system, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; line-height: 1.6; }
+        body { background: #FAF7F5; color: #1E0A15; font-family: 'DM Sans', -apple-system, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; line-height: 1.6; }
         .hero-gradient { background: linear-gradient(135deg, #420b31 0%, #5a1646 50%, #6b244d 100%); }
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #420b31; }
@@ -948,10 +948,10 @@ export default function Portfolio() {
         .ticker-wrap { -webkit-mask-image: linear-gradient(to right, transparent, black 100px, black calc(100% - 100px), transparent); mask-image: linear-gradient(to right, transparent, black 100px, black calc(100% - 100px), transparent); }
 
         .case-card { transition: transform 0.35s ease, box-shadow 0.35s ease !important; }
-        .case-card:hover { transform: translateY(-6px) !important; box-shadow: 0 28px 70px rgba(0,0,0,0.45), 0 0 50px rgba(245,170,26,0.10) !important; }
+        .case-card:hover { transform: translateY(-4px) !important; box-shadow: 0 16px 48px rgba(66,11,49,0.12), 0 0 30px rgba(245,170,26,0.06) !important; }
 
         .quote-card { transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; }
-        .quote-card:hover { transform: translateY(-4px); border-color: rgba(245,170,26,0.3) !important; box-shadow: 0 16px 48px rgba(0,0,0,0.3); }
+        .quote-card:hover { transform: translateY(-4px); border-color: rgba(245,170,26,0.35) !important; box-shadow: 0 12px 36px rgba(0,0,0,0.20); }
 
         .comp-card { transition: transform 0.25s ease, border-color 0.3s ease, background 0.3s ease !important; }
         .comp-card:hover { transform: translateY(-3px) !important; }
@@ -965,8 +965,8 @@ export default function Portfolio() {
 
         .timeline-line { transform-origin: top; }
 
-        .gallery-item:hover { transform: scale(1.02); border-color: rgba(255,200,230,0.25) !important; box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
-        .pdf-card:hover { border-color: rgba(245,170,26,0.25) !important; background: rgba(245,170,26,0.05) !important; }
+        .gallery-item:hover { transform: scale(1.02); border-color: rgba(66,11,49,0.20) !important; box-shadow: 0 8px 32px rgba(66,11,49,0.10); }
+        .pdf-card:hover { border-color: rgba(245,170,26,0.40) !important; background: rgba(245,170,26,0.04) !important; }
 
         a:hover { opacity: 0.85; }
 
@@ -1301,23 +1301,23 @@ export default function Portfolio() {
       </div>
 
       {/* THROUGHLINE */}
-      <section className="section-pad" id="throughline" style={{ padding: "120px 48px", background: "#420b31" }}>
+      <section className="section-pad" id="throughline" style={{ padding: "80px 48px" }}>
         <Reveal>
-          <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.7rem", color: "#F5AA1A", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 16 }}>
+          <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.7rem", color: "#420b31", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 16 }}>
             The Throughline
           </div>
         </Reveal>
         <Reveal>
-          <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(2.2rem, 4.5vw, 3.5rem)", letterSpacing: "-0.03em", lineHeight: 1.1, marginBottom: 32, maxWidth: 700 }}>
+          <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(2.2rem, 4.5vw, 3.5rem)", letterSpacing: "-0.03em", lineHeight: 1.1, marginBottom: 32, maxWidth: 700, color: "#1E0A15" }}>
             Two modes. One system.
           </h2>
         </Reveal>
         <Reveal>
           <div style={{ maxWidth: 640 }}>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.1rem", color: "#BEA7B7", lineHeight: 1.7, fontWeight: 300, marginBottom: 20 }}>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.1rem", color: "#4A2C3A", lineHeight: 1.7, fontWeight: 300, marginBottom: 20 }}>
               Nine years across five venture-backed companies. B2B SaaS, fintech, proptech. Two acquired. The work splits into two modes.
             </p>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.1rem", color: "#BEA7B7", lineHeight: 1.7, fontWeight: 300 }}>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.1rem", color: "#4A2C3A", lineHeight: 1.7, fontWeight: 300 }}>
               Mode one: build the GTM engine from nothing. No team, no pipeline, no brand in market. ICP, pricing, outbound, channel, hiring, forecasting. All from a blank page. Mode two: walk into an existing revenue org and install the systems that make it perform. Redesign the sales process, tighten unit economics, build the coaching frameworks. The throughline is the same: repeatable revenue architecture that survives after I build it.
             </p>
           </div>
@@ -1327,21 +1327,21 @@ export default function Portfolio() {
         <Reveal>
           <div
             className="two-modes-grid"
-            style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginTop: 48 }}
+            style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginTop: 40 }}
           >
             {/* Zero to One */}
             <div
               style={{
-                background: "#501440",
-                border: "1px solid rgba(255,200,230,0.12)",
+                background: "#FFFFFF",
+                border: "1px solid rgba(66,11,49,0.10)",
                 borderRadius: 16,
                 padding: 32,
               }}
             >
-              <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "1.3rem", marginBottom: 12 }}>
+              <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "1.3rem", marginBottom: 12, color: "#1E0A15" }}>
                 Build from Zero
               </div>
-              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.85rem", color: "#84627A", lineHeight: 1.6, marginBottom: 24 }}>
+              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.85rem", color: "#7A5568", lineHeight: 1.6, marginBottom: 24 }}>
                 No team. No pipeline. No playbook. Create the entire GTM stack.
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
@@ -1351,8 +1351,8 @@ export default function Portfolio() {
                   { name: "Lane", label: "Enterprise motion, greenfield" },
                 ].map((item) => (
                   <div key={item.name} style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                    <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.9rem", color: "#F0EDE6", fontWeight: 500 }}>{item.name}</span>
-                    <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.65rem", color: "#84627A", letterSpacing: "0.05em" }}>{item.label}</span>
+                    <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.9rem", color: "#1E0A15", fontWeight: 500 }}>{item.name}</span>
+                    <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.65rem", color: "#7A5568", letterSpacing: "0.05em" }}>{item.label}</span>
                   </div>
                 ))}
               </div>
@@ -1361,16 +1361,16 @@ export default function Portfolio() {
             {/* Scale and Optimize */}
             <div
               style={{
-                background: "#501440",
-                border: "1px solid rgba(255,200,230,0.12)",
+                background: "#FFFFFF",
+                border: "1px solid rgba(66,11,49,0.10)",
                 borderRadius: 16,
                 padding: 32,
               }}
             >
-              <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "1.3rem", marginBottom: 12 }}>
+              <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "1.3rem", marginBottom: 12, color: "#1E0A15" }}>
                 Scale What Exists
               </div>
-              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.85rem", color: "#84627A", lineHeight: 1.6, marginBottom: 24 }}>
+              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.85rem", color: "#7A5568", lineHeight: 1.6, marginBottom: 24 }}>
                 Walk into a live org. Install systems. Fix unit economics. Produce results.
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
@@ -1380,21 +1380,20 @@ export default function Portfolio() {
                   { name: "Relay", label: "Sales infrastructure build" },
                 ].map((item) => (
                   <div key={item.name} style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                    <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.9rem", color: "#F0EDE6", fontWeight: 500 }}>{item.name}</span>
-                    <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.65rem", color: "#84627A", letterSpacing: "0.05em" }}>{item.label}</span>
+                    <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.9rem", color: "#1E0A15", fontWeight: 500 }}>{item.name}</span>
+                    <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.65rem", color: "#7A5568", letterSpacing: "0.05em" }}>{item.label}</span>
                   </div>
                 ))}
               </div>
             </div>
           </div>
         </Reveal>
-        <div style={{ height: 1, background: "rgba(255,255,255,0.06)", marginTop: 80 }} />
       </section>
 
       {/* CASE STUDIES */}
-      <section className="section-pad" id="work" style={{ padding: "120px 48px" }}>
+      <section className="section-pad" id="work" style={{ padding: "80px 48px", background: "#F3EBF0" }}>
         <Reveal>
-          <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.7rem", color: "#F5AA1A", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 16 }}>
+          <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.7rem", color: "#420b31", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 16 }}>
             Selected Work
           </div>
         </Reveal>
@@ -1404,7 +1403,7 @@ export default function Portfolio() {
           </h2>
         </Reveal>
         <Reveal>
-          <p style={{ fontSize: "1.1rem", color: "#BEA7B7", maxWidth: 560, lineHeight: 1.7, fontWeight: 300, marginBottom: 64 }}>
+          <p style={{ fontSize: "1.1rem", color: "#4A2C3A", maxWidth: 560, lineHeight: 1.7, fontWeight: 300, marginBottom: 48 }}>
             Each case study represents a distinct GTM challenge. New market entry. Category creation.
             Enterprise motion from scratch. Hyper-growth sales management. All with receipts.
           </p>
@@ -1488,19 +1487,19 @@ export default function Portfolio() {
       </section>
 
       {/* APPROACH */}
-      <section className="section-pad" id="approach" style={{ padding: "120px 48px" }}>
+      <section className="section-pad" id="approach" style={{ padding: "96px 48px" }}>
         <Reveal>
-          <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.7rem", color: "#F5AA1A", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 16 }}>
+          <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.7rem", color: "#420b31", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 16 }}>
             How I Operate
           </div>
         </Reveal>
         <Reveal>
-          <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(2.5rem, 5vw, 4rem)", letterSpacing: "-0.03em", lineHeight: 1.1, maxWidth: 700, marginBottom: 24 }}>
+          <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(2.5rem, 5vw, 4rem)", letterSpacing: "-0.03em", lineHeight: 1.1, maxWidth: 700, marginBottom: 24, color: "#1E0A15" }}>
             Systems over heroics. Process over luck.
           </h2>
         </Reveal>
         <Reveal>
-          <p style={{ fontSize: "1.1rem", color: "#BEA7B7", maxWidth: 560, lineHeight: 1.7, fontWeight: 300, marginBottom: 48 }}>
+          <p style={{ fontSize: "1.1rem", color: "#4A2C3A", maxWidth: 560, lineHeight: 1.7, fontWeight: 300, marginBottom: 48 }}>
             I don't just "do sales." I architect the entire revenue machine. From ICP definition
             through closed-won, every step is designed to be repeatable and measurable.
           </p>
@@ -1519,47 +1518,47 @@ export default function Portfolio() {
               <div
                 className="comp-card"
                 style={{
-                  background: "#501440",
-                  border: "1px solid rgba(255,200,230,0.12)",
+                  background: "#FFFFFF",
+                  border: "1px solid rgba(66,11,49,0.10)",
                   borderRadius: 12,
                   padding: 32,
                   cursor: "default",
                 }}
                 onMouseEnter={(e) => {
                   (e.currentTarget as HTMLDivElement).style.borderColor = "#F5AA1A";
-                  (e.currentTarget as HTMLDivElement).style.background = "#5c1749";
+                  (e.currentTarget as HTMLDivElement).style.background = "#FFFBF2";
                 }}
                 onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,200,230,0.12)";
-                  (e.currentTarget as HTMLDivElement).style.background = "#501440";
+                  (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(66,11,49,0.10)";
+                  (e.currentTarget as HTMLDivElement).style.background = "#FFFFFF";
                 }}
               >
-                <div style={{ fontSize: "1.5rem", marginBottom: 16 }}>{c.icon}</div>
-                <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "1.15rem", marginBottom: 8 }}>{c.title}</div>
-                <div style={{ fontSize: "0.85rem", color: "#84627A", lineHeight: 1.6 }}>{c.desc}</div>
+                <div style={{ fontSize: "1.5rem", marginBottom: 16, color: "#420b31" }}>{c.icon}</div>
+                <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "1.15rem", marginBottom: 8, color: "#1E0A15" }}>{c.title}</div>
+                <div style={{ fontSize: "0.85rem", color: "#7A5568", lineHeight: 1.6 }}>{c.desc}</div>
               </div>
             </Reveal>
           ))}
         </div>
       </section>
 
-      <div className="divider-pad" style={{ height: 1, background: "rgba(255,200,230,0.10)", margin: "0 48px" }} />
+      <div className="divider-pad" style={{ height: 1, background: "rgba(66,11,49,0.08)", margin: "0 48px" }} />
 
       {/* TIMELINE */}
-      <section className="section-pad" id="timeline" style={{ padding: "120px 48px" }}>
+      <section className="section-pad" id="timeline" style={{ padding: "96px 48px", background: "#F3EBF0" }}>
         <Reveal>
-          <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.7rem", color: "#F5AA1A", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 16 }}>
+          <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.7rem", color: "#420b31", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 16 }}>
             Career Arc
           </div>
         </Reveal>
         <Reveal>
-          <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(2.5rem, 5vw, 4rem)", letterSpacing: "-0.03em", lineHeight: 1.1, maxWidth: 700, marginBottom: 48 }}>
+          <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(2.5rem, 5vw, 4rem)", letterSpacing: "-0.03em", lineHeight: 1.1, maxWidth: 700, marginBottom: 48, color: "#1E0A15" }}>
             A pattern of building, scaling, and outcomes.
           </h2>
         </Reveal>
 
         <div style={{ position: "relative" }}>
-          <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 2, background: "rgba(255,200,230,0.10)" }} />
+          <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 2, background: "rgba(66,11,49,0.12)" }} />
           {[
             { date: "Nov 2023 - Mar 2026", company: "Defigo", role: "RVP Sales → GM Americas → CEO", desc: "Built the US business from zero. Full P&L ownership. National distribution, 16 buildings, 20+ dealer partners.", badge: { label: "3x Promoted", style: { background: "rgba(245,170,26,0.08)", color: "#F5AA1A", border: "1px solid rgba(245,170,26,0.2)" } } },
             { date: "Jun 2022 - Jul 2023", company: "Percy", role: "Co-Founder & Head of Sales", desc: "Co-founded and built GTM for a category-creating QSR automation startup. $0 to $331K live ARR.", badge: { label: "Co-founded", style: { background: "rgba(255,138,76,0.1)", color: "#FF8A4C", border: "1px solid rgba(255,138,76,0.2)" } } },
@@ -1578,24 +1577,24 @@ export default function Portfolio() {
                     width: 12,
                     height: 12,
                     borderRadius: "50%",
-                    background: "#F5AA1A",
-                    border: "2px solid #420b31",
+                    background: "#420b31",
+                    border: "2px solid #F3EBF0",
                   }}
                 />
                 <div
                   style={{
-                    background: "#501440",
-                    border: "1px solid rgba(255,200,230,0.14)",
+                    background: "#FFFFFF",
+                    border: "1px solid rgba(66,11,49,0.10)",
                     borderRadius: 16,
                     padding: "20px 24px 22px",
                   }}
                 >
-                  <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.7rem", color: "#D4BAC8", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 8 }}>
+                  <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.7rem", color: "#7A5568", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 8 }}>
                     {item.date}
                   </div>
-                  <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "1.4rem", marginBottom: 4 }}>{item.company}</div>
-                  <div style={{ fontSize: "0.85rem", color: "#E0CCDA", marginBottom: 8 }}>{item.role}</div>
-                  <div style={{ fontSize: "0.85rem", color: "#C4A8B8", lineHeight: 1.6, maxWidth: 500 }}>{item.desc}</div>
+                  <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "1.4rem", marginBottom: 4, color: "#1E0A15" }}>{item.company}</div>
+                  <div style={{ fontSize: "0.85rem", color: "#4A2C3A", marginBottom: 8 }}>{item.role}</div>
+                  <div style={{ fontSize: "0.85rem", color: "#4A2C3A", lineHeight: 1.6, maxWidth: 500 }}>{item.desc}</div>
                   {item.badge && (
                     <span
                       style={{
@@ -1627,6 +1626,8 @@ export default function Portfolio() {
           textAlign: "center",
           padding: "160px 48px",
           position: "relative",
+          background: "#420b31",
+          color: "#F0EDE6",
         }}
       >
         <div
@@ -1725,6 +1726,7 @@ export default function Portfolio() {
         className="footer-pad"
         style={{
           padding: 48,
+          background: "#360928",
           borderTop: "1px solid rgba(255,200,230,0.10)",
           display: "flex",
           justifyContent: "space-between",
