@@ -653,7 +653,7 @@ function CaseCard({ cs, isOpen, onToggle }: { cs: CaseStudy; isOpen: boolean; on
           ref={expandedRef}
           style={{
             marginTop: 2,
-            background: "#111114",
+            background: "#360928",
             border: "1px solid rgba(255,255,255,0.06)",
             borderRadius: "0 0 20px 20px",
             padding: "48px 48px 56px",
@@ -835,10 +835,10 @@ export default function Portfolio() {
         
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        body { background: #0A0A0C; color: #F0EDE6; font-family: 'DM Sans', -apple-system, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; line-height: 1.6; }
+        body { background: #420b31; color: #F0EDE6; font-family: 'DM Sans', -apple-system, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; line-height: 1.6; }
         ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #0A0A0C; }
-        ::-webkit-scrollbar-thumb { background: #5A5A5E; border-radius: 3px; }
+        ::-webkit-scrollbar-track { background: #420b31; }
+        ::-webkit-scrollbar-thumb { background: #7a3060; border-radius: 3px; }
         ::selection { background: #C8FF00; color: #0A0A0C; }
 
         @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
@@ -858,6 +858,9 @@ export default function Portfolio() {
           .comp-grid-wrap { grid-template-columns: 1fr !important; }
           .section-pad { padding: 80px 24px !important; }
           .hero-pad { padding: 120px 24px 60px !important; }
+          .hero-columns { flex-direction: column-reverse !important; }
+          .hero-photo-wrap { width: 180px !important; height: 180px !important; }
+          .hero-photo-wrap > div { width: 180px !important; height: 180px !important; }
           .case-card-pad { padding: 32px !important; }
           .expanded-pad { padding: 32px 24px 40px !important; }
         }
@@ -881,9 +884,9 @@ export default function Portfolio() {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          background: "rgba(10,10,12,0.8)",
+          background: "rgba(66,11,49,0.85)",
           backdropFilter: "blur(24px)",
-          borderBottom: "1px solid rgba(255,255,255,0.06)",
+          borderBottom: "1px solid rgba(255,255,255,0.08)",
           transition: "padding 0.3s ease",
         }}
       >
@@ -954,55 +957,102 @@ export default function Portfolio() {
             right: -200,
             width: 800,
             height: 800,
-            background: "radial-gradient(circle, rgba(200,255,0,0.04) 0%, transparent 70%)",
+            background: "radial-gradient(circle, rgba(200,255,0,0.06) 0%, transparent 70%)",
             pointerEvents: "none",
           }}
         />
+        {/* Two-column hero layout */}
         <div
+          className="hero-columns"
           style={{
-            fontFamily: "'JetBrains Mono', monospace",
-            fontSize: "0.75rem",
-            color: "#C8FF00",
-            letterSpacing: "0.15em",
-            textTransform: "uppercase",
-            marginBottom: 32,
-            opacity: 0,
-            animation: "fadeUp 0.8s ease 0.2s forwards",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: 48,
+            width: "100%",
           }}
         >
-          GTM Operator · Builder · Revenue Architect
+          {/* Left: text */}
+          <div style={{ flex: "1 1 0", minWidth: 0 }}>
+            <div
+              style={{
+                fontFamily: "'JetBrains Mono', monospace",
+                fontSize: "0.75rem",
+                color: "#C8FF00",
+                letterSpacing: "0.15em",
+                textTransform: "uppercase",
+                marginBottom: 32,
+                opacity: 0,
+                animation: "fadeUp 0.8s ease 0.2s forwards",
+              }}
+            >
+              GTM Operator · Builder · Revenue Architect
+            </div>
+            <h1
+              style={{
+                fontFamily: "'Instrument Serif', Georgia, serif",
+                fontSize: "clamp(3.5rem, 7vw, 7rem)",
+                lineHeight: 1.0,
+                letterSpacing: "-0.03em",
+                color: "#F0EDE6",
+                maxWidth: 900,
+                opacity: 0,
+                animation: "fadeUp 0.8s ease 0.4s forwards",
+              }}
+            >
+              I build revenue<br />engines from{" "}
+              <em style={{ fontStyle: "italic", color: "#C8FF00" }}>zero.</em>
+            </h1>
+            <p
+              style={{
+                fontSize: "1.2rem",
+                color: "#8A8A8E",
+                maxWidth: 580,
+                marginTop: 32,
+                lineHeight: 1.7,
+                fontWeight: 300,
+                opacity: 0,
+                animation: "fadeUp 0.8s ease 0.6s forwards",
+              }}
+            >
+              Senior go-to-market operator. I take companies from no revenue to scalable,
+              predictable growth. Four times over. Across fintech, proptech, foodtech, and
+              enterprise SaaS.
+            </p>
+          </div>
+          {/* Right: profile photo */}
+          <div
+            className="hero-photo-wrap"
+            style={{
+              flex: "0 0 auto",
+              opacity: 0,
+              animation: "fadeUp 0.8s ease 0.5s forwards",
+            }}
+          >
+            <div
+              style={{
+                width: 280,
+                height: 280,
+                borderRadius: "50%",
+                overflow: "hidden",
+                border: "3px solid rgba(200,255,0,0.25)",
+                boxShadow: "0 0 60px rgba(200,255,0,0.08), 0 24px 64px rgba(0,0,0,0.4)",
+              }}
+            >
+              <img
+                src={assetUrl("profile.jpg")}
+                alt="Umair Ahmed"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "center top",
+                  display: "block",
+                }}
+              />
+            </div>
+          </div>
         </div>
-        <h1
-          style={{
-            fontFamily: "'Instrument Serif', Georgia, serif",
-            fontSize: "clamp(3.5rem, 8vw, 7rem)",
-            lineHeight: 1.0,
-            letterSpacing: "-0.03em",
-            color: "#F0EDE6",
-            maxWidth: 900,
-            opacity: 0,
-            animation: "fadeUp 0.8s ease 0.4s forwards",
-          }}
-        >
-          I build revenue<br />engines from{" "}
-          <em style={{ fontStyle: "italic", color: "#C8FF00" }}>zero.</em>
-        </h1>
-        <p
-          style={{
-            fontSize: "1.2rem",
-            color: "#8A8A8E",
-            maxWidth: 580,
-            marginTop: 32,
-            lineHeight: 1.7,
-            fontWeight: 300,
-            opacity: 0,
-            animation: "fadeUp 0.8s ease 0.6s forwards",
-          }}
-        >
-          Senior go-to-market operator. I take companies from no revenue to scalable,
-          predictable growth. Four times over. Across fintech, proptech, foodtech, and
-          enterprise SaaS.
-        </p>
         <div
           className="hero-stats-wrap"
           style={{
@@ -1036,7 +1086,7 @@ export default function Portfolio() {
           padding: "40px 0",
           borderTop: "1px solid rgba(255,255,255,0.06)",
           borderBottom: "1px solid rgba(255,255,255,0.06)",
-          background: "#111114",
+          background: "#360928",
         }}
       >
         <div style={{ display: "flex", animation: "scroll 30s linear infinite", width: "max-content" }}>
@@ -1109,7 +1159,7 @@ export default function Portfolio() {
         id="quotes"
         style={{
           padding: "120px 48px",
-          background: "#111114",
+          background: "#360928",
           borderTop: "1px solid rgba(255,255,255,0.06)",
           borderBottom: "1px solid rgba(255,255,255,0.06)",
         }}
@@ -1255,7 +1305,7 @@ export default function Portfolio() {
                     height: 12,
                     borderRadius: "50%",
                     background: "#C8FF00",
-                    border: "2px solid #0A0A0C",
+                    border: "2px solid #420b31",
                   }}
                 />
                 <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.7rem", color: "#5A5A5E", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 8 }}>
@@ -1399,7 +1449,7 @@ export default function Portfolio() {
         }}
       >
         <div style={{ fontSize: "0.8rem", color: "#5A5A5E" }}>
-          Umair Ahmed · Toronto, ON · (647) 389-7773
+          Umair Ahmed · Toronto, ON · Open to relocation · (647) 389-7773
         </div>
         <div style={{ fontSize: "0.8rem", color: "#5A5A5E" }}>Built with intent.</div>
       </footer>
