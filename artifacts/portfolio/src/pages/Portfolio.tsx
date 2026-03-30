@@ -882,7 +882,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
         fontSize: "0.7rem",
         letterSpacing: "0.2em",
         textTransform: "uppercase",
-        color: "#420b31",
+        color: "#F5AA1A",
         marginBottom: 20,
         marginTop: 48,
       }}
@@ -933,13 +933,13 @@ export default function Portfolio() {
         .hero-gradient { background: linear-gradient(135deg, #420b31 0%, #5a1646 50%, #6b244d 100%); }
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #420b31; }
-        ::-webkit-scrollbar-thumb { background: #7a3060; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb { background: #F5AA1A; border-radius: 3px; }
         ::selection { background: #F5AA1A; color: #0A0A0C; }
 
         @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        @keyframes glowPulse { 0%, 100% { box-shadow: 0 0 40px rgba(245,170,26,0.15), 0 0 0 0 rgba(245,170,26,0.25), 0 24px 64px rgba(0,0,0,0.4); } 50% { box-shadow: 0 0 70px rgba(245,170,26,0.28), 0 0 0 10px rgba(245,170,26,0), 0 24px 64px rgba(0,0,0,0.4); } }
+        @keyframes glowPulse { 0%, 100% { box-shadow: 0 0 50px rgba(245,170,26,0.30), 0 0 0 0 rgba(245,170,26,0.35), 0 24px 64px rgba(0,0,0,0.45); } 50% { box-shadow: 0 0 90px rgba(245,170,26,0.50), 0 0 0 14px rgba(245,170,26,0), 0 24px 64px rgba(0,0,0,0.45); } }
         @keyframes shimmer { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }
         @keyframes lineGrow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
 
@@ -961,7 +961,7 @@ export default function Portfolio() {
 
         .scroll-progress { position: fixed; top: 0; left: 0; height: 2px; background: linear-gradient(to right, #F5AA1A, #F0C060, #F5AA1A); z-index: 201; pointer-events: none; transition: width 0.08s linear; }
 
-        .stat-number { background: linear-gradient(135deg, #F0EDE6 0%, #D4BAC8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .stat-number { background: linear-gradient(135deg, #FFFFFF 20%, #F5CC70 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 
         .timeline-line { transform-origin: top; }
 
@@ -1048,7 +1048,7 @@ export default function Portfolio() {
           transition: "padding 0.3s ease",
         }}
       >
-        <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "1.25rem", letterSpacing: "-0.02em" }}>
+        <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontStyle: "italic", fontSize: "1.3rem", letterSpacing: "-0.02em", color: "#F0EDE6" }}>
           Umair Ahmed
         </div>
         <div className="nav-cta-mobile" style={{ display: "none" }}>
@@ -1070,20 +1070,20 @@ export default function Portfolio() {
           </a>
         </div>
         <div className="nav-links-wrap" style={{ display: "flex", gap: 32, alignItems: "center" }}>
-          <a href="#work" style={{ color: "#BEA7B7", textDecoration: "none", fontSize: "0.8rem", fontWeight: 500, letterSpacing: "0.08em", textTransform: "uppercase" }}>
+          <a href="#work" style={{ color: "#D4BEC8", textDecoration: "none", fontSize: "0.8rem", fontWeight: 500, letterSpacing: "0.08em", textTransform: "uppercase" }}>
             Case Studies
           </a>
-          <a href="#approach" style={{ color: "#BEA7B7", textDecoration: "none", fontSize: "0.8rem", fontWeight: 500, letterSpacing: "0.08em", textTransform: "uppercase" }}>
+          <a href="#approach" style={{ color: "#D4BEC8", textDecoration: "none", fontSize: "0.8rem", fontWeight: 500, letterSpacing: "0.08em", textTransform: "uppercase" }}>
             Approach
           </a>
-          <a href="#timeline" style={{ color: "#BEA7B7", textDecoration: "none", fontSize: "0.8rem", fontWeight: 500, letterSpacing: "0.08em", textTransform: "uppercase" }}>
+          <a href="#timeline" style={{ color: "#D4BEC8", textDecoration: "none", fontSize: "0.8rem", fontWeight: 500, letterSpacing: "0.08em", textTransform: "uppercase" }}>
             Timeline
           </a>
           <a
             href={assetUrl("resume/Umair_Ahmed_Resume_2026.pdf")}
             download
             style={{
-              color: "#BEA7B7",
+              color: "#D4BEC8",
               textDecoration: "none",
               fontSize: "0.8rem",
               fontWeight: 500,
@@ -1106,6 +1106,7 @@ export default function Portfolio() {
               textTransform: "uppercase",
               textDecoration: "none",
               transition: "transform 0.2s, box-shadow 0.2s",
+              boxShadow: "0 2px 16px rgba(245,170,26,0.35)",
             }}
           >
             Get in Touch
@@ -1133,7 +1134,7 @@ export default function Portfolio() {
             right: -200,
             width: 800,
             height: 800,
-            background: "radial-gradient(circle, rgba(245,170,26,0.06) 0%, transparent 70%)",
+            background: "radial-gradient(circle, rgba(245,170,26,0.14) 0%, transparent 70%)",
             pointerEvents: "none",
           }}
         />
@@ -1172,7 +1173,7 @@ export default function Portfolio() {
                 fontSize: "clamp(3rem, 8vw, 7rem)",
                 lineHeight: 1.0,
                 letterSpacing: "-0.03em",
-                color: "#F0EDE6",
+                color: "#FFFFFF",
                 maxWidth: 900,
                 opacity: 0,
                 animation: "fadeUp 0.8s ease 0.4s forwards",
@@ -1185,7 +1186,7 @@ export default function Portfolio() {
               className="hero-subtitle"
               style={{
                 fontSize: "1.2rem",
-                color: "#BEA7B7",
+                color: "#D4BEC8",
                 maxWidth: 580,
                 marginTop: 32,
                 lineHeight: 1.7,
@@ -1215,7 +1216,7 @@ export default function Portfolio() {
                 height: 280,
                 borderRadius: "50%",
                 overflow: "hidden",
-                border: "3px solid rgba(245,170,26,0.35)",
+                border: "3px solid rgba(245,170,26,0.60)",
               }}
             >
               <img
@@ -1248,11 +1249,11 @@ export default function Portfolio() {
             { value: "2", label: "Portfolio Acquisitions" },
             { value: "57%", label: "Peak Contribution Margin" },
           ].map((s, i) => (
-            <div key={s.label} style={{ borderRight: i < 3 ? "1px solid rgba(255,200,230,0.12)" : "none", paddingRight: i < 3 ? 64 : 0 }}>
+            <div key={s.label} style={{ borderRight: i < 3 ? "1px solid rgba(255,200,230,0.22)" : "none", paddingRight: i < 3 ? 64 : 0 }}>
               <div className="stat-number" style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "3rem", lineHeight: 1 }}>
                 <AnimatedStat value={s.value} />
               </div>
-              <div style={{ fontSize: "0.75rem", color: "#84627A", textTransform: "uppercase", letterSpacing: "0.12em", marginTop: 8 }}>
+              <div style={{ fontSize: "0.75rem", color: "#C4A8BC", textTransform: "uppercase", letterSpacing: "0.12em", marginTop: 8 }}>
                 {s.label}
               </div>
             </div>
@@ -1303,7 +1304,7 @@ export default function Portfolio() {
       {/* THROUGHLINE */}
       <section className="section-pad" id="throughline" style={{ padding: "80px 48px" }}>
         <Reveal>
-          <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.7rem", color: "#420b31", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 16 }}>
+          <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.7rem", color: "#F5AA1A", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 16 }}>
             The Throughline
           </div>
         </Reveal>
@@ -1393,7 +1394,7 @@ export default function Portfolio() {
       {/* CASE STUDIES */}
       <section className="section-pad" id="work" style={{ padding: "80px 48px", background: "#F3EBF0" }}>
         <Reveal>
-          <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.7rem", color: "#420b31", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 16 }}>
+          <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.7rem", color: "#F5AA1A", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 16 }}>
             Selected Work
           </div>
         </Reveal>
@@ -1464,7 +1465,7 @@ export default function Portfolio() {
                 className="quote-card"
                 style={{
                   background: "#501440",
-                  border: "1px solid rgba(255,200,230,0.12)",
+                  border: "1px solid rgba(255,200,230,0.22)",
                   borderRadius: 20,
                   padding: 36,
                 }}
@@ -1488,7 +1489,7 @@ export default function Portfolio() {
       {/* APPROACH */}
       <section className="section-pad" id="approach" style={{ padding: "96px 48px" }}>
         <Reveal>
-          <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.7rem", color: "#420b31", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 16 }}>
+          <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.7rem", color: "#F5AA1A", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 16 }}>
             How I Operate
           </div>
         </Reveal>
@@ -1532,7 +1533,7 @@ export default function Portfolio() {
                   (e.currentTarget as HTMLDivElement).style.background = "#FFFFFF";
                 }}
               >
-                <div style={{ fontSize: "1.5rem", marginBottom: 16, color: "#420b31" }}>{c.icon}</div>
+                <div style={{ fontSize: "1.5rem", marginBottom: 16, color: "#F5AA1A" }}>{c.icon}</div>
                 <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "1.15rem", marginBottom: 8, color: "#1E0A15" }}>{c.title}</div>
                 <div style={{ fontSize: "0.85rem", color: "#7A5568", lineHeight: 1.6 }}>{c.desc}</div>
               </div>
@@ -1546,7 +1547,7 @@ export default function Portfolio() {
       {/* TIMELINE */}
       <section className="section-pad" id="timeline" style={{ padding: "96px 48px", background: "#F3EBF0" }}>
         <Reveal>
-          <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.7rem", color: "#420b31", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 16 }}>
+          <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.7rem", color: "#F5AA1A", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 16 }}>
             Career Arc
           </div>
         </Reveal>
@@ -1672,6 +1673,7 @@ export default function Portfolio() {
                 textDecoration: "none",
                 letterSpacing: "0.02em",
                 transition: "transform 0.2s, box-shadow 0.2s",
+                boxShadow: "0 4px 28px rgba(245,170,26,0.45)",
                 display: "inline-block",
               }}
             >
@@ -1691,6 +1693,7 @@ export default function Portfolio() {
                 textDecoration: "none",
                 letterSpacing: "0.02em",
                 transition: "transform 0.2s, box-shadow 0.2s",
+                boxShadow: "0 4px 28px rgba(245,170,26,0.45)",
                 display: "inline-block",
               }}
             >
@@ -1701,16 +1704,17 @@ export default function Portfolio() {
               href={assetUrl("resume/Umair_Ahmed_Resume_2026.pdf")}
               download
               style={{
-                background: "#F5AA1A",
-                color: "#420b31",
-                padding: "16px 36px",
+                background: "transparent",
+                color: "#F5AA1A",
+                padding: "15px 36px",
                 borderRadius: 100,
-                fontWeight: 700,
+                fontWeight: 600,
                 fontSize: "0.9rem",
                 textDecoration: "none",
                 letterSpacing: "0.04em",
-                border: "none",
+                border: "1px solid rgba(245,170,26,0.50)",
                 display: "inline-block",
+                transition: "border-color 0.2s",
               }}
             >
               Download Resume
