@@ -617,7 +617,7 @@ function CaseCard({ cs, isOpen, onToggle }: { cs: CaseStudy; isOpen: boolean; on
   return (
     <Reveal>
       <div
-        className="case-card"
+        className="case-card case-card-pad"
         style={{
           background: isOpen ? "#5c1749" : "#501440",
           border: `1px solid ${isOpen ? "rgba(255,200,230,0.22)" : "rgba(255,200,230,0.12)"}`,
@@ -719,6 +719,7 @@ function CaseCard({ cs, isOpen, onToggle }: { cs: CaseStudy; isOpen: boolean; on
       {isOpen && (
         <div
           ref={expandedRef}
+          className="expanded-pad"
           style={{
             marginTop: 2,
             background: "#481038",
@@ -875,6 +876,7 @@ function CaseCard({ cs, isOpen, onToggle }: { cs: CaseStudy; isOpen: boolean; on
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
     <div
+      className="section-label-pad"
       style={{
         fontFamily: "'JetBrains Mono', monospace",
         fontSize: "0.7rem",
@@ -969,20 +971,50 @@ export default function Portfolio() {
         a:hover { opacity: 0.85; }
 
         @media (max-width: 768px) {
+          /* Nav */
+          .nav-links-wrap { display: none !important; }
+          .nav-wrap { padding-left: 20px !important; padding-right: 20px !important; }
+          .nav-cta-mobile { display: flex !important; }
+
+          /* Hero */
+          .hero-pad { padding: 96px 20px 56px !important; }
+          .hero-columns { flex-direction: column-reverse !important; align-items: center !important; gap: 28px !important; }
+          .hero-photo-wrap { width: 150px !important; height: 150px !important; }
+          .hero-photo-wrap > div { width: 150px !important; height: 150px !important; }
+          .hero-tagline { font-size: 0.6rem !important; letter-spacing: 0.06em !important; margin-bottom: 16px !important; }
+          .hero-subtitle { font-size: 1rem !important; margin-top: 20px !important; }
+          .hero-stats-wrap { flex-direction: column !important; gap: 0 !important; margin-top: 40px !important; }
+          .hero-stats-wrap > div { border-right: none !important; padding-right: 0 !important; padding: 16px 0 !important; border-bottom: 1px solid rgba(255,200,230,0.10) !important; }
+          .hero-stats-wrap > div:last-child { border-bottom: none !important; }
+          .stat-number { font-size: 2.2rem !important; }
+
+          /* Sections */
+          .section-pad { padding: 72px 20px !important; }
+          .cta-pad { padding: 80px 20px !important; }
+          .footer-pad { padding: 28px 20px !important; flex-direction: column !important; align-items: flex-start !important; gap: 8px !important; }
+          .divider-pad { margin: 0 20px !important; }
+
+          /* Cards */
+          .cases-grid-wrap { grid-template-columns: 1fr !important; }
+          .case-card-pad { padding: 24px !important; }
+          .expanded-pad { padding: 24px 20px 32px !important; }
+          .section-label-pad { margin-top: 32px !important; }
+
+          /* Quotes */
+          .quotes-grid-wrap { grid-template-columns: 1fr !important; }
+
+          /* Competency grid */
+          .comp-grid-wrap { grid-template-columns: 1fr !important; }
+
+          /* Gallery */
           .proof-gallery { grid-template-columns: 1fr !important; }
           .metrics-grid-full { grid-template-columns: 1fr 1fr !important; }
-          .nav-links-wrap { display: none !important; }
-          .hero-stats-wrap { flex-direction: column !important; gap: 32px !important; }
-          .cases-grid-wrap { grid-template-columns: 1fr !important; }
-          .quotes-grid-wrap { grid-template-columns: 1fr !important; }
-          .comp-grid-wrap { grid-template-columns: 1fr !important; }
-          .section-pad { padding: 80px 24px !important; }
-          .hero-pad { padding: 120px 24px 60px !important; }
-          .hero-columns { flex-direction: column-reverse !important; }
-          .hero-photo-wrap { width: 180px !important; height: 180px !important; }
-          .hero-photo-wrap > div { width: 180px !important; height: 180px !important; }
-          .case-card-pad { padding: 32px !important; }
-          .expanded-pad { padding: 32px 24px 40px !important; }
+
+          /* Two modes */
+          .two-modes-grid { grid-template-columns: 1fr !important; }
+
+          /* Timeline */
+          .timeline-content { padding-left: 20px !important; }
         }
         @media (max-width: 1024px) {
           .cases-grid-wrap { grid-template-columns: 1fr !important; }
@@ -998,6 +1030,7 @@ export default function Portfolio() {
 
       {/* NAV */}
       <nav
+        className="nav-wrap"
         style={{
           position: "fixed",
           top: 0,
@@ -1008,14 +1041,33 @@ export default function Portfolio() {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          background: "rgba(66,11,49,0.85)",
+          background: "rgba(66,11,49,0.92)",
           backdropFilter: "blur(24px)",
+          WebkitBackdropFilter: "blur(24px)",
           borderBottom: "1px solid rgba(255,200,230,0.12)",
           transition: "padding 0.3s ease",
         }}
       >
         <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "1.25rem", letterSpacing: "-0.02em" }}>
           Umair Ahmed
+        </div>
+        <div className="nav-cta-mobile" style={{ display: "none" }}>
+          <a
+            href="mailto:umairadilahmed@gmail.com"
+            style={{
+              background: "#F5AA1A",
+              color: "#0A0A0C",
+              padding: "8px 18px",
+              borderRadius: 100,
+              fontWeight: 600,
+              fontSize: "0.75rem",
+              letterSpacing: "0.04em",
+              textTransform: "uppercase",
+              textDecoration: "none",
+            }}
+          >
+            Get in Touch
+          </a>
         </div>
         <div className="nav-links-wrap" style={{ display: "flex", gap: 32, alignItems: "center" }}>
           <a href="#work" style={{ color: "#BEA7B7", textDecoration: "none", fontSize: "0.8rem", fontWeight: 500, letterSpacing: "0.08em", textTransform: "uppercase" }}>
@@ -1100,6 +1152,7 @@ export default function Portfolio() {
           {/* Left: text */}
           <div style={{ flex: "1 1 auto", minWidth: 0, maxWidth: 620 }}>
             <div
+              className="hero-tagline"
               style={{
                 fontFamily: "'JetBrains Mono', monospace",
                 fontSize: "0.75rem",
@@ -1116,7 +1169,7 @@ export default function Portfolio() {
             <h1
               style={{
                 fontFamily: "'Instrument Serif', Georgia, serif",
-                fontSize: "clamp(3.5rem, 7vw, 7rem)",
+                fontSize: "clamp(3rem, 8vw, 7rem)",
                 lineHeight: 1.0,
                 letterSpacing: "-0.03em",
                 color: "#F0EDE6",
@@ -1129,6 +1182,7 @@ export default function Portfolio() {
               <em style={{ fontStyle: "italic", color: "#F5AA1A" }}>zero.</em>
             </h1>
             <p
+              className="hero-subtitle"
               style={{
                 fontSize: "1.2rem",
                 color: "#BEA7B7",
@@ -1489,7 +1543,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      <div style={{ height: 1, background: "rgba(255,200,230,0.10)", margin: "0 48px" }} />
+      <div className="divider-pad" style={{ height: 1, background: "rgba(255,200,230,0.10)", margin: "0 48px" }} />
 
       {/* TIMELINE */}
       <section className="section-pad" id="timeline" style={{ padding: "120px 48px" }}>
@@ -1515,7 +1569,7 @@ export default function Portfolio() {
             { date: "Jul 2017 - Aug 2019", company: "Hubdoc", role: "AE → Sales Manager", desc: "Top-performing AE. $750K+ ARR generated. Built and managed 12-person team. Acquired by Xero.", badge: { label: "Acquired by Xero", style: { background: "rgba(77,163,255,0.1)", color: "#4DA3FF", border: "1px solid rgba(77,163,255,0.2)" } } },
           ].map((item, i) => (
             <Reveal key={i}>
-              <div style={{ paddingLeft: 48, paddingBottom: 32, position: "relative" }}>
+              <div className="timeline-content" style={{ paddingLeft: 48, paddingBottom: 32, position: "relative" }}>
                 <div
                   style={{
                     position: "absolute",
@@ -1568,6 +1622,7 @@ export default function Portfolio() {
 
       {/* CTA */}
       <section
+        className="section-pad cta-pad"
         style={{
           textAlign: "center",
           padding: "160px 48px",
@@ -1667,6 +1722,7 @@ export default function Portfolio() {
 
       {/* FOOTER */}
       <footer
+        className="footer-pad"
         style={{
           padding: 48,
           borderTop: "1px solid rgba(255,200,230,0.10)",
