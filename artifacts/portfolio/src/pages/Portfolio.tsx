@@ -945,7 +945,7 @@ export default function Portfolio() {
 
         .photo-glow { animation: glowPulse 3.5s ease-in-out infinite; }
 
-        .ticker-wrap { -webkit-mask-image: linear-gradient(to right, transparent, black 100px, black calc(100% - 100px), transparent); mask-image: linear-gradient(to right, transparent, black 100px, black calc(100% - 100px), transparent); }
+        .ticker-inner { will-change: transform; }
 
         .case-card { transition: transform 0.35s ease, box-shadow 0.35s ease !important; }
         .case-card:hover { transform: translateY(-4px) !important; box-shadow: 0 16px 48px rgba(66,11,49,0.12), 0 0 30px rgba(245,170,26,0.06) !important; }
@@ -968,37 +968,58 @@ export default function Portfolio() {
         .gallery-item:hover { transform: scale(1.02); border-color: rgba(66,11,49,0.20) !important; box-shadow: 0 8px 32px rgba(66,11,49,0.10); }
         .pdf-card:hover { border-color: rgba(245,170,26,0.40) !important; background: rgba(245,170,26,0.04) !important; }
 
+        button, a { touch-action: manipulation; }
         a:hover { opacity: 0.85; }
 
+        @media (hover: none) {
+          .case-card:hover { transform: none !important; box-shadow: none !important; }
+          .quote-card:hover { transform: none !important; border-color: rgba(255,200,230,0.22) !important; box-shadow: none !important; }
+          .comp-card:hover { transform: none !important; }
+          .gallery-item:hover { transform: none !important; box-shadow: none !important; }
+          .pdf-card:hover { border-color: rgba(66,11,49,0.10) !important; background: #FFFFFF !important; }
+          a:hover { opacity: 1; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+          .photo-glow { animation: none !important; box-shadow: 0 0 40px rgba(245,170,26,0.30) !important; }
+          .cta-btn::after { animation: none !important; }
+        }
+
         @media (max-width: 768px) {
-          /* Nav */
+          /* Nav: solid bg instead of blur (performance) */
           .nav-links-wrap { display: none !important; }
-          .nav-wrap { padding-left: 20px !important; padding-right: 20px !important; }
+          .nav-wrap { padding-left: 20px !important; padding-right: 20px !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important; background: rgba(42,5,29,0.98) !important; }
           .nav-cta-mobile { display: flex !important; }
 
           /* Hero */
-          .hero-pad { padding: 96px 20px 56px !important; }
-          .hero-columns { flex-direction: column-reverse !important; align-items: center !important; gap: 28px !important; }
-          .hero-photo-wrap { width: 150px !important; height: 150px !important; }
-          .hero-photo-wrap > div { width: 150px !important; height: 150px !important; }
-          .hero-tagline { font-size: 0.6rem !important; letter-spacing: 0.06em !important; margin-bottom: 16px !important; }
-          .hero-subtitle { font-size: 1rem !important; margin-top: 20px !important; }
-          .hero-stats-wrap { flex-direction: column !important; gap: 0 !important; margin-top: 40px !important; }
-          .hero-stats-wrap > div { border-right: none !important; padding-right: 0 !important; padding: 16px 0 !important; border-bottom: 1px solid rgba(255,200,230,0.10) !important; }
+          .hero-pad { padding: 100px 20px 60px !important; }
+          .hero-columns { flex-direction: column-reverse !important; align-items: center !important; gap: 24px !important; }
+          .hero-photo-wrap { width: 140px !important; height: 140px !important; }
+          .hero-photo-wrap > div { width: 140px !important; height: 140px !important; }
+          .photo-glow { animation: none !important; box-shadow: 0 0 30px rgba(245,170,26,0.25) !important; }
+          .hero-tagline { font-size: 0.6rem !important; letter-spacing: 0.06em !important; margin-bottom: 12px !important; }
+          .hero-subtitle { font-size: 0.95rem !important; margin-top: 16px !important; }
+          .hero-stats-wrap { flex-direction: column !important; gap: 0 !important; margin-top: 36px !important; }
+          .hero-stats-wrap > div { border-right: none !important; padding-right: 0 !important; padding: 14px 0 !important; border-bottom: 1px solid rgba(255,200,230,0.10) !important; }
           .hero-stats-wrap > div:last-child { border-bottom: none !important; }
-          .stat-number { font-size: 2.2rem !important; }
+          .stat-number { font-size: 2rem !important; }
 
           /* Sections */
-          .section-pad { padding: 72px 20px !important; }
-          .cta-pad { padding: 80px 20px !important; }
+          .section-pad { padding: 64px 20px !important; }
+          .cta-pad { padding: 72px 20px !important; }
           .footer-pad { padding: 28px 20px !important; flex-direction: column !important; align-items: flex-start !important; gap: 8px !important; }
           .divider-pad { margin: 0 20px !important; }
 
+          /* CTA buttons: stack full-width */
+          .cta-buttons-wrap { flex-direction: column !important; align-items: stretch !important; gap: 12px !important; }
+          .cta-buttons-wrap a { text-align: center !important; display: block !important; }
+
           /* Cards */
           .cases-grid-wrap { grid-template-columns: 1fr !important; }
-          .case-card-pad { padding: 24px !important; }
+          .case-card-pad { padding: 24px 20px !important; }
           .expanded-pad { padding: 24px 20px 32px !important; }
-          .section-label-pad { margin-top: 32px !important; }
+          .section-label-pad { margin-top: 28px !important; }
 
           /* Quotes */
           .quotes-grid-wrap { grid-template-columns: 1fr !important; }
@@ -1015,7 +1036,12 @@ export default function Portfolio() {
 
           /* Timeline */
           .timeline-content { padding-left: 20px !important; }
+
+          /* Disable heavy animations */
+          .cta-btn::after { display: none !important; }
+          .ticker-inner { animation-duration: 60s !important; }
         }
+
         @media (max-width: 1024px) {
           .cases-grid-wrap { grid-template-columns: 1fr !important; }
           .quotes-grid-wrap { grid-template-columns: 1fr !important; }
@@ -1272,7 +1298,7 @@ export default function Portfolio() {
           background: "#360928",
         }}
       >
-        <div style={{ display: "flex", animation: "scroll 30s linear infinite", width: "max-content" }}>
+        <div className="ticker-inner" style={{ display: "flex", animation: "scroll 30s linear infinite", width: "max-content" }}>
           {[
             "0-to-1 GTM Build", "Pipeline Architecture", "Outbound Engine Design", "Channel & Partner GTM",
             "Enterprise Sales Cycles", "Revenue Forecasting", "ICP Discovery", "Pricing & Packaging",
@@ -1660,7 +1686,7 @@ export default function Portfolio() {
           </p>
         </Reveal>
         <Reveal>
-          <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
+          <div className="cta-buttons-wrap" style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
             <a
               href="mailto:umairadilahmed@gmail.com"
               style={{
