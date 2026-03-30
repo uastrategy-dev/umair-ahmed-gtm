@@ -1308,7 +1308,7 @@ export default function Portfolio() {
           </div>
         </Reveal>
         <Reveal>
-          <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(2.2rem, 4.5vw, 3.5rem)", letterSpacing: "-0.03em", lineHeight: 1.1, marginBottom: 32, maxWidth: 700, color: "#1E0A15" }}>
+          <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(2.2rem, 4.5vw, 3.5rem)", letterSpacing: "-0.03em", lineHeight: 1.1, marginBottom: 32, maxWidth: 700, color: "#F5AA1A" }}>
             Two modes. One system.
           </h2>
         </Reveal>
@@ -1338,7 +1338,7 @@ export default function Portfolio() {
                 padding: 32,
               }}
             >
-              <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "1.3rem", marginBottom: 12, color: "#1E0A15" }}>
+              <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "1.3rem", marginBottom: 12, color: "#F5AA1A" }}>
                 Build from Zero
               </div>
               <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.85rem", color: "#7A5568", lineHeight: 1.6, marginBottom: 24 }}>
@@ -1367,7 +1367,7 @@ export default function Portfolio() {
                 padding: 32,
               }}
             >
-              <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "1.3rem", marginBottom: 12, color: "#1E0A15" }}>
+              <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "1.3rem", marginBottom: 12, color: "#F5AA1A" }}>
                 Scale What Exists
               </div>
               <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.85rem", color: "#7A5568", lineHeight: 1.6, marginBottom: 24 }}>
@@ -1398,7 +1398,7 @@ export default function Portfolio() {
           </div>
         </Reveal>
         <Reveal>
-          <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(2.5rem, 5vw, 4rem)", letterSpacing: "-0.03em", lineHeight: 1.1, maxWidth: 700, marginBottom: 24 }}>
+          <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(2.5rem, 5vw, 4rem)", letterSpacing: "-0.03em", lineHeight: 1.1, maxWidth: 700, marginBottom: 24, color: "#F5AA1A" }}>
             Four companies. Four GTM builds. Real numbers.
           </h2>
         </Reveal>
@@ -1442,7 +1442,7 @@ export default function Portfolio() {
           </div>
         </Reveal>
         <Reveal>
-          <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(2.5rem, 5vw, 4rem)", letterSpacing: "-0.03em", lineHeight: 1.1, maxWidth: 700, marginBottom: 48 }}>
+          <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(2.5rem, 5vw, 4rem)", letterSpacing: "-0.03em", lineHeight: 1.1, maxWidth: 700, marginBottom: 48, color: "#F5AA1A" }}>
             Direct from founders, execs, and teammates.
           </h2>
         </Reveal>
@@ -1475,10 +1475,9 @@ export default function Portfolio() {
                 <p style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "1.1rem", fontStyle: "italic", color: "#F0EDE6", lineHeight: 1.6, marginBottom: 20 }}>
                   {q.text}
                 </p>
-                <div style={{ fontSize: "0.8rem", color: "#84627A" }}>
-                  <strong style={{ color: "#BEA7B7", fontWeight: 500 }}>{q.attr}</strong>
-                  <br />
-                  {q.sub}
+                <div style={{ fontSize: "0.8rem" }}>
+                  <strong style={{ color: "#F0EDE6", fontWeight: 600, display: "block", marginBottom: 2 }}>{q.attr}</strong>
+                  <span style={{ color: "#BEA7B7" }}>{q.sub}</span>
                 </div>
               </div>
             </Reveal>
@@ -1494,7 +1493,7 @@ export default function Portfolio() {
           </div>
         </Reveal>
         <Reveal>
-          <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(2.5rem, 5vw, 4rem)", letterSpacing: "-0.03em", lineHeight: 1.1, maxWidth: 700, marginBottom: 24, color: "#1E0A15" }}>
+          <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(2.5rem, 5vw, 4rem)", letterSpacing: "-0.03em", lineHeight: 1.1, maxWidth: 700, marginBottom: 24, color: "#F5AA1A" }}>
             Systems over heroics. Process over luck.
           </h2>
         </Reveal>
@@ -1552,7 +1551,7 @@ export default function Portfolio() {
           </div>
         </Reveal>
         <Reveal>
-          <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(2.5rem, 5vw, 4rem)", letterSpacing: "-0.03em", lineHeight: 1.1, maxWidth: 700, marginBottom: 48, color: "#1E0A15" }}>
+          <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(2.5rem, 5vw, 4rem)", letterSpacing: "-0.03em", lineHeight: 1.1, maxWidth: 700, marginBottom: 48, color: "#F5AA1A" }}>
             A pattern of building, scaling, and outcomes.
           </h2>
         </Reveal>
@@ -1683,16 +1682,15 @@ export default function Portfolio() {
               target="_blank"
               rel="noopener noreferrer"
               style={{
-                background: "transparent",
-                color: "#F0EDE6",
+                background: "#F5AA1A",
+                color: "#0A0A0C",
                 padding: "16px 36px",
                 borderRadius: 100,
-                fontWeight: 500,
+                fontWeight: 600,
                 fontSize: "0.9rem",
                 textDecoration: "none",
                 letterSpacing: "0.02em",
-                border: "1px solid rgba(255,200,230,0.10)",
-                transition: "border-color 0.2s",
+                transition: "transform 0.2s, box-shadow 0.2s",
                 display: "inline-block",
               }}
             >
@@ -1735,10 +1733,9 @@ export default function Portfolio() {
           gap: 16,
         }}
       >
-        <div style={{ fontSize: "0.8rem", color: "#84627A" }}>
+        <div style={{ fontSize: "0.8rem", color: "#F5AA1A" }}>
           Umair Ahmed · Toronto, ON · Open to relocation · (647) 389-7773
         </div>
-        <div style={{ fontSize: "0.8rem", color: "#84627A" }}>Built with intent.</div>
       </footer>
     </>
   );
