@@ -404,7 +404,7 @@ function Lightbox({
           </p>
         )}
         {images.length > 1 && (
-          <p style={{ marginTop: 8, fontSize: "0.7rem", color: "#84627A", fontFamily: "'JetBrains Mono', monospace" }}>
+          <p style={{ marginTop: 8, fontSize: "0.7rem", color: "rgba(255,255,255,0.4)", fontFamily: "'JetBrains Mono', monospace" }}>
             {index + 1} / {images.length}
           </p>
         )}
@@ -882,7 +882,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
         fontSize: "0.7rem",
         letterSpacing: "0.2em",
         textTransform: "uppercase",
-        color: "#F5AA1A",
+        color: "#420b31",
         marginBottom: 20,
         marginTop: 48,
       }}
@@ -1309,7 +1309,7 @@ export default function Portfolio() {
           </div>
         </Reveal>
         <Reveal>
-          <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(2.2rem, 4.5vw, 3.5rem)", letterSpacing: "-0.03em", lineHeight: 1.1, marginBottom: 32, maxWidth: 700, color: "#F5AA1A" }}>
+          <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(2.2rem, 4.5vw, 3.5rem)", letterSpacing: "-0.03em", lineHeight: 1.1, marginBottom: 32, maxWidth: 700, color: "#1E0A15" }}>
             Two modes. One system.
           </h2>
         </Reveal>
@@ -1399,7 +1399,7 @@ export default function Portfolio() {
           </div>
         </Reveal>
         <Reveal>
-          <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(2.5rem, 5vw, 4rem)", letterSpacing: "-0.03em", lineHeight: 1.1, maxWidth: 700, marginBottom: 24, color: "#F5AA1A" }}>
+          <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(2.5rem, 5vw, 4rem)", letterSpacing: "-0.03em", lineHeight: 1.1, maxWidth: 700, marginBottom: 24, color: "#1E0A15" }}>
             Four companies. Four GTM builds. Real numbers.
           </h2>
         </Reveal>
@@ -1494,7 +1494,7 @@ export default function Portfolio() {
           </div>
         </Reveal>
         <Reveal>
-          <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(2.5rem, 5vw, 4rem)", letterSpacing: "-0.03em", lineHeight: 1.1, maxWidth: 700, marginBottom: 24, color: "#F5AA1A" }}>
+          <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(2.5rem, 5vw, 4rem)", letterSpacing: "-0.03em", lineHeight: 1.1, maxWidth: 700, marginBottom: 24, color: "#1E0A15" }}>
             Systems over heroics. Process over luck.
           </h2>
         </Reveal>
@@ -1552,7 +1552,7 @@ export default function Portfolio() {
           </div>
         </Reveal>
         <Reveal>
-          <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(2.5rem, 5vw, 4rem)", letterSpacing: "-0.03em", lineHeight: 1.1, maxWidth: 700, marginBottom: 48, color: "#F5AA1A" }}>
+          <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(2.5rem, 5vw, 4rem)", letterSpacing: "-0.03em", lineHeight: 1.1, maxWidth: 700, marginBottom: 48, color: "#1E0A15" }}>
             A pattern of building, scaling, and outcomes.
           </h2>
         </Reveal>
@@ -1648,7 +1648,7 @@ export default function Portfolio() {
           </div>
         </Reveal>
         <Reveal>
-          <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(2.5rem, 5vw, 4rem)", letterSpacing: "-0.03em", marginBottom: 20 }}>
+          <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(2.5rem, 5vw, 4rem)", letterSpacing: "-0.03em", marginBottom: 20, color: "#FFFFFF" }}>
             Let's build your revenue engine.
           </h2>
         </Reveal>
