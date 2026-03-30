@@ -567,8 +567,8 @@ function CaseCard({ cs, isOpen, onToggle }: { cs: CaseStudy; isOpen: boolean; on
     <Reveal>
       <div
         style={{
-          background: isOpen ? "#1C1C21" : "#16161A",
-          border: `1px solid ${isOpen ? "rgba(255,255,255,0.12)" : "rgba(255,200,230,0.10)"}`,
+          background: isOpen ? "#5c1749" : "#501440",
+          border: `1px solid ${isOpen ? "rgba(255,200,230,0.22)" : "rgba(255,200,230,0.12)"}`,
           borderRadius: 20,
           padding: 48,
           position: "relative",
@@ -653,8 +653,8 @@ function CaseCard({ cs, isOpen, onToggle }: { cs: CaseStudy; isOpen: boolean; on
           ref={expandedRef}
           style={{
             marginTop: 2,
-            background: "#360928",
-            border: "1px solid rgba(255,200,230,0.10)",
+            background: "#481038",
+            border: "1px solid rgba(255,200,230,0.15)",
             borderRadius: "0 0 20px 20px",
             padding: "48px 48px 56px",
           }}
@@ -1104,7 +1104,7 @@ export default function Portfolio() {
               style={{
                 fontFamily: "'Instrument Serif', Georgia, serif",
                 fontSize: "1.4rem",
-                color: "#84627A",
+                color: "#F5AA1A",
                 whiteSpace: "nowrap",
                 padding: "0 24px",
                 display: "flex",
@@ -1296,12 +1296,12 @@ export default function Portfolio() {
             { date: "Jul 2017 - Aug 2019", company: "Hubdoc", role: "AE → Sales Manager", desc: "Top-performing AE. $750K+ ARR generated. Built and managed 12-person team. Acquired by Xero.", badge: { label: "Acquired by Xero", style: { background: "rgba(77,163,255,0.1)", color: "#4DA3FF", border: "1px solid rgba(77,163,255,0.2)" } } },
           ].map((item, i) => (
             <Reveal key={i}>
-              <div style={{ paddingLeft: 48, paddingBottom: 48, position: "relative" }}>
+              <div style={{ paddingLeft: 48, paddingBottom: 32, position: "relative" }}>
                 <div
                   style={{
                     position: "absolute",
                     left: -5,
-                    top: 4,
+                    top: 20,
                     width: 12,
                     height: 12,
                     borderRadius: "50%",
@@ -1309,29 +1309,38 @@ export default function Portfolio() {
                     border: "2px solid #420b31",
                   }}
                 />
-                <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.7rem", color: "#84627A", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 8 }}>
-                  {item.date}
+                <div
+                  style={{
+                    background: "#501440",
+                    border: "1px solid rgba(255,200,230,0.14)",
+                    borderRadius: 16,
+                    padding: "20px 24px 22px",
+                  }}
+                >
+                  <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.7rem", color: "#D4BAC8", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 8 }}>
+                    {item.date}
+                  </div>
+                  <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "1.4rem", marginBottom: 4 }}>{item.company}</div>
+                  <div style={{ fontSize: "0.85rem", color: "#E0CCDA", marginBottom: 8 }}>{item.role}</div>
+                  <div style={{ fontSize: "0.85rem", color: "#C4A8B8", lineHeight: 1.6, maxWidth: 500 }}>{item.desc}</div>
+                  {item.badge && (
+                    <span
+                      style={{
+                        display: "inline-block",
+                        fontFamily: "'JetBrains Mono', monospace",
+                        fontSize: "0.6rem",
+                        letterSpacing: "0.1em",
+                        textTransform: "uppercase",
+                        padding: "4px 10px",
+                        borderRadius: 100,
+                        marginTop: 10,
+                        ...item.badge.style,
+                      }}
+                    >
+                      {item.badge.label}
+                    </span>
+                  )}
                 </div>
-                <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "1.4rem", marginBottom: 4 }}>{item.company}</div>
-                <div style={{ fontSize: "0.85rem", color: "#BEA7B7", marginBottom: 8 }}>{item.role}</div>
-                <div style={{ fontSize: "0.85rem", color: "#84627A", lineHeight: 1.6, maxWidth: 500 }}>{item.desc}</div>
-                {item.badge && (
-                  <span
-                    style={{
-                      display: "inline-block",
-                      fontFamily: "'JetBrains Mono', monospace",
-                      fontSize: "0.6rem",
-                      letterSpacing: "0.1em",
-                      textTransform: "uppercase",
-                      padding: "4px 10px",
-                      borderRadius: 100,
-                      marginTop: 8,
-                      ...item.badge.style,
-                    }}
-                  >
-                    {item.badge.label}
-                  </span>
-                )}
               </div>
             </Reveal>
           ))}
