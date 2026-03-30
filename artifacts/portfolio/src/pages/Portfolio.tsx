@@ -16,6 +16,7 @@ interface CaseStudy {
   accent: string;
   accentColor: string;
   tag: string;
+  mode: string;
   company: string;
   role: string;
   desc: string;
@@ -24,7 +25,10 @@ interface CaseStudy {
   startingPoint: string;
   whatIBuilt: string[];
   metricsGrid?: { value: string; label: string }[];
+  realStoryOnNumbers?: string;
   whyItMatters: string;
+  whatILearned?: string;
+  honestAssessment?: string;
   images?: ProofImage[];
   pdfs?: PdfDoc[];
 }
@@ -37,128 +41,11 @@ function assetUrl(path: string) {
 
 const CASES: CaseStudy[] = [
   {
-    id: "defigo",
-    accent: "green",
-    accentColor: "#34D399",
-    tag: "Proptech · US Market Entry",
-    company: "Defigo",
-    role: "RVP Sales → GM → CEO",
-    desc: "Built Defigo's entire US business from zero. No brand, no pipeline, no channel, no product-market fit for the US. Designed the full GTM stack and signed national distribution with Wesco/Anixter.",
-    metrics: [
-      { value: "16", label: "Buildings Deployed" },
-      { value: "20+", label: "Integrator Partners" },
-      { value: "$96K", label: "Recurring ARR" },
-      { value: "18mo", label: "Zero to Revenue" },
-    ],
-    expandedTitle: "Defigo: Building a US Business from Nothing",
-    startingPoint:
-      "Zero revenue. No active pipeline. No channel partners, no distributor relationships, no integrator network. A European product not adapted to US buying behavior, technical standards, or security market structure. Minimal brand awareness in a category dominated by 30-year incumbents.",
-    whatIBuilt: [
-      "Designed the full ICP, positioning, messaging, sales, channel, enablement, pricing, and onboarding system",
-      "Signed national distribution with Wesco/Anixter: 8,000+ integrators, 100+ branch locations",
-      "Activated 20+ dealers including Everon (ADT's commercial division)",
-      "Built pipeline across NY, Massachusetts, Florida, and New Mexico",
-      "Operated as CEO with full P&L, pricing, supply chain, support, and board reporting",
-    ],
-    metricsGrid: [
-      { value: "16", label: "Buildings Live" },
-      { value: "$80K", label: "Hardware Revenue" },
-      { value: "$96K", label: "ARR Generated" },
-      { value: "20+", label: "Dealer Partners" },
-    ],
-    whyItMatters:
-      "Cross-border market entry with hardware-enabled SaaS is one of the hardest GTM problems. You're selling a physical product through a fragmented channel to skeptical buyers who've used the same vendor for decades. This is the work of building from absolute zero into a functioning revenue engine.",
-    images: [
-      { src: assetUrl("defigo/slack-1.png"), caption: "Recognition from Defigo leadership — Jan & Oct 2024" },
-      { src: assetUrl("defigo/slack-2.png"), caption: "Hildur Smaradottir: 'Amazing, so impressive Umair'" },
-      { src: assetUrl("defigo/slack-3.png"), caption: "Defigo CEO: 'You are a man of many talents'" },
-      { src: assetUrl("defigo/slack-4.png"), caption: "Hildur Smaradottir: 'Wow Umair! Well done'" },
-      { src: assetUrl("defigo/slack-5.png"), caption: "Joachim in #defigo: 'Awesome Umair. Great job'" },
-    ],
-  },
-  {
-    id: "percy",
-    accent: "blue",
-    accentColor: "#4DA3FF",
-    tag: "Foodtech · Co-founder",
-    company: "Percy",
-    role: "Co-Founder & Head of Sales",
-    desc: "Co-founded a virtual cashier SaaS during peak QSR labor crisis. No category existed. Bootstrapped. Engineered every GTM system the company used. Featured on NPR's Planet Money as the #1 business podcast episode.",
-    metrics: [
-      { value: "$331K", label: "Live ARR" },
-      { value: "$878K", label: "Booked ARR" },
-      { value: "38", label: "Logos Signed" },
-      { value: "32%", label: "Win Rate (from 20%)" },
-    ],
-    expandedTitle: "Percy: Category Creation, Bootstrapped",
-    startingPoint:
-      "A category that did not exist. Virtual cashiers for QSR operators. No references, no case studies, no competitive benchmarks. Bootstrapped, capital-constrained, founder-led selling. Friction from franchisees, labor groups, and press. Featured on NPR Planet Money, hitting #1 on the business podcast charts.",
-    whatIBuilt: [
-      "Defined ICP, segmentation, offer, and value prop for multi-location QSR operators",
-      "Built the entire outbound engine: targeting, messaging, cadences, demo flow, objection handling",
-      "Sourced 100% of all pipeline and revenue through the system I engineered",
-      "$0 to $50K in 3 months. $100K ARR by month 9. $331K live ARR across 17 locations by exit",
-      "Doubled Freshii locations 17 to 34 in 30 days. Added 30 new opportunities in the same window",
-      "Increased win rate from 20% to 32% in one month via qualification and pipeline hygiene",
-      "Built the SDR org, playbook, and partner referral program from scratch",
-    ],
-    metricsGrid: [
-      { value: "$331K", label: "Live ARR" },
-      { value: "$878K", label: "Total Booked ARR" },
-      { value: "38", label: "Logos Signed" },
-      { value: "17", label: "Active Locations" },
-    ],
-    whyItMatters:
-      "Percy is proof that a repeatable GTM engine can be engineered from first principles, even in markets most people consider impossible. No brand. No case studies. No money. No category. And still closed real ARR with real customers.",
-    images: [
-      { src: assetUrl("percy/linkedin-1.png"), caption: "Crazy Pita CEO Mehdi Zarhloul announcing Percy as their first-ever virtual cashier on LinkedIn" },
-      { src: assetUrl("percy/linkedin-2.png"), caption: "CTV News coverage of Percy at an Ontario Freshii location — national media pickup" },
-      { src: assetUrl("percy/linkedin-5.png"), caption: "Percy on NPR's Planet Money — #1 business podcast in the country the week of release" },
-      { src: assetUrl("percy/linkedin-3.png"), caption: "Percy at the 2022 International Pool Group Summit in Quebec City — channel expansion" },
-      { src: assetUrl("percy/linkedin-4.png"), caption: "Percy at the Gordon Food Service Back of House show — 58 reactions, top trade show presence" },
-      { src: assetUrl("percy/arr-dashboard.png"), caption: "Live + Booked ARR snapshot: 38 logos, $878,260 total booked ARR across 457 total locations in pipeline" },
-    ],
-    pdfs: [
-      {
-        name: "Percy_Investment_Deck.pdf",
-        label: "Percy Investor Deck",
-        url: assetUrl("percy/investment-deck.pdf"),
-      },
-    ],
-  },
-  {
-    id: "lane",
-    accent: "orange",
-    accentColor: "#FF8A4C",
-    tag: "Enterprise SaaS · Acquired by VTS",
-    company: "Lane",
-    role: "Director of Enterprise Sales",
-    desc: "Built Lane's first enterprise GTM motion from nothing. Zero ICP, zero outreach strategy, zero enterprise playbook. Advanced Adidas and American Express to contract stage before VTS acquired the company.",
-    metrics: [
-      { value: "~$500K", label: "Late-stage Pipeline" },
-      { value: "F500", label: "Target Accounts" },
-      { value: "6-12mo", label: "Enterprise Cycles" },
-      { value: "Acquired", label: "Outcome → VTS" },
-    ],
-    expandedTitle: "Lane: Enterprise Motion, Built from Scratch",
-    startingPoint:
-      "Lane had strong traction with landlords but zero structure for selling into global tenants. No enterprise ICP, no segmentation, no outreach strategy. No case studies in the occupier segment. Deals required alignment between landlord customers and global tenant buying committees. Long cycles with no existing playbook.",
-    whatIBuilt: [
-      "Defined the enterprise ICP targeting global tenants inside commercial real estate portfolios",
-      "Created outbound sequences targeting workplace, facilities, CRE, HR, and digital transformation",
-      "Built multi-phase enterprise process: discovery, pilot, success criteria, rollout, portfolio expansion",
-      "Advanced Adidas (~$250K ARR) and American Express (~$250K ARR) to proposal/contract stage",
-      "Created the first Enterprise Deal Desk framework Lane ever used",
-      "Navigated 5-10 stakeholders per account across IT, security, legal, workplace, and CRE",
-    ],
-    whyItMatters:
-      "When VTS acquired Lane, they paused all tenant/occupier initiatives and later scrapped the vertical entirely. But the work proved Lane could sell enterprise, expanded the TAM story, and directly contributed to the acquisition narrative. The GTM architecture I built was working.",
-  },
-  {
     id: "clearco",
     accent: "pink",
     accentColor: "#FF6B9D",
     tag: "Fintech · Hyper-growth",
+    mode: "SCALE & OPTIMIZE",
     company: "Clearco",
     role: "Sales Manager",
     desc: "Led the #1 performing sales pod at one of Canada's highest-profile fintechs. Flipped contribution margin from negative to 57%. Closed $5.7M in a single month. Recognized directly by co-founder Michele Romanow.",
@@ -200,6 +87,133 @@ const CASES: CaseStudy[] = [
       { src: assetUrl("clearco/slack-5.png"), caption: "Nicole Nelson: '#1 in CM and GP, lowest tenure and fixed costs — outstanding'" },
       { src: assetUrl("clearco/recognition-2.png"), caption: "#moneyteam Closed Won: 67 records, $5,736,815.97 total amount — record month" },
     ],
+  },
+  {
+    id: "defigo",
+    accent: "green",
+    accentColor: "#34D399",
+    tag: "Proptech · US Market Entry",
+    mode: "ZERO TO ONE",
+    company: "Defigo",
+    role: "RVP Sales → GM → CEO",
+    desc: "Built Defigo's entire US business from zero. No brand, no pipeline, no channel, no product-market fit for the US. Designed the full GTM stack and signed national distribution with Wesco/Anixter.",
+    metrics: [
+      { value: "16", label: "Buildings Deployed" },
+      { value: "20+", label: "Integrator Partners" },
+      { value: "$96K", label: "Recurring ARR" },
+      { value: "18mo", label: "Zero to Revenue" },
+    ],
+    expandedTitle: "Defigo: Building a US Business from Nothing",
+    startingPoint:
+      "Zero revenue. No active pipeline. No channel partners, no distributor relationships, no integrator network. A European product not adapted to US buying behavior, technical standards, or security market structure. Minimal brand awareness in a category dominated by 30-year incumbents.",
+    whatIBuilt: [
+      "Designed the full ICP, positioning, messaging, sales, channel, enablement, pricing, and onboarding system",
+      "Signed national distribution with Wesco/Anixter: 8,000+ integrators, 100+ branch locations",
+      "Activated 20+ dealers including Everon (ADT's commercial division)",
+      "Built pipeline across NY, Massachusetts, Florida, and New Mexico",
+      "Operated as CEO with full P&L, pricing, supply chain, support, and board reporting",
+    ],
+    metricsGrid: [
+      { value: "16", label: "Buildings Live" },
+      { value: "$80K", label: "Hardware Revenue" },
+      { value: "$96K", label: "ARR Generated" },
+      { value: "20+", label: "Dealer Partners" },
+    ],
+    realStoryOnNumbers:
+      "$80K hardware revenue and $96K ARR in 18 months is early traction, not a scaled outcome. I am direct about that. The value of this case study is not the revenue number. It is the system: national distribution through Wesco/Anixter, 20+ activated dealers, pipeline across four US states, and a repeatable channel motion in a market dominated by 30-year incumbents. The machine was built and working. Revenue was beginning to compound through the channel. The output was early. The architecture was not.",
+    whyItMatters:
+      "Cross-border market entry with hardware-enabled SaaS is one of the hardest GTM problems. You're selling a physical product through a fragmented channel to skeptical buyers who've used the same vendor for decades. This is the work of building from absolute zero into a functioning revenue engine.",
+    images: [
+      { src: assetUrl("defigo/slack-1.png"), caption: "Recognition from Defigo leadership — Jan & Oct 2024" },
+      { src: assetUrl("defigo/slack-2.png"), caption: "Hildur Smaradottir: 'Amazing, so impressive Umair'" },
+      { src: assetUrl("defigo/slack-3.png"), caption: "Defigo CEO: 'You are a man of many talents'" },
+      { src: assetUrl("defigo/slack-4.png"), caption: "Hildur Smaradottir: 'Wow Umair! Well done'" },
+      { src: assetUrl("defigo/slack-5.png"), caption: "Joachim in #defigo: 'Awesome Umair. Great job'" },
+    ],
+  },
+  {
+    id: "percy",
+    accent: "blue",
+    accentColor: "#4DA3FF",
+    tag: "Foodtech · Co-founder",
+    mode: "ZERO TO ONE",
+    company: "Percy",
+    role: "Co-Founder & Head of Sales",
+    desc: "Co-founded a virtual cashier SaaS during peak QSR labor crisis. No category existed. Bootstrapped. Engineered every GTM system the company used. Featured on NPR's Planet Money as the #1 business podcast episode.",
+    metrics: [
+      { value: "$331K", label: "Live ARR" },
+      { value: "$878K", label: "Booked ARR" },
+      { value: "38", label: "Logos Signed" },
+      { value: "32%", label: "Win Rate (from 20%)" },
+    ],
+    expandedTitle: "Percy: Category Creation, Bootstrapped",
+    startingPoint:
+      "A category that did not exist. Virtual cashiers for QSR operators. No references, no case studies, no competitive benchmarks. Bootstrapped, capital-constrained, founder-led selling. Friction from franchisees, labor groups, and press. Featured on NPR Planet Money, hitting #1 on the business podcast charts.",
+    whatIBuilt: [
+      "Defined ICP, segmentation, offer, and value prop for multi-location QSR operators",
+      "Built the entire outbound engine: targeting, messaging, cadences, demo flow, objection handling",
+      "Sourced 100% of all pipeline and revenue through the system I engineered",
+      "$0 to $50K in 3 months. $100K ARR by month 9. $331K live ARR across 17 locations by exit",
+      "Doubled Freshii locations 17 to 34 in 30 days. Added 30 new opportunities in the same window",
+      "Increased win rate from 20% to 32% in one month via qualification and pipeline hygiene",
+      "Built the SDR org, playbook, and partner referral program from scratch",
+    ],
+    metricsGrid: [
+      { value: "$331K", label: "Live ARR" },
+      { value: "$878K", label: "Total Booked ARR" },
+      { value: "38", label: "Logos Signed" },
+      { value: "17", label: "Active Locations" },
+    ],
+    whyItMatters:
+      "Percy is proof that a repeatable GTM engine can be engineered from first principles, even in markets most people consider impossible. No brand. No case studies. No money. No category. And still closed real ARR with real customers.",
+    whatILearned:
+      "Percy validated the GTM system but exposed the limits of the business model. Offshore labor arbitrage at $9.99/hour worked at pilot scale. It broke down at the unit economics needed to fund growth. The product worked. The channel worked. The pricing architecture did not survive contact with the cost structure required to scale. That is the honest read. What I took from it: the GTM engine I built generated real revenue in a market that did not exist 12 months earlier. The system was sound. The business model needed a different foundation.",
+    images: [
+      { src: assetUrl("percy/linkedin-1.png"), caption: "Crazy Pita CEO Mehdi Zarhloul announcing Percy as their first-ever virtual cashier on LinkedIn" },
+      { src: assetUrl("percy/linkedin-2.png"), caption: "CTV News coverage of Percy at an Ontario Freshii location — national media pickup" },
+      { src: assetUrl("percy/linkedin-5.png"), caption: "Percy on NPR's Planet Money — #1 business podcast in the country the week of release" },
+      { src: assetUrl("percy/linkedin-3.png"), caption: "Percy at the 2022 International Pool Group Summit in Quebec City — channel expansion" },
+      { src: assetUrl("percy/linkedin-4.png"), caption: "Percy at the Gordon Food Service Back of House show — 58 reactions, top trade show presence" },
+      { src: assetUrl("percy/arr-dashboard.png"), caption: "Live + Booked ARR snapshot: 38 logos, $878,260 total booked ARR across 457 total locations in pipeline" },
+    ],
+    pdfs: [
+      {
+        name: "Percy_Investment_Deck.pdf",
+        label: "Percy Investor Deck",
+        url: assetUrl("percy/investment-deck.pdf"),
+      },
+    ],
+  },
+  {
+    id: "lane",
+    accent: "orange",
+    accentColor: "#FF8A4C",
+    tag: "Enterprise SaaS · Acquired by VTS",
+    mode: "ZERO TO ONE",
+    company: "Lane",
+    role: "Director of Enterprise Sales",
+    desc: "Built Lane's first enterprise GTM motion from nothing. Zero ICP, zero outreach strategy, zero enterprise playbook. Advanced Adidas and American Express to contract stage before VTS acquired the company.",
+    metrics: [
+      { value: "~$500K", label: "Late-stage Pipeline" },
+      { value: "F500", label: "Target Accounts" },
+      { value: "6-12mo", label: "Enterprise Cycles" },
+      { value: "Acquired", label: "Outcome → VTS" },
+    ],
+    expandedTitle: "Lane: Enterprise Motion, Built from Scratch",
+    startingPoint:
+      "Lane had strong traction with landlords but zero structure for selling into global tenants. No enterprise ICP, no segmentation, no outreach strategy. No case studies in the occupier segment. Deals required alignment between landlord customers and global tenant buying committees. Long cycles with no existing playbook.",
+    whatIBuilt: [
+      "Defined the enterprise ICP targeting global tenants inside commercial real estate portfolios",
+      "Created outbound sequences targeting workplace, facilities, CRE, HR, and digital transformation",
+      "Built multi-phase enterprise process: discovery, pilot, success criteria, rollout, portfolio expansion",
+      "Advanced Adidas (~$250K ARR) and American Express (~$250K ARR) to proposal/contract stage",
+      "Created the first Enterprise Deal Desk framework Lane ever used",
+      "Navigated 5-10 stakeholders per account across IT, security, legal, workplace, and CRE",
+    ],
+    whyItMatters:
+      "When VTS acquired Lane, they paused all tenant/occupier initiatives and later scrapped the vertical entirely. But the work proved Lane could sell enterprise, expanded the TAM story, and directly contributed to the acquisition narrative. The GTM architecture I built was working.",
+    honestAssessment:
+      "Zero closed enterprise revenue. That is the fact. Two Fortune 500 accounts at proposal stage, then the acquirer killed the vertical. What this case study proves is not revenue. It proves I can build an enterprise sales motion from scratch, navigate 6-12 month cycles with 10 stakeholders, and create a repeatable outbound pipeline in a segment the company had never sold into. The GTM architecture I built was working. VTS confirmed that by acquiring the company. They just chose a different strategic direction afterward.",
   },
 ];
 
@@ -627,21 +641,38 @@ function CaseCard({ cs, isOpen, onToggle }: { cs: CaseStudy; isOpen: boolean; on
           }}
         />
 
-        <div
-          style={{
-            display: "inline-block",
-            fontFamily: "'JetBrains Mono', monospace",
-            fontSize: "0.65rem",
-            letterSpacing: "0.15em",
-            textTransform: "uppercase",
-            padding: "6px 14px",
-            borderRadius: 100,
-            border: "1px solid rgba(255,200,230,0.10)",
-            color: "#BEA7B7",
-            marginBottom: 24,
-          }}
-        >
-          {cs.tag}
+        <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 24, flexWrap: "wrap" }}>
+          <div
+            style={{
+              display: "inline-block",
+              fontFamily: "'JetBrains Mono', monospace",
+              fontSize: "0.65rem",
+              letterSpacing: "0.15em",
+              textTransform: "uppercase",
+              padding: "6px 14px",
+              borderRadius: 100,
+              border: "1px solid rgba(255,200,230,0.10)",
+              color: "#BEA7B7",
+            }}
+          >
+            {cs.tag}
+          </div>
+          <div
+            style={{
+              display: "inline-block",
+              fontFamily: "'JetBrains Mono', monospace",
+              fontSize: "0.6rem",
+              letterSpacing: "0.1em",
+              textTransform: "uppercase",
+              padding: "4px 10px",
+              borderRadius: 100,
+              border: `1px solid ${cs.accentColor}55`,
+              color: cs.accentColor,
+              background: `${cs.accentColor}11`,
+            }}
+          >
+            {cs.mode}
+          </div>
         </div>
         <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "2rem", letterSpacing: "-0.02em", marginBottom: 4 }}>
           {cs.company}
@@ -811,8 +842,29 @@ function CaseCard({ cs, isOpen, onToggle }: { cs: CaseStudy; isOpen: boolean; on
               </>
             ) : null}
 
+            {cs.realStoryOnNumbers && (
+              <>
+                <SectionLabel>The Real Story on the Numbers</SectionLabel>
+                <p style={{ fontSize: "1rem", color: "#BEA7B7", lineHeight: 1.75, maxWidth: 680 }}>{cs.realStoryOnNumbers}</p>
+              </>
+            )}
+
             <SectionLabel>Why This Matters</SectionLabel>
             <p style={{ fontSize: "1rem", color: "#BEA7B7", lineHeight: 1.75, maxWidth: 680 }}>{cs.whyItMatters}</p>
+
+            {cs.whatILearned && (
+              <>
+                <SectionLabel>What I Learned</SectionLabel>
+                <p style={{ fontSize: "1rem", color: "#BEA7B7", lineHeight: 1.75, maxWidth: 680 }}>{cs.whatILearned}</p>
+              </>
+            )}
+
+            {cs.honestAssessment && (
+              <>
+                <SectionLabel>The Honest Assessment</SectionLabel>
+                <p style={{ fontSize: "1rem", color: "#BEA7B7", lineHeight: 1.75, maxWidth: 680 }}>{cs.honestAssessment}</p>
+              </>
+            )}
           </div>
         </div>
       )}
@@ -937,6 +989,7 @@ export default function Portfolio() {
           .quotes-grid-wrap { grid-template-columns: 1fr !important; }
           .comp-grid-wrap { grid-template-columns: 1fr 1fr !important; }
           .metrics-grid-full { grid-template-columns: 1fr 1fr !important; }
+          .two-modes-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
 
@@ -1192,6 +1245,97 @@ export default function Portfolio() {
           ))}
         </div>
       </div>
+
+      {/* THROUGHLINE */}
+      <section className="section-pad" id="throughline" style={{ padding: "120px 48px", background: "#420b31" }}>
+        <Reveal>
+          <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.7rem", color: "#F5AA1A", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 16 }}>
+            The Throughline
+          </div>
+        </Reveal>
+        <Reveal>
+          <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(2.2rem, 4.5vw, 3.5rem)", letterSpacing: "-0.03em", lineHeight: 1.1, marginBottom: 32, maxWidth: 700 }}>
+            Two modes. One system.
+          </h2>
+        </Reveal>
+        <Reveal>
+          <div style={{ maxWidth: 640 }}>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.1rem", color: "#BEA7B7", lineHeight: 1.7, fontWeight: 300, marginBottom: 20 }}>
+              Nine years across five venture-backed companies. B2B SaaS, fintech, proptech. Two acquired. The work splits into two modes.
+            </p>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.1rem", color: "#BEA7B7", lineHeight: 1.7, fontWeight: 300 }}>
+              Mode one: build the GTM engine from nothing. No team, no pipeline, no brand in market. ICP, pricing, outbound, channel, hiring, forecasting. All from a blank page. Mode two: walk into an existing revenue org and install the systems that make it perform. Redesign the sales process, tighten unit economics, build the coaching frameworks. The throughline is the same: repeatable revenue architecture that survives after I build it.
+            </p>
+          </div>
+        </Reveal>
+
+        {/* Two Modes visual */}
+        <Reveal>
+          <div
+            className="two-modes-grid"
+            style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginTop: 48 }}
+          >
+            {/* Zero to One */}
+            <div
+              style={{
+                background: "#501440",
+                border: "1px solid rgba(255,200,230,0.12)",
+                borderRadius: 16,
+                padding: 32,
+              }}
+            >
+              <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "1.3rem", marginBottom: 12 }}>
+                Build from Zero
+              </div>
+              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.85rem", color: "#84627A", lineHeight: 1.6, marginBottom: 24 }}>
+                No team. No pipeline. No playbook. Create the entire GTM stack.
+              </p>
+              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                {[
+                  { name: "Defigo", label: "US market, $0 start" },
+                  { name: "Percy", label: "New category, bootstrapped" },
+                  { name: "Lane", label: "Enterprise motion, greenfield" },
+                ].map((item) => (
+                  <div key={item.name} style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.9rem", color: "#F0EDE6", fontWeight: 500 }}>{item.name}</span>
+                    <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.65rem", color: "#84627A", letterSpacing: "0.05em" }}>{item.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Scale and Optimize */}
+            <div
+              style={{
+                background: "#501440",
+                border: "1px solid rgba(255,200,230,0.12)",
+                borderRadius: 16,
+                padding: 32,
+              }}
+            >
+              <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "1.3rem", marginBottom: 12 }}>
+                Scale What Exists
+              </div>
+              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.85rem", color: "#84627A", lineHeight: 1.6, marginBottom: 24 }}>
+                Walk into a live org. Install systems. Fix unit economics. Produce results.
+              </p>
+              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                {[
+                  { name: "Clearco", label: "#1 pod, 57% CM" },
+                  { name: "Hubdoc", label: "$750K ARR, 12-person team" },
+                  { name: "Relay", label: "Sales infrastructure build" },
+                ].map((item) => (
+                  <div key={item.name} style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.9rem", color: "#F0EDE6", fontWeight: 500 }}>{item.name}</span>
+                    <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.65rem", color: "#84627A", letterSpacing: "0.05em" }}>{item.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </Reveal>
+        <div style={{ height: 1, background: "rgba(255,255,255,0.06)", marginTop: 80 }} />
+      </section>
 
       {/* CASE STUDIES */}
       <section className="section-pad" id="work" style={{ padding: "120px 48px" }}>
