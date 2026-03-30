@@ -453,7 +453,7 @@ function ImageGallery({ images }: { images: ProofImage[] }) {
                   color: "#BEA7B7",
                   fontFamily: "'DM Sans', sans-serif",
                   lineHeight: 1.5,
-                  background: "#16161A",
+                  background: "rgba(45,7,32,0.95)",
                 }}
               >
                 {img.caption}
@@ -553,6 +553,43 @@ function PdfCard({ doc }: { doc: PdfDoc }) {
   );
 }
 
+function AnimatedStat({ value }: { value: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [displayed, setDisplayed] = useState("0");
+  const triggered = useRef(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting && !triggered.current) {
+        triggered.current = true;
+        const match = value.match(/^([^0-9]*)([0-9.]+)(.*)$/);
+        if (!match) { setDisplayed(value); return; }
+        const [, prefix, numStr, suffix] = match;
+        const target = parseFloat(numStr);
+        const isDecimal = numStr.includes(".");
+        const decimals = isDecimal ? numStr.split(".")[1].length : 0;
+        const duration = 1400;
+        const start = Date.now();
+        const tick = () => {
+          const elapsed = Date.now() - start;
+          const progress = Math.min(elapsed / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const current = target * eased;
+          setDisplayed(prefix + (isDecimal ? current.toFixed(decimals) : Math.round(current).toString()) + suffix);
+          if (progress < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      }
+    }, { threshold: 0.5 });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [value]);
+
+  return <div ref={ref}>{displayed}</div>;
+}
+
 function CaseCard({ cs, isOpen, onToggle }: { cs: CaseStudy; isOpen: boolean; onToggle: () => void }) {
   const expandedRef = useRef<HTMLDivElement>(null);
 
@@ -566,6 +603,7 @@ function CaseCard({ cs, isOpen, onToggle }: { cs: CaseStudy; isOpen: boolean; on
   return (
     <Reveal>
       <div
+        className="case-card"
         style={{
           background: isOpen ? "#5c1749" : "#501440",
           border: `1px solid ${isOpen ? "rgba(255,200,230,0.22)" : "rgba(255,200,230,0.12)"}`,
@@ -574,7 +612,6 @@ function CaseCard({ cs, isOpen, onToggle }: { cs: CaseStudy; isOpen: boolean; on
           position: "relative",
           overflow: "hidden",
           cursor: "pointer",
-          transition: "all 0.4s ease",
         }}
         onClick={onToggle}
       >
@@ -804,11 +841,14 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 export default function Portfolio() {
   const [openCase, setOpenCase] = useState<string | null>(null);
   const [navScrolled, setNavScrolled] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const expandedRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
   useEffect(() => {
     function onScroll() {
       setNavScrolled(window.scrollY > 100);
+      const docH = document.documentElement.scrollHeight - window.innerHeight;
+      setScrollProgress(docH > 0 ? (window.scrollY / docH) * 100 : 0);
     }
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
@@ -842,12 +882,39 @@ export default function Portfolio() {
         ::-webkit-scrollbar-thumb { background: #7a3060; border-radius: 3px; }
         ::selection { background: #F5AA1A; color: #0A0A0C; }
 
-        @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes glowPulse { 0%, 100% { box-shadow: 0 0 40px rgba(245,170,26,0.15), 0 0 0 0 rgba(245,170,26,0.25), 0 24px 64px rgba(0,0,0,0.4); } 50% { box-shadow: 0 0 70px rgba(245,170,26,0.28), 0 0 0 10px rgba(245,170,26,0), 0 24px 64px rgba(0,0,0,0.4); } }
+        @keyframes shimmer { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }
+        @keyframes lineGrow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
 
-        .gallery-item:hover { transform: scale(1.02); border-color: rgba(255,255,255,0.18) !important; }
-        .pdf-card:hover { border-color: rgba(245,170,26,0.2) !important; background: rgba(245,170,26,0.03) !important; }
+        .photo-glow { animation: glowPulse 3.5s ease-in-out infinite; }
+
+        .ticker-wrap { -webkit-mask-image: linear-gradient(to right, transparent, black 100px, black calc(100% - 100px), transparent); mask-image: linear-gradient(to right, transparent, black 100px, black calc(100% - 100px), transparent); }
+
+        .case-card { transition: transform 0.35s ease, box-shadow 0.35s ease !important; }
+        .case-card:hover { transform: translateY(-6px) !important; box-shadow: 0 28px 70px rgba(0,0,0,0.45), 0 0 50px rgba(245,170,26,0.10) !important; }
+
+        .quote-card { transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; }
+        .quote-card:hover { transform: translateY(-4px); border-color: rgba(245,170,26,0.3) !important; box-shadow: 0 16px 48px rgba(0,0,0,0.3); }
+
+        .comp-card { transition: transform 0.25s ease, border-color 0.3s ease, background 0.3s ease !important; }
+        .comp-card:hover { transform: translateY(-3px) !important; }
+
+        .cta-btn { position: relative; overflow: hidden; }
+        .cta-btn::after { content: ''; position: absolute; inset: 0; background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.2) 50%, transparent 60%); background-size: 200% auto; animation: shimmer 2.5s linear infinite; }
+
+        .scroll-progress { position: fixed; top: 0; left: 0; height: 2px; background: linear-gradient(to right, #F5AA1A, #F0C060, #F5AA1A); z-index: 201; pointer-events: none; transition: width 0.08s linear; }
+
+        .stat-number { background: linear-gradient(135deg, #F0EDE6 0%, #D4BAC8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+        .timeline-line { transform-origin: top; }
+
+        .gallery-item:hover { transform: scale(1.02); border-color: rgba(255,200,230,0.25) !important; box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+        .pdf-card:hover { border-color: rgba(245,170,26,0.25) !important; background: rgba(245,170,26,0.05) !important; }
+
+        a:hover { opacity: 0.85; }
 
         @media (max-width: 768px) {
           .proof-gallery { grid-template-columns: 1fr !important; }
@@ -872,6 +939,9 @@ export default function Portfolio() {
           .metrics-grid-full { grid-template-columns: 1fr 1fr !important; }
         }
       `}</style>
+
+      {/* SCROLL PROGRESS */}
+      <div className="scroll-progress" style={{ width: `${scrollProgress}%` }} />
 
       {/* NAV */}
       <nav
@@ -968,13 +1038,14 @@ export default function Portfolio() {
           style={{
             display: "flex",
             alignItems: "center",
-            justifyContent: "space-between",
-            gap: 48,
+            justifyContent: "flex-start",
+            gap: 72,
             width: "100%",
+            maxWidth: 1100,
           }}
         >
           {/* Left: text */}
-          <div style={{ flex: "1 1 0", minWidth: 0 }}>
+          <div style={{ flex: "1 1 auto", minWidth: 0, maxWidth: 620 }}>
             <div
               style={{
                 fontFamily: "'JetBrains Mono', monospace",
@@ -1031,13 +1102,13 @@ export default function Portfolio() {
             }}
           >
             <div
+              className="photo-glow"
               style={{
                 width: 280,
                 height: 280,
                 borderRadius: "50%",
                 overflow: "hidden",
-                border: "3px solid rgba(245,170,26,0.25)",
-                boxShadow: "0 0 60px rgba(245,170,26,0.08), 0 24px 64px rgba(0,0,0,0.4)",
+                border: "3px solid rgba(245,170,26,0.35)",
               }}
             >
               <img
@@ -1069,10 +1140,12 @@ export default function Portfolio() {
             { value: "$878K", label: "Booked ARR (Co-founder)" },
             { value: "2", label: "Portfolio Acquisitions" },
             { value: "57%", label: "Peak Contribution Margin" },
-          ].map((s) => (
-            <div key={s.label}>
-              <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "3rem", lineHeight: 1 }}>{s.value}</div>
-              <div style={{ fontSize: "0.8rem", color: "#84627A", textTransform: "uppercase", letterSpacing: "0.1em", marginTop: 8 }}>
+          ].map((s, i) => (
+            <div key={s.label} style={{ borderRight: i < 3 ? "1px solid rgba(255,200,230,0.12)" : "none", paddingRight: i < 3 ? 64 : 0 }}>
+              <div className="stat-number" style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "3rem", lineHeight: 1 }}>
+                <AnimatedStat value={s.value} />
+              </div>
+              <div style={{ fontSize: "0.75rem", color: "#84627A", textTransform: "uppercase", letterSpacing: "0.12em", marginTop: 8 }}>
                 {s.label}
               </div>
             </div>
@@ -1082,6 +1155,7 @@ export default function Portfolio() {
 
       {/* TICKER */}
       <div
+        className="ticker-wrap"
         style={{
           overflow: "hidden",
           padding: "40px 0",
@@ -1190,9 +1264,10 @@ export default function Portfolio() {
           ].map((q, i) => (
             <Reveal key={i}>
               <div
+                className="quote-card"
                 style={{
-                  background: "#16161A",
-                  border: "1px solid rgba(255,200,230,0.10)",
+                  background: "#501440",
+                  border: "1px solid rgba(255,200,230,0.12)",
                   borderRadius: 20,
                   padding: 36,
                 }}
@@ -1244,21 +1319,21 @@ export default function Portfolio() {
           ].map((c, i) => (
             <Reveal key={i}>
               <div
+                className="comp-card"
                 style={{
-                  background: "#16161A",
-                  border: "1px solid rgba(255,200,230,0.10)",
+                  background: "#501440",
+                  border: "1px solid rgba(255,200,230,0.12)",
                   borderRadius: 12,
                   padding: 32,
-                  transition: "border-color 0.3s, background 0.3s",
                   cursor: "default",
                 }}
                 onMouseEnter={(e) => {
                   (e.currentTarget as HTMLDivElement).style.borderColor = "#F5AA1A";
-                  (e.currentTarget as HTMLDivElement).style.background = "rgba(245,170,26,0.08)";
+                  (e.currentTarget as HTMLDivElement).style.background = "#5c1749";
                 }}
                 onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,200,230,0.10)";
-                  (e.currentTarget as HTMLDivElement).style.background = "#16161A";
+                  (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,200,230,0.12)";
+                  (e.currentTarget as HTMLDivElement).style.background = "#501440";
                 }}
               >
                 <div style={{ fontSize: "1.5rem", marginBottom: 16 }}>{c.icon}</div>
@@ -1424,19 +1499,19 @@ export default function Portfolio() {
               LinkedIn
             </a>
             <a
+              className="cta-btn"
               href={assetUrl("resume/Umair_Ahmed_Resume_2026.pdf")}
               download
               style={{
-                background: "transparent",
-                color: "#F5AA1A",
+                background: "#F5AA1A",
+                color: "#420b31",
                 padding: "16px 36px",
                 borderRadius: 100,
-                fontWeight: 500,
+                fontWeight: 700,
                 fontSize: "0.9rem",
                 textDecoration: "none",
-                letterSpacing: "0.02em",
-                border: "1px solid rgba(245,170,26,0.3)",
-                transition: "border-color 0.2s",
+                letterSpacing: "0.04em",
+                border: "none",
                 display: "inline-block",
               }}
             >
