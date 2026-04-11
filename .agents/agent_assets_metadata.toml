@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "_62NCWyWjF7B_5-Jh1qSY"
+uri = "file://brand-guidelines.md"
+type = "text"
+title = "Umair Ahmed — Brand Guidelines"
