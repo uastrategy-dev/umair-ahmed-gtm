@@ -101,7 +101,7 @@ const CASES: CaseStudy[] = [
       { value: "16", label: "Buildings Deployed" },
       { value: "20+", label: "Integrator Partners" },
       { value: "$96K", label: "Recurring ARR" },
-      { value: "18mo", label: "Zero to Revenue" },
+      { value: "28mo", label: "Tenure" },
     ],
     expandedTitle: "Defigo: Building a US Business from Nothing",
     startingPoint:
@@ -963,9 +963,6 @@ export default function Portfolio() {
           .photo-glow { animation: none !important; box-shadow: 0 0 30px rgba(245,170,26,0.25) !important; }
           .hero-tagline { font-size: 0.6rem !important; letter-spacing: 0.06em !important; margin-bottom: 12px !important; }
           .hero-subtitle { font-size: 0.95rem !important; margin-top: 16px !important; }
-          .hero-stats-wrap { flex-direction: column !important; gap: 0 !important; margin-top: 36px !important; }
-          .hero-stats-wrap > div { border-right: none !important; padding-right: 0 !important; padding: 14px 0 !important; border-bottom: 1px solid rgba(255,200,230,0.10) !important; }
-          .hero-stats-wrap > div:last-child { border-bottom: none !important; }
           .stat-number { font-size: 2rem !important; }
 
           /* Sections */
@@ -1543,7 +1540,7 @@ export default function Portfolio() {
           <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 2, background: "rgba(66,11,49,0.12)" }} />
           {[
             { date: "Nov 2023 - Mar 2026", company: "Defigo", role: "Vice President of Sales", desc: "Built the US business from zero. Full P&L ownership. National distribution, 16 buildings, 20+ dealer partners." },
-            { date: "Jun 2022 - Jul 2023", company: "Percy", role: "Co-Founder & Head of Sales", desc: "Co-founded and built GTM for a category-creating QSR automation startup. $0 to $331K live ARR.", badge: { label: "Co-founded", style: { background: "rgba(255,138,76,0.1)", color: "#FF8A4C", border: "1px solid rgba(255,138,76,0.2)" } } },
+            { date: "Jun 2022 - Jul 2023", company: "Percy", role: "Co-Founder & Head of Sales", desc: "Co-founded and built GTM for a category-creating QSR automation startup. $0 to $331K live ARR." },
             { date: "Jun 2021 - Jun 2022", company: "Lane Technologies", role: "Director of Enterprise Sales", desc: "Created first enterprise motion. Advanced Adidas + AmEx to proposal. GTM informed acquisition by VTS.", badge: { label: "Acquired by VTS", style: { background: "rgba(77,163,255,0.1)", color: "#4DA3FF", border: "1px solid rgba(77,163,255,0.2)" } } },
             { date: "Nov 2020 - May 2021", company: "Relay Financial", role: "Head of Sales", desc: "Built foundational sales infrastructure, playbook, onboarding, enablement, and outbound engine during high-growth phase." },
             { date: "Aug 2019 - Oct 2020", company: "Clearco", role: "Sales Manager", desc: "#1 pod company-wide. $5.7M single month. 57.3% contribution margin. Manager Award from Michele Romanow." },
