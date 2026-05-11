@@ -1,0 +1,69 @@
+I need to make 9 changes to my personal website. Please update the React/Vite app accordingly. Each change includes the exact old text and the exact replacement text. After making all changes, redeploy to Vercel.
+---
+CHANGE 1: Hero tagline — REMOVE
+In the hero section, find and remove this tagline element entirely:
+"GTM Operator · Builder · Revenue Architect"
+(Remove the entire styled div / span / element that renders this text. Do not replace with anything. The hero should flow directly from nav to the main "zero." display word and subheadline.)
+---
+CHANGE 2: Hero subheadline — REPLACE
+Find:
+"Senior go-to-market operator. I take companies from no revenue to scalable, predictable growth. Four times over. Across fintech, proptech, foodtech, and enterprise SaaS."
+Replace with:
+"Senior GTM operator. I build revenue engines for venture-backed B2B. Zero-to-one twice. Scale-and-professionalize four times. Across fintech, proptech, foodtech, and enterprise SaaS."
+---
+CHANGE 3: Throughline — REPLACE
+Find:
+"Nine years across five venture-backed companies. B2B SaaS, fintech, proptech. Two acquired. The work splits into two modes."
+Replace with:
+"Nine years across five venture-backed companies in B2B SaaS, fintech, and proptech. Two of them (Hubdoc, Lane) were acquired during my time. The work splits into two modes."
+---
+CHANGE 4: Add a new section — "Where GTM is Going"
+Insert a new section BETWEEN "The Throughline" section and the "Selected Work" section. Match the visual styling of adjacent sections (same padding, same heading typography as "The Throughline" / "Selected Work", same paragraph styling).
+Section content:
+Heading: "Where GTM is Going"
+Subhead: "The new build is AI-native by default."
+Body paragraph:
+"The old playbook (hire 8 SDRs, build a sequence, pray for pipeline) is a relic. The new build is AI-native by default: targeting driven by data, outbound that doesn't waste signal, lean teams that outperform bloated ones by an order of magnitude on cost-per-dollar-of-pipeline. The companies that figure this out first win. I build that function."
+---
+CHANGE 5: Defigo case study — REPLACE the "Operated as CEO" line
+Find:
+"Operated as CEO with full P&L, pricing, supply chain, support, and board reporting"
+Replace with:
+"Owned full P&L for the US business unit. Managed pricing, supply chain, support, and board reporting"
+---
+CHANGE 6: Career Arc / Timeline — REPLACE the Defigo title progression
+There are two variants of this string in the codebase. Find and replace BOTH:
+Find variant 1:
+"RVP Sales → GM Americas → CEO"
+Find variant 2:
+"RVP Sales → GM → CEO"
+Replace BOTH with:
+"Vice President of Sales"
+(The Defigo timeline entry should now show a single title for the full Nov 2023 - Mar 2026 tenure with no progression.)
+---
+CHANGE 7: CTA section ("Next Chapter") — REPLACE
+Find:
+"I'm looking for my next operating role. Head of Sales, VP Revenue, CRO. If you need someone who can take you from zero to ten, or ten to a hundred, let's talk."
+Replace with:
+"I'm looking for my next operating role. VP Sales at a venture-backed B2B company. If you need someone who can take you from zero to ten, or ten to a hundred, let's talk."
+---
+CHANGE 8: Add "Writing" link to the nav
+Add a new nav item labeled "Writing" between the existing "Timeline" item and the "Resume" item.
+The link should point to: https://gtmarabia.substack.com/
+It should open in a new tab (target="_blank", rel="noopener noreferrer").
+Style it to match the existing nav items exactly (same color, font size, weight, letter-spacing, uppercase treatment, hover behavior). Do not add an icon or any other visual differentiator — it should look like a peer of the other nav items.
+The final nav order should be:
+Case Studies · Approach · Timeline · Writing · Resume · Get in Touch
+---
+CHANGE 9: Footer — REMOVE phone number
+Find:
+"Umair Ahmed · Toronto, ON · Open to relocation · (647) 389-7773"
+Replace with:
+"Umair Ahmed · Toronto, ON · Open to relocation"
+(Remove the phone number and the preceding middot separator. Keep the rest of the line intact.)
+---
+After making all 9 changes:
+1. Verify each change took effect by searching the codebase for the old strings — none should remain.
+2. Run the build locally to make sure nothing breaks.
+3. Redeploy to Vercel.
+4. Confirm the live site at https://umair-ahmed-gtm.vercel.app/ reflects all changes.

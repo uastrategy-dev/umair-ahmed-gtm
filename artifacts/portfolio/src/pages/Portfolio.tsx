@@ -95,7 +95,7 @@ const CASES: CaseStudy[] = [
     tag: "Proptech · US Market Entry",
     mode: "ZERO TO ONE",
     company: "Defigo",
-    role: "RVP Sales → GM → CEO",
+    role: "Vice President of Sales",
     desc: "Built Defigo's entire US business from zero. No brand, no pipeline, no channel, no product-market fit for the US. Designed the full GTM stack and signed national distribution with Wesco/Anixter.",
     metrics: [
       { value: "16", label: "Buildings Deployed" },
@@ -111,7 +111,7 @@ const CASES: CaseStudy[] = [
       "Signed national distribution with Wesco/Anixter: 8,000+ integrators, 100+ branch locations",
       "Activated 20+ dealers including Everon (ADT's commercial division)",
       "Built pipeline across NY, Massachusetts, Florida, and New Mexico",
-      "Operated as CEO with full P&L, pricing, supply chain, support, and board reporting",
+      "Owned full P&L for the US business unit. Managed pricing, supply chain, support, and board reporting",
     ],
     metricsGrid: [
       { value: "16", label: "Buildings Live" },
@@ -1106,6 +1106,14 @@ export default function Portfolio() {
             Timeline
           </a>
           <a
+            href="https://gtmarabia.substack.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: "#D4BEC8", textDecoration: "none", fontSize: "0.8rem", fontWeight: 500, letterSpacing: "0.08em", textTransform: "uppercase" }}
+          >
+            Writing
+          </a>
+          <a
             href={assetUrl("resume/Umair_Ahmed_Resume_2026.pdf")}
             download
             style={{
@@ -1178,21 +1186,6 @@ export default function Portfolio() {
         >
           {/* Left: text */}
           <div style={{ flex: "1 1 auto", minWidth: 0, maxWidth: 620 }}>
-            <div
-              className="hero-tagline"
-              style={{
-                fontFamily: "'JetBrains Mono', monospace",
-                fontSize: "0.75rem",
-                color: "#F5AA1A",
-                letterSpacing: "0.15em",
-                textTransform: "uppercase",
-                marginBottom: 32,
-                opacity: 0,
-                animation: "fadeUp 0.8s ease 0.2s forwards",
-              }}
-            >
-              GTM Operator · Builder · Revenue Architect
-            </div>
             <h1
               style={{
                 fontFamily: "'Instrument Serif', Georgia, serif",
@@ -1221,9 +1214,9 @@ export default function Portfolio() {
                 animation: "fadeUp 0.8s ease 0.6s forwards",
               }}
             >
-              Senior go-to-market operator. I take companies from no revenue to scalable,
-              predictable growth. Four times over. Across fintech, proptech, foodtech, and
-              enterprise SaaS.
+              Senior GTM operator. I build revenue engines for venture-backed B2B.
+              Zero-to-one twice. Scale-and-professionalize four times. Across fintech,
+              proptech, foodtech, and enterprise SaaS.
             </p>
           </div>
           {/* Right: profile photo */}
@@ -1342,7 +1335,7 @@ export default function Portfolio() {
         <Reveal>
           <div style={{ maxWidth: 640 }}>
             <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.1rem", color: "#4A2C3A", lineHeight: 1.7, fontWeight: 300, marginBottom: 20 }}>
-              Nine years across five venture-backed companies. B2B SaaS, fintech, proptech. Two acquired. The work splits into two modes.
+              Nine years across five venture-backed companies in B2B SaaS, fintech, and proptech. Two of them (Hubdoc, Lane) were acquired during my time. The work splits into two modes.
             </p>
             <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.1rem", color: "#4A2C3A", lineHeight: 1.7, fontWeight: 300 }}>
               Mode one: build the GTM engine from nothing. No team, no pipeline, no brand in market. ICP, pricing, outbound, channel, hiring, forecasting. All from a blank page. Mode two: walk into an existing revenue org and install the systems that make it perform. Redesign the sales process, tighten unit economics, build the coaching frameworks. The throughline is the same: repeatable revenue architecture that survives after I build it.
@@ -1413,6 +1406,32 @@ export default function Portfolio() {
                 ))}
               </div>
             </div>
+          </div>
+        </Reveal>
+      </section>
+
+      {/* WHERE GTM IS GOING */}
+      <section className="section-pad" id="future" style={{ padding: "80px 48px" }}>
+        <Reveal>
+          <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.7rem", color: "#F5AA1A", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 16 }}>
+            The Future
+          </div>
+        </Reveal>
+        <Reveal>
+          <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(2.2rem, 4.5vw, 3.5rem)", letterSpacing: "-0.03em", lineHeight: 1.1, marginBottom: 20, maxWidth: 700, color: "#1E0A15" }}>
+            Where GTM is Going
+          </h2>
+        </Reveal>
+        <Reveal>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.2rem", color: "#1E0A15", lineHeight: 1.5, fontWeight: 400, marginBottom: 24, maxWidth: 640 }}>
+            The new build is AI-native by default.
+          </p>
+        </Reveal>
+        <Reveal>
+          <div style={{ maxWidth: 640 }}>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.1rem", color: "#4A2C3A", lineHeight: 1.7, fontWeight: 300 }}>
+              The old playbook (hire 8 SDRs, build a sequence, pray for pipeline) is a relic. The new build is AI-native by default: targeting driven by data, outbound that doesn't waste signal, lean teams that outperform bloated ones by an order of magnitude on cost-per-dollar-of-pipeline. The companies that figure this out first win. I build that function.
+            </p>
           </div>
         </Reveal>
       </section>
@@ -1586,7 +1605,7 @@ export default function Portfolio() {
         <div style={{ position: "relative" }}>
           <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 2, background: "rgba(66,11,49,0.12)" }} />
           {[
-            { date: "Nov 2023 - Mar 2026", company: "Defigo", role: "RVP Sales → GM Americas → CEO", desc: "Built the US business from zero. Full P&L ownership. National distribution, 16 buildings, 20+ dealer partners.", badge: { label: "3x Promoted", style: { background: "rgba(245,170,26,0.08)", color: "#F5AA1A", border: "1px solid rgba(245,170,26,0.2)" } } },
+            { date: "Nov 2023 - Mar 2026", company: "Defigo", role: "Vice President of Sales", desc: "Built the US business from zero. Full P&L ownership. National distribution, 16 buildings, 20+ dealer partners.", badge: { label: "3x Promoted", style: { background: "rgba(245,170,26,0.08)", color: "#F5AA1A", border: "1px solid rgba(245,170,26,0.2)" } } },
             { date: "Jun 2022 - Jul 2023", company: "Percy", role: "Co-Founder & Head of Sales", desc: "Co-founded and built GTM for a category-creating QSR automation startup. $0 to $331K live ARR.", badge: { label: "Co-founded", style: { background: "rgba(255,138,76,0.1)", color: "#FF8A4C", border: "1px solid rgba(255,138,76,0.2)" } } },
             { date: "Jun 2021 - Jun 2022", company: "Lane Technologies", role: "Director of Enterprise Sales", desc: "Created first enterprise motion. Advanced Adidas + AmEx to proposal. GTM informed acquisition by VTS.", badge: { label: "Acquired by VTS", style: { background: "rgba(77,163,255,0.1)", color: "#4DA3FF", border: "1px solid rgba(77,163,255,0.2)" } } },
             { date: "Nov 2020 - May 2021", company: "Relay Financial", role: "Head of Sales", desc: "Built foundational sales infrastructure, playbook, onboarding, enablement, and outbound engine during high-growth phase." },
@@ -1680,7 +1699,7 @@ export default function Portfolio() {
         </Reveal>
         <Reveal>
           <p style={{ fontSize: "1.1rem", color: "#BEA7B7", maxWidth: 480, margin: "0 auto 40px", lineHeight: 1.7 }}>
-            I'm looking for my next operating role. Head of Sales, VP Revenue, CRO.
+            I'm looking for my next operating role. VP Sales at a venture-backed B2B company.
             If you need someone who can take you from zero to ten, or ten to a hundred,
             let's talk.
           </p>
@@ -1764,7 +1783,7 @@ export default function Portfolio() {
         }}
       >
         <div style={{ fontSize: "0.8rem", color: "#F5AA1A" }}>
-          Umair Ahmed · Toronto, ON · Open to relocation · (647) 389-7773
+          Umair Ahmed · Toronto, ON · Open to relocation
         </div>
       </footer>
     </>
