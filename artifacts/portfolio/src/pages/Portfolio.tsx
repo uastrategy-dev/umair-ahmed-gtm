@@ -567,43 +567,6 @@ function PdfCard({ doc }: { doc: PdfDoc }) {
   );
 }
 
-function AnimatedStat({ value }: { value: string }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [displayed, setDisplayed] = useState("0");
-  const triggered = useRef(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting && !triggered.current) {
-        triggered.current = true;
-        const match = value.match(/^([^0-9]*)([0-9.]+)(.*)$/);
-        if (!match) { setDisplayed(value); return; }
-        const [, prefix, numStr, suffix] = match;
-        const target = parseFloat(numStr);
-        const isDecimal = numStr.includes(".");
-        const decimals = isDecimal ? numStr.split(".")[1].length : 0;
-        const duration = 1400;
-        const start = Date.now();
-        const tick = () => {
-          const elapsed = Date.now() - start;
-          const progress = Math.min(elapsed / duration, 1);
-          const eased = 1 - Math.pow(1 - progress, 3);
-          const current = target * eased;
-          setDisplayed(prefix + (isDecimal ? current.toFixed(decimals) : Math.round(current).toString()) + suffix);
-          if (progress < 1) requestAnimationFrame(tick);
-        };
-        requestAnimationFrame(tick);
-      }
-    }, { threshold: 0.5 });
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [value]);
-
-  return <div ref={ref}>{displayed}</div>;
-}
-
 function CaseCard({ cs, isOpen, onToggle }: { cs: CaseStudy; isOpen: boolean; onToggle: () => void }) {
   const expandedRef = useRef<HTMLDivElement>(null);
 
@@ -1251,32 +1214,6 @@ export default function Portfolio() {
               />
             </div>
           </div>
-        </div>
-        <div
-          className="hero-stats-wrap"
-          style={{
-            display: "flex",
-            gap: 64,
-            marginTop: 64,
-            opacity: 0,
-            animation: "fadeUp 0.8s ease 0.8s forwards",
-          }}
-        >
-          {[
-            { value: "$5.7M", label: "Single Month Deploy" },
-            { value: "$878K", label: "Booked ARR (Co-founder)" },
-            { value: "2", label: "Portfolio Acquisitions" },
-            { value: "57%", label: "Peak Contribution Margin" },
-          ].map((s, i) => (
-            <div key={s.label} style={{ borderRight: i < 3 ? "1px solid rgba(255,200,230,0.22)" : "none", paddingRight: i < 3 ? 64 : 0 }}>
-              <div className="stat-number" style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "3rem", lineHeight: 1 }}>
-                <AnimatedStat value={s.value} />
-              </div>
-              <div style={{ fontSize: "0.75rem", color: "#C4A8BC", textTransform: "uppercase", letterSpacing: "0.12em", marginTop: 8 }}>
-                {s.label}
-              </div>
-            </div>
-          ))}
         </div>
       </section>
 
