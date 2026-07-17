@@ -43,7 +43,7 @@ const CASES: CaseStudy[] = [
   {
     id: "clearco",
     accent: "pink",
-    accentColor: "#FF6B9D",
+    accentColor: "#E27C55",
     tag: "Fintech · Hyper-growth",
     mode: "SCALE & OPTIMIZE",
     company: "Clearco",
@@ -91,7 +91,7 @@ const CASES: CaseStudy[] = [
   {
     id: "defigo",
     accent: "green",
-    accentColor: "#34D399",
+    accentColor: "#E27C55",
     tag: "Proptech · US Market Entry",
     mode: "ZERO TO ONE",
     company: "Defigo",
@@ -134,7 +134,7 @@ const CASES: CaseStudy[] = [
   {
     id: "percy",
     accent: "blue",
-    accentColor: "#4DA3FF",
+    accentColor: "#E27C55",
     tag: "Foodtech · Co-founder",
     mode: "ZERO TO ONE",
     company: "Percy",
@@ -187,7 +187,7 @@ const CASES: CaseStudy[] = [
   {
     id: "lane",
     accent: "orange",
-    accentColor: "#FF8A4C",
+    accentColor: "#E27C55",
     tag: "Enterprise SaaS · Acquired by VTS",
     mode: "ZERO TO ONE",
     company: "Lane",
@@ -245,8 +245,8 @@ function Reveal({ children, className = "" }: { children: React.ReactNode; class
       className={className}
       style={{
         opacity: visible ? 1 : 0,
-        transform: visible ? "translateY(0)" : "translateY(32px)",
-        transition: "opacity 0.7s ease, transform 0.7s ease",
+        transform: visible ? "translateY(0)" : "translateY(24px)",
+        transition: "opacity 0.8s ease, transform 0.8s ease",
       }}
     >
       {children}
@@ -286,7 +286,7 @@ function Lightbox({
         position: "fixed",
         inset: 0,
         zIndex: 1000,
-        background: "rgba(0,0,0,0.92)",
+        background: "rgba(27,44,74,0.95)",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -301,10 +301,10 @@ function Lightbox({
           right: 24,
           width: 48,
           height: 48,
-          borderRadius: "50%",
-          border: "1px solid rgba(255,255,255,0.2)",
+          borderRadius: 0,
+          border: "1px solid rgba(244,232,207,0.14)",
           background: "transparent",
-          color: "#F0EDE6",
+          color: "#F4E8CF",
           fontSize: "1.4rem",
           cursor: "pointer",
           display: "flex",
@@ -327,10 +327,10 @@ function Lightbox({
               transform: "translateY(-50%)",
               width: 48,
               height: 48,
-              borderRadius: "50%",
-              border: "1px solid rgba(255,255,255,0.2)",
-              background: "rgba(255,255,255,0.05)",
-              color: "#F0EDE6",
+              borderRadius: 0,
+              border: "1px solid rgba(244,232,207,0.14)",
+              background: "rgba(244,232,207,0.05)",
+              color: "#F4E8CF",
               fontSize: "1.2rem",
               cursor: "pointer",
               display: "flex",
@@ -350,10 +350,10 @@ function Lightbox({
               transform: "translateY(-50%)",
               width: 48,
               height: 48,
-              borderRadius: "50%",
-              border: "1px solid rgba(255,255,255,0.2)",
-              background: "rgba(255,255,255,0.05)",
-              color: "#F0EDE6",
+              borderRadius: 0,
+              border: "1px solid rgba(244,232,207,0.14)",
+              background: "rgba(244,232,207,0.05)",
+              color: "#F4E8CF",
               fontSize: "1.2rem",
               cursor: "pointer",
               display: "flex",
@@ -385,16 +385,14 @@ function Lightbox({
             maxWidth: "100%",
             maxHeight: "75vh",
             objectFit: "contain",
-            borderRadius: 8,
-            boxShadow: "0 24px 80px rgba(0,0,0,0.6)",
           }}
         />
         {img.caption && (
           <p
             style={{
               marginTop: 16,
-              fontSize: "0.8rem",
-              color: "#BEA7B7",
+              fontSize: "0.85rem",
+              color: "#F4E8CF",
               fontFamily: "'DM Sans', sans-serif",
               textAlign: "center",
               maxWidth: 600,
@@ -404,7 +402,7 @@ function Lightbox({
           </p>
         )}
         {images.length > 1 && (
-          <p style={{ marginTop: 8, fontSize: "0.7rem", color: "rgba(255,255,255,0.4)", fontFamily: "'JetBrains Mono', monospace" }}>
+          <p style={{ marginTop: 8, fontSize: "0.7rem", color: "rgba(244,232,207,0.4)", fontFamily: "'IBM Plex Mono', monospace" }}>
             {index + 1} / {images.length}
           </p>
         )}
@@ -441,10 +439,10 @@ function ImageGallery({ images }: { images: ProofImage[] }) {
             onClick={() => openLightbox(i)}
             style={{
               cursor: "pointer",
-              borderRadius: 8,
+              borderRadius: 0,
               overflow: "hidden",
-              border: "1px solid rgba(66,11,49,0.12)",
-              transition: "transform 0.2s ease, border-color 0.2s ease",
+              border: "1px solid rgba(27,44,74,0.15)",
+              transition: "border-color 0.2s ease",
             }}
             className="gallery-item"
           >
@@ -464,10 +462,10 @@ function ImageGallery({ images }: { images: ProofImage[] }) {
                 style={{
                   padding: "10px 14px",
                   fontSize: "0.75rem",
-                  color: "#BEA7B7",
+                  color: "#F4E8CF",
                   fontFamily: "'DM Sans', sans-serif",
                   lineHeight: 1.5,
-                  background: "rgba(45,7,32,0.95)",
+                  background: "#1b2c4a",
                 }}
               >
                 {img.caption}
@@ -500,12 +498,12 @@ function PdfCard({ doc }: { doc: PdfDoc }) {
         display: "flex",
         alignItems: "center",
         gap: 16,
-        background: "#FFFFFF",
-        border: "1px solid rgba(66,11,49,0.10)",
-        borderRadius: 12,
+        background: "#F4E8CF",
+        border: "1px solid rgba(27,44,74,0.15)",
+        borderRadius: 0,
         padding: "20px 24px",
         textDecoration: "none",
-        transition: "border-color 0.2s, background 0.2s",
+        transition: "background 0.2s",
       }}
       className="pdf-card"
     >
@@ -513,9 +511,9 @@ function PdfCard({ doc }: { doc: PdfDoc }) {
         style={{
           width: 40,
           height: 40,
-          borderRadius: 8,
-          background: "rgba(245,170,26,0.10)",
-          border: "1px solid rgba(245,170,26,0.20)",
+          borderRadius: 0,
+          background: "transparent",
+          border: "1px solid rgba(27,44,74,0.15)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -530,7 +528,7 @@ function PdfCard({ doc }: { doc: PdfDoc }) {
           style={{
             fontFamily: "'DM Sans', sans-serif",
             fontSize: "0.9rem",
-            color: "#1E0A15",
+            color: "#1b2c4a",
             fontWeight: 500,
             marginBottom: 2,
           }}
@@ -539,26 +537,30 @@ function PdfCard({ doc }: { doc: PdfDoc }) {
         </div>
         <div
           style={{
-            fontFamily: "'JetBrains Mono', monospace",
+            fontFamily: "'IBM Plex Mono', monospace",
             fontSize: "0.65rem",
-            color: "#7A5568",
+            color: "#1b2c4a",
             letterSpacing: "0.05em",
             overflow: "hidden",
             textOverflow: "ellipsis",
             whiteSpace: "nowrap",
+            opacity: 0.7,
           }}
         >
           {doc.name}
         </div>
       </div>
       <div
+        className="link-hover"
         style={{
-          fontFamily: "'JetBrains Mono', monospace",
+          fontFamily: "'IBM Plex Mono', monospace",
           fontSize: "0.65rem",
-          color: "#B07A00",
+          color: "#E27C55",
           letterSpacing: "0.15em",
           textTransform: "uppercase",
           flexShrink: 0,
+          position: "relative",
+          display: "inline-block",
         }}
       >
         View PDF →
@@ -567,285 +569,16 @@ function PdfCard({ doc }: { doc: PdfDoc }) {
   );
 }
 
-function CaseCard({ cs, isOpen, onToggle }: { cs: CaseStudy; isOpen: boolean; onToggle: () => void }) {
-  const expandedRef = useRef<HTMLDivElement>(null);
-
-  const accentStyle: Record<string, React.CSSProperties> = {
-    green: { background: "#34D399" },
-    blue: { background: "#4DA3FF" },
-    orange: { background: "#FF8A4C" },
-    pink: { background: "#FF6B9D" },
-  };
-
-  return (
-    <Reveal>
-      <div
-        className="case-card case-card-pad"
-        style={{
-          background: isOpen ? "#F5EEF2" : "#FFFFFF",
-          border: `1px solid ${isOpen ? "rgba(66,11,49,0.18)" : "rgba(66,11,49,0.10)"}`,
-          borderRadius: 20,
-          padding: 48,
-          position: "relative",
-          overflow: "hidden",
-          cursor: "pointer",
-        }}
-        onClick={onToggle}
-      >
-        <div
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            height: 3,
-            borderRadius: "20px 20px 0 0",
-            ...accentStyle[cs.accent],
-          }}
-        />
-
-        <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 24, flexWrap: "wrap" }}>
-          <div
-            style={{
-              display: "inline-block",
-              fontFamily: "'JetBrains Mono', monospace",
-              fontSize: "0.65rem",
-              letterSpacing: "0.15em",
-              textTransform: "uppercase",
-              padding: "6px 14px",
-              borderRadius: 100,
-              border: "1px solid rgba(66,11,49,0.12)",
-              color: "#7A5568",
-            }}
-          >
-            {cs.tag}
-          </div>
-          <div
-            style={{
-              display: "inline-block",
-              fontFamily: "'JetBrains Mono', monospace",
-              fontSize: "0.6rem",
-              letterSpacing: "0.1em",
-              textTransform: "uppercase",
-              padding: "4px 10px",
-              borderRadius: 100,
-              border: `1px solid ${cs.accentColor}55`,
-              color: cs.accentColor,
-              background: `${cs.accentColor}11`,
-            }}
-          >
-            {cs.mode}
-          </div>
-        </div>
-        <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "2rem", letterSpacing: "-0.02em", marginBottom: 4, color: "#1E0A15" }}>
-          {cs.company}
-        </div>
-        <div style={{ fontSize: "0.85rem", color: "#7A5568", marginBottom: 20 }}>{cs.role}</div>
-        <div style={{ fontSize: "0.95rem", color: "#4A2C3A", lineHeight: 1.65, marginBottom: 32 }}>{cs.desc}</div>
-
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
-          {cs.metrics.map((m) => (
-            <div
-              key={m.label}
-              style={{
-                background: "rgba(66,11,49,0.04)",
-                border: "1px solid rgba(66,11,49,0.08)",
-                borderRadius: 12,
-                padding: 20,
-              }}
-            >
-              <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "1.6rem", lineHeight: 1.1, color: "#1E0A15" }}>{m.value}</div>
-              <div style={{ fontSize: "0.72rem", color: "#7A5568", textTransform: "uppercase", letterSpacing: "0.08em", marginTop: 6 }}>
-                {m.label}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div
-          style={{
-            marginTop: 24,
-            display: "flex",
-            alignItems: "center",
-            gap: 8,
-            fontFamily: "'JetBrains Mono', monospace",
-            fontSize: "0.7rem",
-            color: "#F5AA1A",
-            letterSpacing: "0.1em",
-            textTransform: "uppercase",
-          }}
-        >
-          {isOpen ? "Close case study ↑" : "Read case study ↓"}
-        </div>
-      </div>
-
-      {isOpen && (
-        <div
-          ref={expandedRef}
-          className="expanded-pad"
-          style={{
-            marginTop: 2,
-            background: "#F0E8ED",
-            border: "1px solid rgba(66,11,49,0.12)",
-            borderRadius: "0 0 20px 20px",
-            padding: "48px 48px 56px",
-          }}
-          onClick={(e) => e.stopPropagation()}
-        >
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 48 }}>
-            <h3
-              style={{
-                fontFamily: "'Instrument Serif', Georgia, serif",
-                fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
-                letterSpacing: "-0.02em",
-                lineHeight: 1.1,
-              }}
-            >
-              {cs.expandedTitle}
-            </h3>
-            <button
-              onClick={onToggle}
-              style={{
-                width: 48,
-                height: 48,
-                borderRadius: "50%",
-                border: "1px solid rgba(66,11,49,0.14)",
-                background: "transparent",
-                color: "#7A5568",
-                fontSize: "1.2rem",
-                cursor: "pointer",
-                flexShrink: 0,
-                marginLeft: 16,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              ×
-            </button>
-          </div>
-
-          <div>
-            <SectionLabel>The Starting Point</SectionLabel>
-            <p style={{ fontSize: "1rem", color: "#4A2C3A", lineHeight: 1.75, marginBottom: 16, maxWidth: 680 }}>
-              {cs.startingPoint}
-            </p>
-
-            <SectionLabel>What I Built</SectionLabel>
-            <ul style={{ listStyle: "none", marginBottom: 24 }}>
-              {cs.whatIBuilt.map((item, i) => (
-                <li
-                  key={i}
-                  style={{
-                    fontSize: "0.95rem",
-                    color: "#4A2C3A",
-                    lineHeight: 1.7,
-                    paddingLeft: 20,
-                    position: "relative",
-                    marginBottom: 8,
-                  }}
-                >
-                  <span
-                    style={{
-                      position: "absolute",
-                      left: 0,
-                      top: 10,
-                      width: 6,
-                      height: 6,
-                      background: "#F5AA1A",
-                      borderRadius: "50%",
-                      display: "block",
-                    }}
-                  />
-                  {item}
-                </li>
-              ))}
-            </ul>
-
-            {cs.metricsGrid && (
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "repeat(4, 1fr)",
-                  gap: 16,
-                  margin: "32px 0",
-                }}
-                className="metrics-grid-full"
-              >
-                {cs.metricsGrid.map((m) => (
-                  <div
-                    key={m.label}
-                    style={{
-                      background: "rgba(66,11,49,0.04)",
-                      border: "1px solid rgba(66,11,49,0.08)",
-                      borderRadius: 12,
-                      padding: 20,
-                      textAlign: "center",
-                    }}
-                  >
-                    <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "1.6rem", lineHeight: 1.1, color: "#1E0A15" }}>{m.value}</div>
-                    <div style={{ fontSize: "0.72rem", color: "#7A5568", textTransform: "uppercase", letterSpacing: "0.08em", marginTop: 6 }}>
-                      {m.label}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {(cs.images && cs.images.length > 0) || (cs.pdfs && cs.pdfs.length > 0) ? (
-              <>
-                <SectionLabel>Proof Points</SectionLabel>
-                {cs.images && cs.images.length > 0 && <ImageGallery images={cs.images} />}
-                {cs.pdfs && cs.pdfs.length > 0 && (
-                  <div style={{ display: "flex", flexDirection: "column", gap: 12, marginTop: cs.images && cs.images.length > 0 ? 16 : 0 }}>
-                    {cs.pdfs.map((pdf, i) => (
-                      <PdfCard key={i} doc={pdf} />
-                    ))}
-                  </div>
-                )}
-              </>
-            ) : null}
-
-            {cs.realStoryOnNumbers && (
-              <>
-                <SectionLabel>The Real Story on the Numbers</SectionLabel>
-                <p style={{ fontSize: "1rem", color: "#4A2C3A", lineHeight: 1.75, maxWidth: 680 }}>{cs.realStoryOnNumbers}</p>
-              </>
-            )}
-
-            <SectionLabel>Why This Matters</SectionLabel>
-            <p style={{ fontSize: "1rem", color: "#4A2C3A", lineHeight: 1.75, maxWidth: 680 }}>{cs.whyItMatters}</p>
-
-            {cs.whatILearned && (
-              <>
-                <SectionLabel>What I Learned</SectionLabel>
-                <p style={{ fontSize: "1rem", color: "#4A2C3A", lineHeight: 1.75, maxWidth: 680 }}>{cs.whatILearned}</p>
-              </>
-            )}
-
-            {cs.honestAssessment && (
-              <>
-                <SectionLabel>The Honest Assessment</SectionLabel>
-                <p style={{ fontSize: "1rem", color: "#4A2C3A", lineHeight: 1.75, maxWidth: 680 }}>{cs.honestAssessment}</p>
-              </>
-            )}
-          </div>
-        </div>
-      )}
-    </Reveal>
-  );
-}
-
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
     <div
       className="section-label-pad"
       style={{
-        fontFamily: "'JetBrains Mono', monospace",
+        fontFamily: "'IBM Plex Mono', monospace",
         fontSize: "0.7rem",
-        letterSpacing: "0.2em",
+        letterSpacing: "0.18em",
         textTransform: "uppercase",
-        color: "#420b31",
+        color: "#E6A85C",
         marginBottom: 20,
         marginTop: 48,
       }}
@@ -858,14 +591,11 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 export default function Portfolio() {
   const [openCase, setOpenCase] = useState<string | null>(null);
   const [navScrolled, setNavScrolled] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
   const expandedRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
   useEffect(() => {
     function onScroll() {
       setNavScrolled(window.scrollY > 100);
-      const docH = document.documentElement.scrollHeight - window.innerHeight;
-      setScrollProgress(docH > 0 ? (window.scrollY / docH) * 100 : 0);
     }
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
@@ -888,131 +618,93 @@ export default function Portfolio() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Instrument+Serif:ital@0;1&display=swap');
         
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        body { background: #FAF7F5; color: #1E0A15; font-family: 'DM Sans', -apple-system, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; line-height: 1.6; }
-        .hero-gradient { background: linear-gradient(135deg, #420b31 0%, #5a1646 50%, #6b244d 100%); }
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #420b31; }
-        ::-webkit-scrollbar-thumb { background: #F5AA1A; border-radius: 3px; }
-        ::selection { background: #F5AA1A; color: #0A0A0C; }
+        body { background: #F4E8CF; color: #1b2c4a; font-family: 'DM Sans', -apple-system, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; line-height: 1.6; }
+        
+        .hero-gradient { background: linear-gradient(180deg, #1b2c4a 0%, #1b2c4a 70%, #503a3c 88%, #E27C55 120%); }
+        .paper-noise {
+          position: absolute;
+          inset: 0;
+          background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
+          pointer-events: none;
+          mix-blend-mode: overlay;
+        }
 
-        @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .dark-section { background: #1b2c4a; color: #F4E8CF; position: relative; }
+        .dark-section .hairline { background: rgba(244,232,207,0.14); }
+        .dark-section .paper-noise { opacity: 0.05; }
+        
+        .light-section { background: #F4E8CF; color: #1b2c4a; position: relative; }
+        .light-section .hairline { background: rgba(27,44,74,0.15); }
+        .light-section .paper-noise { opacity: 0.12; }
+
+        .hairline { height: 1px; width: 100%; display: block; }
+        .hairline-v { width: 1px; height: 100%; display: block; }
+
+        ::selection { background: #E27C55; color: #F4E8CF; }
+
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        @keyframes glowPulse { 0%, 100% { box-shadow: 0 0 50px rgba(245,170,26,0.30), 0 0 0 0 rgba(245,170,26,0.35), 0 24px 64px rgba(0,0,0,0.45); } 50% { box-shadow: 0 0 90px rgba(245,170,26,0.50), 0 0 0 14px rgba(245,170,26,0), 0 24px 64px rgba(0,0,0,0.45); } }
-        @keyframes shimmer { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }
-        @keyframes lineGrow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
-
-        .photo-glow { animation: glowPulse 3.5s ease-in-out infinite; }
+        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
         .ticker-inner { will-change: transform; }
 
-        .case-card { transition: transform 0.35s ease, box-shadow 0.35s ease !important; }
-        .case-card:hover { transform: translateY(-4px) !important; box-shadow: 0 16px 48px rgba(66,11,49,0.12), 0 0 30px rgba(245,170,26,0.06) !important; }
+        .quote-stagger { margin-top: var(--stagger-mt, 0px); }
+        @media (max-width: 1024px) {
+          .quote-stagger { margin-top: 0 !important; }
+        }
+        @media (max-width: 768px) {
+          .approach-row { grid-template-columns: 1fr !important; gap: 16px !important; }
+          .proof-gallery { grid-template-columns: 1fr !important; }
+        }
 
-        .quote-card { transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; }
-        .quote-card:hover { transform: translateY(-4px); border-color: rgba(245,170,26,0.35) !important; box-shadow: 0 12px 36px rgba(0,0,0,0.20); }
-
-        .comp-card { transition: transform 0.25s ease, border-color 0.3s ease, background 0.3s ease !important; }
-        .comp-card:hover { transform: translateY(-3px) !important; }
-
-        .cta-btn { position: relative; overflow: hidden; }
-        .cta-btn::after { content: ''; position: absolute; inset: 0; background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.2) 50%, transparent 60%); background-size: 200% auto; animation: shimmer 2.5s linear infinite; }
-
-        .scroll-progress { position: fixed; top: 0; left: 0; height: 2px; background: linear-gradient(to right, #F5AA1A, #F0C060, #F5AA1A); z-index: 201; pointer-events: none; transition: width 0.08s linear; }
-
-        .stat-number { background: linear-gradient(135deg, #FFFFFF 20%, #F5CC70 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-
-        .timeline-line { transform-origin: top; }
-
-        .gallery-item:hover { transform: scale(1.02); border-color: rgba(66,11,49,0.20) !important; box-shadow: 0 8px 32px rgba(66,11,49,0.10); }
-        .pdf-card:hover { border-color: rgba(245,170,26,0.40) !important; background: rgba(245,170,26,0.04) !important; }
+        .link-hover { position: relative; display: inline-block; text-decoration: none; }
+        .link-hover::after { content: ''; position: absolute; width: 100%; transform: scaleX(0); height: 1px; bottom: 0; left: 0; background-color: #E27C55; transform-origin: bottom right; transition: transform 0.25s ease-out; }
+        .link-hover:hover::after { transform: scaleX(1); transform-origin: bottom left; }
 
         button, a { touch-action: manipulation; }
-        a:hover { opacity: 0.85; }
+        
+        .pdf-card:hover { background: #e0d0b0 !important; }
+        .gallery-item:hover { border-color: rgba(27,44,74,0.3) !important; }
 
-        @media (hover: none) {
-          .case-card:hover { transform: none !important; box-shadow: none !important; }
-          .quote-card:hover { transform: none !important; border-color: rgba(255,200,230,0.22) !important; box-shadow: none !important; }
-          .comp-card:hover { transform: none !important; }
-          .gallery-item:hover { transform: none !important; box-shadow: none !important; }
-          .pdf-card:hover { border-color: rgba(66,11,49,0.10) !important; background: #FFFFFF !important; }
-          a:hover { opacity: 1; }
+        .halftone-portrait {
+          filter: grayscale(100%) contrast(1.2) sepia(100%) hue-rotate(180deg) saturate(200%) brightness(0.8);
+          mix-blend-mode: hard-light;
         }
 
         @media (prefers-reduced-motion: reduce) {
           *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
-          .photo-glow { animation: none !important; box-shadow: 0 0 40px rgba(245,170,26,0.30) !important; }
-          .cta-btn::after { animation: none !important; }
         }
 
         @media (max-width: 768px) {
-          /* Nav: solid bg instead of blur (performance) */
           .nav-links-wrap { display: none !important; }
-          .nav-wrap { padding-left: 20px !important; padding-right: 20px !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important; background: rgba(42,5,29,0.98) !important; }
+          .nav-wrap { padding-left: 20px !important; padding-right: 20px !important; background: #1b2c4a !important; }
           .nav-cta-mobile { display: flex !important; }
 
-          /* Hero */
-          .hero-pad { padding: 100px 20px 60px !important; }
-          .hero-columns { flex-direction: column-reverse !important; align-items: center !important; gap: 24px !important; }
-          .hero-photo-wrap { width: 140px !important; height: 140px !important; }
-          .hero-photo-wrap > div { width: 140px !important; height: 140px !important; }
-          .photo-glow { animation: none !important; box-shadow: 0 0 30px rgba(245,170,26,0.25) !important; }
-          .hero-tagline { font-size: 0.6rem !important; letter-spacing: 0.06em !important; margin-bottom: 12px !important; }
-          .hero-subtitle { font-size: 0.95rem !important; margin-top: 16px !important; }
-          .stat-number { font-size: 2rem !important; }
-
-          /* Sections */
-          .section-pad { padding: 64px 20px !important; }
-          .cta-pad { padding: 72px 20px !important; }
-          .footer-pad { padding: 28px 20px !important; flex-direction: column !important; align-items: flex-start !important; gap: 8px !important; }
-          .divider-pad { margin: 0 20px !important; }
-
-          /* CTA buttons: stack full-width */
+          .hero-pad { padding: 120px 20px 60px !important; }
+          .hero-columns { flex-direction: column !important; align-items: flex-start !important; gap: 40px !important; }
+          .hero-photo-wrap { width: 100% !important; max-width: 400px; position: relative !important; align-self: flex-start !important; right: auto !important; top: auto !important; height: auto !important; margin-bottom: 20px; }
+          
+          .section-pad { padding: 80px 20px !important; }
+          .cta-pad { padding: 100px 20px !important; }
+          
           .cta-buttons-wrap { flex-direction: column !important; align-items: stretch !important; gap: 12px !important; }
           .cta-buttons-wrap a { text-align: center !important; display: block !important; }
 
-          /* Cards */
-          .cases-grid-wrap { grid-template-columns: 1fr !important; }
-          .case-card-pad { padding: 24px 20px !important; }
-          .expanded-pad { padding: 24px 20px 32px !important; }
-          .section-label-pad { margin-top: 28px !important; }
-
-          /* Quotes */
-          .quotes-grid-wrap { grid-template-columns: 1fr !important; }
-
-          /* Competency grid */
-          .comp-grid-wrap { grid-template-columns: 1fr !important; }
-
-          /* Gallery */
-          .proof-gallery { grid-template-columns: 1fr !important; }
-          .metrics-grid-full { grid-template-columns: 1fr 1fr !important; }
-
-          /* Two modes */
-          .two-modes-grid { grid-template-columns: 1fr !important; }
-
-          /* Timeline */
-          .timeline-content { padding-left: 20px !important; }
-
-          /* Disable heavy animations */
-          .cta-btn::after { display: none !important; }
-          .ticker-inner { animation-duration: 60s !important; }
+          .quotes-grid-wrap, .two-modes-grid { grid-template-columns: 1fr !important; }
+          .metrics-row { flex-direction: column !important; gap: 24px !important; align-items: flex-start !important; }
+          .metrics-col { border-right: none !important; border-bottom: 1px solid rgba(27,44,74,0.15) !important; width: 100% !important; padding-bottom: 16px !important; }
+          .metrics-col:last-child { border-bottom: none !important; }
+          .case-row-header { flex-direction: column !important; gap: 16px !important; }
         }
 
         @media (max-width: 1024px) {
-          .cases-grid-wrap { grid-template-columns: 1fr !important; }
-          .quotes-grid-wrap { grid-template-columns: 1fr !important; }
-          .comp-grid-wrap { grid-template-columns: 1fr 1fr !important; }
-          .metrics-grid-full { grid-template-columns: 1fr 1fr !important; }
-          .two-modes-grid { grid-template-columns: 1fr !important; }
+          .quotes-grid-wrap { grid-template-columns: 1fr 1fr !important; }
         }
       `}</style>
-
-      {/* SCROLL PROGRESS */}
-      <div className="scroll-progress" style={{ width: `${scrollProgress}%` }} />
 
       {/* NAV */}
       <nav
@@ -1023,66 +715,58 @@ export default function Portfolio() {
           left: 0,
           right: 0,
           zIndex: 100,
-          padding: navScrolled ? "12px 48px" : "20px 48px",
+          padding: navScrolled ? "16px 48px" : "24px 48px",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          background: "rgba(66,11,49,0.92)",
-          backdropFilter: "blur(24px)",
-          WebkitBackdropFilter: "blur(24px)",
-          borderBottom: "1px solid rgba(255,200,230,0.12)",
-          transition: "padding 0.3s ease",
+          background: navScrolled ? "#1b2c4a" : "transparent",
+          transition: "padding 0.3s ease, background 0.3s ease",
         }}
       >
-        <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontStyle: "italic", fontSize: "1.3rem", letterSpacing: "-0.02em", color: "#F0EDE6" }}>
+        <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontStyle: "italic", fontSize: "1.5rem", letterSpacing: "-0.01em", color: "#F4E8CF" }}>
           Umair Ahmed
         </div>
         <div className="nav-cta-mobile" style={{ display: "none" }}>
           <a
             href="mailto:umairadilahmed@gmail.com"
             style={{
-              background: "#F5AA1A",
-              color: "#0A0A0C",
-              padding: "8px 18px",
-              borderRadius: 100,
-              fontWeight: 600,
-              fontSize: "0.75rem",
-              letterSpacing: "0.04em",
-              textTransform: "uppercase",
+              color: "#E27C55",
+              fontWeight: 500,
+              fontSize: "0.85rem",
               textDecoration: "none",
             }}
           >
             Get in Touch
           </a>
         </div>
-        <div className="nav-links-wrap" style={{ display: "flex", gap: 32, alignItems: "center" }}>
-          <a href="#work" style={{ color: "#D4BEC8", textDecoration: "none", fontSize: "0.8rem", fontWeight: 500, letterSpacing: "0.08em", textTransform: "uppercase" }}>
+        <div className="nav-links-wrap" style={{ display: "flex", gap: 40, alignItems: "center" }}>
+          <a href="#work" className="link-hover" style={{ color: "#F4E8CF", textDecoration: "none", fontSize: "0.85rem", fontWeight: 400 }}>
             Case Studies
           </a>
-          <a href="#approach" style={{ color: "#D4BEC8", textDecoration: "none", fontSize: "0.8rem", fontWeight: 500, letterSpacing: "0.08em", textTransform: "uppercase" }}>
+          <a href="#approach" className="link-hover" style={{ color: "#F4E8CF", textDecoration: "none", fontSize: "0.85rem", fontWeight: 400 }}>
             Approach
           </a>
-          <a href="#timeline" style={{ color: "#D4BEC8", textDecoration: "none", fontSize: "0.8rem", fontWeight: 500, letterSpacing: "0.08em", textTransform: "uppercase" }}>
+          <a href="#timeline" className="link-hover" style={{ color: "#F4E8CF", textDecoration: "none", fontSize: "0.85rem", fontWeight: 400 }}>
             Timeline
           </a>
           <a
             href="https://gtmarabia.substack.com/"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ color: "#D4BEC8", textDecoration: "none", fontSize: "0.8rem", fontWeight: 500, letterSpacing: "0.08em", textTransform: "uppercase" }}
+            className="link-hover"
+            style={{ color: "#F4E8CF", textDecoration: "none", fontSize: "0.85rem", fontWeight: 400 }}
           >
             Writing
           </a>
           <a
             href={assetUrl("resume/Umair_Ahmed_Resume_2026.pdf")}
             download
+            className="link-hover"
             style={{
-              color: "#D4BEC8",
+              color: "#F4E8CF",
               textDecoration: "none",
-              fontSize: "0.8rem",
-              fontWeight: 500,
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
+              fontSize: "0.85rem",
+              fontWeight: 400,
             }}
           >
             Resume
@@ -1090,18 +774,12 @@ export default function Portfolio() {
           <a
             href="mailto:umairadilahmed@gmail.com"
             style={{
-              background: "#F5AA1A",
-              color: "#0A0A0C",
-              padding: "8px 20px",
-              borderRadius: 100,
-              fontWeight: 600,
-              fontSize: "0.8rem",
-              letterSpacing: "0.04em",
-              textTransform: "uppercase",
+              color: "#E27C55",
+              fontWeight: 500,
+              fontSize: "0.85rem",
               textDecoration: "none",
-              transition: "transform 0.2s, box-shadow 0.2s",
-              boxShadow: "0 2px 16px rgba(245,170,26,0.35)",
             }}
+            className="link-hover"
           >
             Get in Touch
           </a>
@@ -1116,62 +794,53 @@ export default function Portfolio() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          padding: "140px 48px 80px",
+          padding: "160px 48px 80px",
           position: "relative",
           overflow: "hidden",
         }}
       >
-        <div
-          style={{
-            position: "absolute",
-            top: -200,
-            right: -200,
-            width: 800,
-            height: 800,
-            background: "radial-gradient(circle, rgba(245,170,26,0.14) 0%, transparent 70%)",
-            pointerEvents: "none",
-          }}
-        />
-        {/* Two-column hero layout */}
+        <div className="paper-noise" />
+        
         <div
           className="hero-columns"
           style={{
             display: "flex",
             alignItems: "center",
-            justifyContent: "flex-start",
-            gap: 72,
+            justifyContent: "space-between",
             width: "100%",
-            maxWidth: 1100,
+            maxWidth: 1600,
+            margin: "0 auto",
+            position: "relative",
+            zIndex: 10,
           }}
         >
           {/* Left: text */}
-          <div style={{ flex: "1 1 auto", minWidth: 0, maxWidth: 620 }}>
+          <div style={{ flex: "1 1 auto", minWidth: 0, maxWidth: 800, position: "relative", zIndex: 2 }}>
             <h1
               style={{
                 fontFamily: "'Instrument Serif', Georgia, serif",
-                fontSize: "clamp(3rem, 8vw, 7rem)",
-                lineHeight: 1.0,
-                letterSpacing: "-0.03em",
-                color: "#FFFFFF",
-                maxWidth: 900,
+                fontSize: "clamp(4rem, 10vw, 120px)",
+                lineHeight: 0.95,
+                letterSpacing: "-0.01em",
+                color: "#F4E8CF",
+                fontWeight: 400,
                 opacity: 0,
-                animation: "fadeUp 0.8s ease 0.4s forwards",
+                animation: "fadeUp 0.8s ease 0.2s forwards",
               }}
             >
-              I build revenue<br />engines from{" "}
-              <em style={{ fontStyle: "italic", color: "#F5AA1A" }}>zero.</em>
+              I build revenue engines <em style={{ fontStyle: "italic", color: "#E27C55" }}>from zero.</em>
             </h1>
             <p
-              className="hero-subtitle"
               style={{
+                fontFamily: "'DM Sans', sans-serif",
                 fontSize: "1.2rem",
-                color: "#D4BEC8",
-                maxWidth: 580,
-                marginTop: 32,
-                lineHeight: 1.7,
-                fontWeight: 300,
+                color: "rgba(244,232,207,0.8)",
+                maxWidth: "55ch",
+                marginTop: 40,
+                lineHeight: 1.6,
+                fontWeight: 400,
                 opacity: 0,
-                animation: "fadeUp 0.8s ease 0.6s forwards",
+                animation: "fadeUp 0.8s ease 0.4s forwards",
               }}
             >
               Senior GTM operator. I build revenue engines for venture-backed B2B.
@@ -1179,547 +848,680 @@ export default function Portfolio() {
               proptech, foodtech, and enterprise SaaS.
             </p>
           </div>
-          {/* Right: profile photo */}
+
+          {/* Right: profile photo bleeding off edge */}
           <div
             className="hero-photo-wrap"
             style={{
-              flex: "0 0 auto",
+              position: "absolute",
+              right: "-5%",
+              top: "50%",
+              transform: "translateY(-50%)",
+              width: "42vw",
+              maxWidth: 640,
+              aspectRatio: "1 / 1",
+              zIndex: 1,
               opacity: 0,
-              animation: "fadeUp 0.8s ease 0.5s forwards",
+              animation: "fadeUp 1s ease 0.3s forwards",
             }}
           >
-            <div
-              className="photo-glow"
-              style={{
-                width: 280,
-                height: 280,
-                borderRadius: "50%",
-                overflow: "hidden",
-                border: "3px solid rgba(245,170,26,0.60)",
-              }}
-            >
+            <div style={{ position: "relative", width: "100%", height: "100%" }}>
+              {/* Fake halftone dot effect layered under */}
+              <div style={{
+                position: "absolute", inset: 0, 
+                backgroundImage: "radial-gradient(#1b2c4a 15%, transparent 20%), radial-gradient(#1b2c4a 15%, transparent 20%)",
+                backgroundSize: "8px 8px",
+                backgroundPosition: "0 0, 4px 4px",
+                opacity: 0.4,
+                mixBlendMode: "multiply",
+                zIndex: 2
+              }} />
               <img
                 src={assetUrl("profile.jpg")}
                 alt="Umair Ahmed"
+                className="halftone-portrait"
                 style={{
                   width: "100%",
                   height: "100%",
                   objectFit: "cover",
                   objectPosition: "center top",
                   display: "block",
+                  position: "relative",
+                  zIndex: 1
                 }}
               />
             </div>
           </div>
         </div>
+
+        {/* TICKER */}
+        <div
+          style={{
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            right: 0,
+            overflow: "hidden",
+            padding: "16px 0",
+            borderTop: "1px solid rgba(244,232,207,0.14)",
+            zIndex: 10,
+          }}
+        >
+          <div className="ticker-inner" style={{ display: "flex", animation: "scroll 40s linear infinite", width: "max-content" }}>
+            {[
+              "0-to-1 GTM Build", "Pipeline Architecture", "Outbound Engine Design", "Channel & Partner GTM",
+              "Enterprise Sales Cycles", "Revenue Forecasting", "ICP Discovery", "Pricing & Packaging",
+              "Sales Hiring & Enablement", "Cross-Border Market Entry",
+              "0-to-1 GTM Build", "Pipeline Architecture", "Outbound Engine Design", "Channel & Partner GTM",
+              "Enterprise Sales Cycles", "Revenue Forecasting", "ICP Discovery", "Pricing & Packaging",
+              "Sales Hiring & Enablement", "Cross-Border Market Entry",
+            ].map((item, i) => (
+              <div
+                key={i}
+                style={{
+                  fontFamily: "'IBM Plex Mono', monospace",
+                  fontSize: "0.8rem",
+                  color: "rgba(244,232,207,0.5)",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.1em",
+                  whiteSpace: "nowrap",
+                  padding: "0 24px",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 24,
+                }}
+              >
+                <span style={{ width: 4, height: 4, background: "#E27C55", borderRadius: "0", flexShrink: 0, display: "inline-block" }} />
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
-      {/* TICKER */}
-      <div
-        className="ticker-wrap"
-        style={{
-          overflow: "hidden",
-          padding: "40px 0",
-          borderTop: "1px solid rgba(255,200,230,0.10)",
-          borderBottom: "1px solid rgba(255,200,230,0.10)",
-          background: "#360928",
-        }}
-      >
-        <div className="ticker-inner" style={{ display: "flex", animation: "scroll 30s linear infinite", width: "max-content" }}>
-          {[
-            "0-to-1 GTM Build", "Pipeline Architecture", "Outbound Engine Design", "Channel & Partner GTM",
-            "Enterprise Sales Cycles", "Revenue Forecasting", "ICP Discovery", "Pricing & Packaging",
-            "Sales Hiring & Enablement", "Cross-Border Market Entry",
-            "0-to-1 GTM Build", "Pipeline Architecture", "Outbound Engine Design", "Channel & Partner GTM",
-            "Enterprise Sales Cycles", "Revenue Forecasting", "ICP Discovery", "Pricing & Packaging",
-            "Sales Hiring & Enablement", "Cross-Border Market Entry",
-          ].map((item, i) => (
-            <div
-              key={i}
-              style={{
-                fontFamily: "'Instrument Serif', Georgia, serif",
-                fontSize: "1.4rem",
-                color: "#F5AA1A",
-                whiteSpace: "nowrap",
-                padding: "0 24px",
-                display: "flex",
-                alignItems: "center",
-                gap: 24,
-              }}
-            >
-              <span style={{ width: 6, height: 6, background: "#F5AA1A", borderRadius: "50%", flexShrink: 0, display: "inline-block" }} />
-              {item}
-            </div>
-          ))}
-        </div>
-      </div>
-
       {/* THROUGHLINE */}
-      <section className="section-pad" id="throughline" style={{ padding: "80px 48px" }}>
-        <Reveal>
-          <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.7rem", color: "#F5AA1A", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 16 }}>
-            The Throughline
-          </div>
-        </Reveal>
-        <Reveal>
-          <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(2.2rem, 4.5vw, 3.5rem)", letterSpacing: "-0.03em", lineHeight: 1.1, marginBottom: 32, maxWidth: 700, color: "#1E0A15" }}>
-            Two modes. One system.
-          </h2>
-        </Reveal>
-        <Reveal>
-          <div style={{ maxWidth: 640 }}>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.1rem", color: "#4A2C3A", lineHeight: 1.7, fontWeight: 300, marginBottom: 20 }}>
-              Nine years across six B2B companies in SaaS, fintech, and proptech. Two of them (Hubdoc, Lane) were acquired during my time. The work splits into two modes.
-            </p>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.1rem", color: "#4A2C3A", lineHeight: 1.7, fontWeight: 300 }}>
-              Mode one: build the GTM engine from nothing. No team, no pipeline, no brand in market. ICP, pricing, outbound, channel, hiring, forecasting. All from a blank page. Mode two: walk into an existing revenue org and install the systems that make it perform. Redesign the sales process, tighten unit economics, build the coaching frameworks. The throughline is the same: repeatable revenue architecture that survives after I build it.
-            </p>
-          </div>
-        </Reveal>
-
-        {/* Two Modes visual */}
-        <Reveal>
-          <div
-            className="two-modes-grid"
-            style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginTop: 40 }}
-          >
-            {/* Zero to One */}
-            <div
-              style={{
-                background: "#FFFFFF",
-                border: "1px solid rgba(66,11,49,0.10)",
-                borderRadius: 16,
-                padding: 32,
-              }}
-            >
-              <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "1.3rem", marginBottom: 12, color: "#F5AA1A" }}>
-                Build from Zero
-              </div>
-              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.85rem", color: "#7A5568", lineHeight: 1.6, marginBottom: 24 }}>
-                No team. No pipeline. No playbook. Create the entire GTM stack.
-              </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-                {[
-                  { name: "Defigo", label: "US market, $0 start" },
-                  { name: "Percy", label: "New category, bootstrapped" },
-                  { name: "Lane", label: "Enterprise motion, greenfield" },
-                ].map((item) => (
-                  <div key={item.name} style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                    <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.9rem", color: "#1E0A15", fontWeight: 500 }}>{item.name}</span>
-                    <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.65rem", color: "#7A5568", letterSpacing: "0.05em" }}>{item.label}</span>
-                  </div>
-                ))}
+      <section className="light-section section-pad" id="throughline" style={{ padding: "120px 48px" }}>
+        <div className="paper-noise" />
+        <div style={{ maxWidth: 1200, margin: "0 auto", position: "relative", zIndex: 2 }}>
+          <Reveal>
+            <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 40 }}>
+              <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "0.85rem", color: "#E27C55" }}>01</span>
+              <div className="hairline" style={{ width: 40, background: "#E27C55" }} />
+              <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "0.75rem", color: "#E6A85C", letterSpacing: "0.18em", textTransform: "uppercase" }}>
+                The Throughline
               </div>
             </div>
+          </Reveal>
+          
+          <Reveal>
+            <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(3rem, 6vw, 4.5rem)", letterSpacing: "-0.01em", lineHeight: 1.0, marginBottom: 48, maxWidth: 800 }}>
+              Two modes. <em style={{ fontStyle: "italic", color: "#E27C55" }}>One system.</em>
+            </h2>
+          </Reveal>
 
-            {/* Scale and Optimize */}
-            <div
-              style={{
-                background: "#FFFFFF",
-                border: "1px solid rgba(66,11,49,0.10)",
-                borderRadius: 16,
-                padding: 32,
-              }}
-            >
-              <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "1.3rem", marginBottom: 12, color: "#F5AA1A" }}>
-                Scale What Exists
-              </div>
-              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.85rem", color: "#7A5568", lineHeight: 1.6, marginBottom: 24 }}>
-                Walk into a live org. Install systems. Fix unit economics. Produce results.
+          <Reveal>
+            <div style={{ maxWidth: 640, marginBottom: 80 }}>
+              <p style={{ fontSize: "1.15rem", color: "#1b2c4a", lineHeight: 1.6, fontWeight: 400, marginBottom: 24 }}>
+                Nine years across six B2B companies in SaaS, fintech, and proptech. Two of them (Hubdoc, Lane) were acquired during my time. The work splits into two modes.
               </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-                {[
-                  { name: "Clearco", label: "#1 pod, 57% CM" },
-                  { name: "Hubdoc", label: "$750K ARR, 12-person team" },
-                  { name: "Relay", label: "Sales infrastructure build" },
-                ].map((item) => (
-                  <div key={item.name} style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                    <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.9rem", color: "#1E0A15", fontWeight: 500 }}>{item.name}</span>
-                    <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.65rem", color: "#7A5568", letterSpacing: "0.05em" }}>{item.label}</span>
-                  </div>
-                ))}
+              <p style={{ fontSize: "1.15rem", color: "#1b2c4a", lineHeight: 1.6, fontWeight: 400 }}>
+                Mode one: build the GTM engine from nothing. No team, no pipeline, no brand in market. ICP, pricing, outbound, channel, hiring, forecasting. All from a blank page. Mode two: walk into an existing revenue org and install the systems that make it perform. Redesign the sales process, tighten unit economics, build the coaching frameworks. The throughline is the same: repeatable revenue architecture that survives after I build it.
+              </p>
+            </div>
+          </Reveal>
+
+          {/* Two Modes visual */}
+          <Reveal>
+            <div
+              className="two-modes-grid"
+              style={{ display: "grid", gridTemplateColumns: "6fr 4fr", gap: 0, borderTop: "1px solid rgba(27,44,74,0.15)", borderBottom: "1px solid rgba(27,44,74,0.15)" }}
+            >
+              {/* Zero to One */}
+              <div style={{ padding: "48px 48px 48px 0", borderRight: "1px solid rgba(27,44,74,0.15)" }}>
+                <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "2rem", marginBottom: 16 }}>
+                  Build from Zero
+                </div>
+                <p style={{ fontSize: "0.95rem", opacity: 0.8, lineHeight: 1.6, marginBottom: 40, maxWidth: 400 }}>
+                  No team. No pipeline. No playbook. Create the entire GTM stack.
+                </p>
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                  {[
+                    { name: "Defigo", label: "US market, $0 start" },
+                    { name: "Percy", label: "New category, bootstrapped" },
+                    { name: "Lane", label: "Enterprise motion, greenfield" },
+                  ].map((item) => (
+                    <div key={item.name} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "16px 0", borderTop: "1px solid rgba(27,44,74,0.15)" }}>
+                      <span style={{ fontSize: "1.1rem", fontWeight: 500 }}>{item.name}</span>
+                      <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "0.75rem", opacity: 0.7, textTransform: "uppercase", letterSpacing: "0.05em" }}>{item.label}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Scale and Optimize */}
+              <div style={{ padding: "48px 0 48px 48px" }}>
+                <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "2rem", marginBottom: 16 }}>
+                  Scale What Exists
+                </div>
+                <p style={{ fontSize: "0.95rem", opacity: 0.8, lineHeight: 1.6, marginBottom: 40, maxWidth: 400 }}>
+                  Walk into a live org. Install systems. Fix unit economics. Produce results.
+                </p>
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                  {[
+                    { name: "Clearco", label: "#1 pod, 57% CM" },
+                    { name: "Hubdoc", label: "$750K ARR, 12-person team" },
+                    { name: "Relay", label: "Sales infrastructure build" },
+                  ].map((item) => (
+                    <div key={item.name} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "16px 0", borderTop: "1px solid rgba(27,44,74,0.15)" }}>
+                      <span style={{ fontSize: "1.1rem", fontWeight: 500 }}>{item.name}</span>
+                      <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "0.75rem", opacity: 0.7, textTransform: "uppercase", letterSpacing: "0.05em" }}>{item.label}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-        </Reveal>
+          </Reveal>
+        </div>
       </section>
 
       {/* WHERE GTM IS GOING */}
-      <section className="section-pad" id="future" style={{ padding: "80px 48px" }}>
-        <Reveal>
-          <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.7rem", color: "#F5AA1A", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 16 }}>
-            The Future
-          </div>
-        </Reveal>
-        <Reveal>
-          <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(2.2rem, 4.5vw, 3.5rem)", letterSpacing: "-0.03em", lineHeight: 1.1, marginBottom: 20, maxWidth: 700, color: "#1E0A15" }}>
-            Where GTM is Going
-          </h2>
-        </Reveal>
-        <Reveal>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.2rem", color: "#1E0A15", lineHeight: 1.5, fontWeight: 400, marginBottom: 24, maxWidth: 640 }}>
-            Signals are splitting into two kinds.
-          </p>
-        </Reveal>
-        <Reveal>
-          <div style={{ maxWidth: 640 }}>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.1rem", color: "#4A2C3A", lineHeight: 1.7, fontWeight: 300, marginBottom: 20 }}>
-              Every sales team can now buy the same intent data, the same alerts, the same AI-written emails. When everyone gets the same signal the same morning, everyone sends the same email, and the signal stops working. Bought signals decay. The edge is moving to the signals only you can see. Your product usage, your community, your ecosystem, the pattern hiding in your own closed deals.
+      <section className="dark-section section-pad" id="future" style={{ padding: "160px 48px" }}>
+        <div className="paper-noise" />
+        <div style={{ maxWidth: 1200, margin: "0 auto", position: "relative", zIndex: 2 }}>
+          <Reveal>
+            <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 40 }}>
+              <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "0.85rem", color: "#E27C55" }}>02</span>
+              <div className="hairline" style={{ width: 40, background: "#E27C55" }} />
+              <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "0.75rem", color: "#E6A85C", letterSpacing: "0.18em", textTransform: "uppercase" }}>
+                The Future
+              </div>
+            </div>
+          </Reveal>
+
+          <Reveal>
+            <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(2.5rem, 5vw, 4.5rem)", letterSpacing: "-0.01em", lineHeight: 1.1, marginBottom: 32, maxWidth: 1000, color: "#F4E8CF" }}>
+              Where GTM is Going
+            </h2>
+          </Reveal>
+
+          <Reveal>
+            <p style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(1.6rem, 3vw, 2.4rem)", lineHeight: 1.25, marginBottom: 64, maxWidth: 800, color: "#F4E8CF" }}>
+              <em style={{ fontStyle: "italic", color: "#E27C55" }}>Signals are splitting into two kinds.</em>
             </p>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.1rem", color: "#4A2C3A", lineHeight: 1.7, fontWeight: 300 }}>
-              That changes what a GTM leader is for. The tooling is plumbing. The scarce skill is the aim. Which accounts to watch, what actually predicts a buyer, and what to say when a signal fires. Lean teams with good aim beat big teams with good tools, and it isn't close. I build that function.
-            </p>
-          </div>
-        </Reveal>
+          </Reveal>
+
+          <Reveal>
+            <div style={{ maxWidth: 640, marginLeft: "auto" }}>
+              <p style={{ fontSize: "1.15rem", color: "rgba(244,232,207,0.9)", lineHeight: 1.6, fontWeight: 400, marginBottom: 24 }}>
+                Every sales team can now buy the same intent data, the same alerts, the same AI-written emails. When everyone gets the same signal the same morning, everyone sends the same email, and the signal stops working. Bought signals decay. The edge is moving to the signals only you can see. Your product usage, your community, your ecosystem, the pattern hiding in your own closed deals.
+              </p>
+              <p style={{ fontSize: "1.15rem", color: "rgba(244,232,207,0.9)", lineHeight: 1.6, fontWeight: 400 }}>
+                That changes what a GTM leader is for. The tooling is plumbing. The scarce skill is the aim. Which accounts to watch, what actually predicts a buyer, and what to say when a signal fires. Lean teams with good aim beat big teams with good tools, and it isn't close. I build that function.
+              </p>
+            </div>
+          </Reveal>
+        </div>
       </section>
 
       {/* CASE STUDIES */}
-      <section className="section-pad" id="work" style={{ padding: "80px 48px", background: "#F3EBF0" }}>
-        <Reveal>
-          <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.7rem", color: "#F5AA1A", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 16 }}>
-            Selected Work
-          </div>
-        </Reveal>
-        <Reveal>
-          <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(2.5rem, 5vw, 4rem)", letterSpacing: "-0.03em", lineHeight: 1.1, maxWidth: 700, marginBottom: 24, color: "#1E0A15" }}>
-            Four companies. Four GTM builds. Real numbers.
-          </h2>
-        </Reveal>
-        <Reveal>
-          <p style={{ fontSize: "1.1rem", color: "#4A2C3A", maxWidth: 560, lineHeight: 1.7, fontWeight: 300, marginBottom: 48 }}>
-            Each case study represents a distinct GTM challenge. New market entry. Category creation.
-            Enterprise motion from scratch. Hyper-growth sales management. All with receipts.
-          </p>
-        </Reveal>
-
-        <div
-          className="cases-grid-wrap"
-          style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}
-        >
-          {CASES.map((cs) => (
-            <div key={cs.id} ref={(el) => { expandedRefs.current[cs.id] = el; }}>
-              <CaseCard
-                cs={cs}
-                isOpen={openCase === cs.id}
-                onToggle={() => toggleCase(cs.id)}
-              />
+      <section className="light-section section-pad" id="work" style={{ padding: "160px 48px" }}>
+        <div className="paper-noise" />
+        <div style={{ maxWidth: 1200, margin: "0 auto", position: "relative", zIndex: 2 }}>
+          <Reveal>
+            <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 40 }}>
+              <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "0.85rem", color: "#E27C55" }}>03</span>
+              <div className="hairline" style={{ width: 40, background: "#E27C55" }} />
+              <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "0.75rem", color: "#E6A85C", letterSpacing: "0.18em", textTransform: "uppercase" }}>
+                Selected Work
+              </div>
             </div>
-          ))}
+          </Reveal>
+
+          <Reveal>
+            <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(3rem, 6vw, 4.5rem)", letterSpacing: "-0.01em", lineHeight: 1.0, maxWidth: 800, marginBottom: 32 }}>
+              Four companies. Four GTM builds. <em style={{ fontStyle: "italic", color: "#E27C55" }}>Real numbers.</em>
+            </h2>
+          </Reveal>
+
+          <Reveal>
+            <p style={{ fontSize: "1.15rem", color: "#1b2c4a", maxWidth: 640, lineHeight: 1.6, fontWeight: 400, marginBottom: 80 }}>
+              Each case study represents a distinct GTM challenge. New market entry. Category creation.
+              Enterprise motion from scratch. Hyper-growth sales management. All with receipts.
+            </p>
+          </Reveal>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: 120 }}>
+            {CASES.map((cs, index) => {
+              return (
+                <Reveal key={cs.id}>
+                  <div style={{ 
+                    borderTop: "1px solid rgba(27,44,74,0.15)", 
+                    paddingTop: 48,
+                    display: "flex",
+                    flexDirection: "column",
+                  }}>
+                    {/* Header */}
+                    <div className="case-row-header" style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 40 }}>
+                      <div>
+                        <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 16 }}>
+                          <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "0.8rem", color: "#E27C55" }}>0{index + 1}</span>
+                          <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.1em", border: "1px solid rgba(27,44,74,0.15)", padding: "4px 10px", color: "#1b2c4a" }}>
+                            {cs.tag}
+                          </span>
+                          <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.1em", color: "#E27C55" }}>
+                            {cs.mode}
+                          </span>
+                        </div>
+                        <h3 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "3.5rem", lineHeight: 1, letterSpacing: "-0.01em" }}>
+                          {cs.company}
+                        </h3>
+                      </div>
+                      <div style={{ fontSize: "1.1rem", fontWeight: 400, opacity: 0.8 }}>
+                        {cs.role}
+                      </div>
+                    </div>
+
+                    {/* Description */}
+                    <p style={{ fontSize: "1.15rem", lineHeight: 1.6, maxWidth: 700, marginBottom: 48, opacity: 0.9 }}>
+                      {cs.desc}
+                    </p>
+
+                    {/* Metrics Table Row */}
+                    <div className="metrics-row" style={{ 
+                      display: "flex", 
+                      borderTop: "1px solid rgba(27,44,74,0.15)",
+                      borderBottom: "1px solid rgba(27,44,74,0.15)",
+                    }}>
+                      {cs.metrics.map((m, i) => (
+                        <div className="metrics-col" key={i} style={{ 
+                          flex: 1, 
+                          padding: "24px 24px 24px 0",
+                          borderRight: i !== cs.metrics.length - 1 ? "1px solid rgba(27,44,74,0.15)" : "none",
+                          paddingLeft: i !== 0 ? 24 : 0
+                        }}>
+                          <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "2.5rem", color: "#1b2c4a", lineHeight: 1, marginBottom: 8 }}>
+                            {m.value}
+                          </div>
+                          <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.1em", color: "#E27C55" }}>
+                            {m.label}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Expandable Content */}
+                    <div style={{ marginTop: 24, alignSelf: "flex-end" }}>
+                      <button
+                        onClick={() => toggleCase(cs.id)}
+                        className="link-hover"
+                        style={{
+                          background: "none",
+                          border: "none",
+                          fontFamily: "'IBM Plex Mono', monospace",
+                          fontSize: "0.75rem",
+                          color: "#1b2c4a",
+                          textTransform: "uppercase",
+                          letterSpacing: "0.1em",
+                          cursor: "pointer",
+                          padding: "8px 0"
+                        }}
+                      >
+                        {openCase === cs.id ? "Close case study ↑" : "Read case study ↓"}
+                      </button>
+                    </div>
+
+                    {openCase === cs.id && (
+                      <div ref={(el) => { expandedRefs.current[cs.id] = el; }} style={{ marginTop: 48 }}>
+                        <h3 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(1.8rem, 4vw, 2.8rem)", letterSpacing: "-0.01em", lineHeight: 1.1, marginBottom: 48, maxWidth: 800 }}>
+                          {cs.expandedTitle}
+                        </h3>
+                        <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: 48, maxWidth: 800 }}>
+                          <div>
+                            <SectionLabel>The Starting Point</SectionLabel>
+                            <p style={{ fontSize: "1.1rem", lineHeight: 1.6 }}>{cs.startingPoint}</p>
+                          </div>
+
+                          <div>
+                            <SectionLabel>What I Built</SectionLabel>
+                            <ul style={{ listStyle: "none" }}>
+                              {cs.whatIBuilt.map((item, i) => (
+                                <li key={i} style={{ fontSize: "1.1rem", lineHeight: 1.6, marginBottom: 12, paddingLeft: 24, position: "relative" }}>
+                                  <span style={{ position: "absolute", left: 0, top: 12, width: 6, height: 1, background: "#E27C55" }} />
+                                  {item}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+
+                          {(cs.images && cs.images.length > 0) || (cs.pdfs && cs.pdfs.length > 0) ? (
+                            <div>
+                              <SectionLabel>Proof Points</SectionLabel>
+                              {cs.images && cs.images.length > 0 && <ImageGallery images={cs.images} />}
+                              {cs.pdfs && cs.pdfs.length > 0 && (
+                                <div style={{ display: "flex", flexDirection: "column", gap: 16, marginTop: cs.images && cs.images.length > 0 ? 24 : 0 }}>
+                                  {cs.pdfs.map((pdf, i) => (
+                                    <PdfCard key={i} doc={pdf} />
+                                  ))}
+                                </div>
+                              )}
+                            </div>
+                          ) : null}
+
+                          {cs.realStoryOnNumbers && (
+                            <div>
+                              <SectionLabel>The Real Story on the Numbers</SectionLabel>
+                              <p style={{ fontSize: "1.1rem", lineHeight: 1.6 }}>{cs.realStoryOnNumbers}</p>
+                            </div>
+                          )}
+
+                          <div>
+                            <SectionLabel>Why This Matters</SectionLabel>
+                            <p style={{ fontSize: "1.1rem", lineHeight: 1.6 }}>{cs.whyItMatters}</p>
+                          </div>
+
+                          {cs.whatILearned && (
+                            <div>
+                              <SectionLabel>What I Learned</SectionLabel>
+                              <p style={{ fontSize: "1.1rem", lineHeight: 1.6 }}>{cs.whatILearned}</p>
+                            </div>
+                          )}
+
+                          {cs.honestAssessment && (
+                            <div>
+                              <SectionLabel>The Honest Assessment</SectionLabel>
+                              <p style={{ fontSize: "1.1rem", lineHeight: 1.6 }}>{cs.honestAssessment}</p>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </Reveal>
+              );
+            })}
+          </div>
         </div>
       </section>
 
       {/* QUOTES */}
-      <section
-        className="section-pad"
-        id="quotes"
-        style={{
-          padding: "120px 48px",
-          background: "#360928",
-          borderTop: "1px solid rgba(255,200,230,0.10)",
-          borderBottom: "1px solid rgba(255,200,230,0.10)",
-        }}
-      >
-        <Reveal>
-          <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.7rem", color: "#F5AA1A", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 16 }}>
-            What People Say
-          </div>
-        </Reveal>
-        <Reveal>
-          <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(2.5rem, 5vw, 4rem)", letterSpacing: "-0.03em", lineHeight: 1.1, maxWidth: 700, marginBottom: 48, color: "#F5AA1A" }}>
-            Direct from founders, execs, and teammates.
-          </h2>
-        </Reveal>
-
-        <div
-          className="quotes-grid-wrap"
-          style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 24 }}
-        >
-          {[
-            { text: "What incredible leadership. I'm so proud of what you are doing. You have SUCH a bright future here.", attr: "Michele Romanow", sub: "Co-Founder, Clearco (Dragon's Den)" },
-            { text: "Your constant dedication to coaching and improving your reps is truly the sign of a great leader.", attr: "Michele Romanow", sub: "Manager Award Presentation" },
-            { text: "One word for you Umair: visionary. You led the team with a clear vision and undeniable belief in our abilities.", attr: "Max", sub: "Senior Rep, Clearco" },
-            { text: "Umair, holy shit dude, not just #1 in CM but ALSO IN GP, all while having the lowest tenure and fixed costs.", attr: "Nicole Nelson", sub: "Sales Leadership, Clearco" },
-            { text: "Massive shoutout to Umair on being an absolute LEGEND. Now we are making Clearbanc history and #1.", attr: "Vasiliki Belegrinis", sub: "Team Member, Clearco" },
-            { text: "This is an important milestone in Defigo's success story in North America.", attr: "Hildur Smaradottir", sub: "Leadership, Defigo" },
-          ].map((q, i) => (
-            <Reveal key={i}>
-              <div
-                className="quote-card"
-                style={{
-                  background: "#501440",
-                  border: "1px solid rgba(255,200,230,0.22)",
-                  borderRadius: 20,
-                  padding: 36,
-                }}
-              >
-                <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "4rem", color: "#F5AA1A", lineHeight: 1, marginBottom: 8, opacity: 0.5 }}>
-                  &ldquo;
-                </div>
-                <p style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "1.1rem", fontStyle: "italic", color: "#F0EDE6", lineHeight: 1.6, marginBottom: 20 }}>
-                  {q.text}
-                </p>
-                <div style={{ fontSize: "0.8rem" }}>
-                  <strong style={{ color: "#F0EDE6", fontWeight: 600, display: "block", marginBottom: 2 }}>{q.attr}</strong>
-                  <span style={{ color: "#BEA7B7" }}>{q.sub}</span>
-                </div>
+      <section className="dark-section section-pad" id="quotes" style={{ padding: "160px 48px" }}>
+        <div className="paper-noise" />
+        <div style={{ maxWidth: 1200, margin: "0 auto", position: "relative", zIndex: 2 }}>
+          <Reveal>
+            <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 40 }}>
+              <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "0.85rem", color: "#E27C55" }}>04</span>
+              <div className="hairline" style={{ width: 40, background: "#E27C55" }} />
+              <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "0.75rem", color: "#E6A85C", letterSpacing: "0.18em", textTransform: "uppercase" }}>
+                What People Say
               </div>
-            </Reveal>
-          ))}
+            </div>
+          </Reveal>
+
+          <Reveal>
+            <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(3rem, 6vw, 4.5rem)", letterSpacing: "-0.01em", lineHeight: 1.0, maxWidth: 800, marginBottom: 80, color: "#F4E8CF" }}>
+              Direct from founders, execs, and teammates.
+            </h2>
+          </Reveal>
+
+          <div
+            className="quotes-grid-wrap"
+            style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 40, alignItems: "start" }}
+          >
+            {[
+              { text: "What incredible leadership. I'm so proud of what you are doing. You have SUCH a bright future here.", attr: "Michele Romanow", sub: "Co-Founder, Clearco (Dragon's Den)", mt: 0 },
+              { text: "Your constant dedication to coaching and improving your reps is truly the sign of a great leader.", attr: "Michele Romanow", sub: "Manager Award Presentation", mt: 60 },
+              { text: "One word for you Umair: visionary. You led the team with a clear vision and undeniable belief in our abilities.", attr: "Max", sub: "Senior Rep, Clearco", mt: 20 },
+              { text: "Umair, holy shit dude, not just #1 in CM but ALSO IN GP, all while having the lowest tenure and fixed costs.", attr: "Nicole Nelson", sub: "Sales Leadership, Clearco", mt: 0 },
+              { text: "Massive shoutout to Umair on being an absolute LEGEND. Now we are making Clearbanc history and #1.", attr: "Vasiliki Belegrinis", sub: "Team Member, Clearco", mt: 40 },
+              { text: "This is an important milestone in Defigo's success story in North America.", attr: "Hildur Smaradottir", sub: "Leadership, Defigo", mt: 0 },
+            ].map((q, i) => (
+              <Reveal key={i}>
+                <div className="quote-stagger" style={{ "--stagger-mt": `${q.mt}px` } as React.CSSProperties}>
+                  <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "6rem", color: "#E27C55", lineHeight: 0.6, marginBottom: 16 }}>
+                    &ldquo;
+                  </div>
+                  <p style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "1.8rem", fontStyle: "italic", color: "#F4E8CF", lineHeight: 1.2, marginBottom: 24, letterSpacing: "-0.01em" }}>
+                    {q.text}
+                  </p>
+                  <div>
+                    <strong style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "0.75rem", color: "#E6A85C", textTransform: "uppercase", letterSpacing: "0.1em", display: "block", marginBottom: 4 }}>{q.attr}</strong>
+                    <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.85rem", color: "rgba(244,232,207,0.6)" }}>{q.sub}</span>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* APPROACH */}
-      <section className="section-pad" id="approach" style={{ padding: "96px 48px" }}>
-        <Reveal>
-          <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.7rem", color: "#F5AA1A", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 16 }}>
-            How I Operate
-          </div>
-        </Reveal>
-        <Reveal>
-          <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(2.5rem, 5vw, 4rem)", letterSpacing: "-0.03em", lineHeight: 1.1, maxWidth: 700, marginBottom: 24, color: "#1E0A15" }}>
-            Systems over heroics. Process over luck.
-          </h2>
-        </Reveal>
-        <Reveal>
-          <p style={{ fontSize: "1.1rem", color: "#4A2C3A", maxWidth: 560, lineHeight: 1.7, fontWeight: 300, marginBottom: 48 }}>
-            I architect the entire revenue machine. From ICP definition
-            through closed-won, every step is designed to be repeatable and measurable.
-          </p>
-        </Reveal>
-
-        <div className="comp-grid-wrap" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
-          {[
-            { icon: "■", title: "0-to-1 GTM Build", desc: "ICP discovery, positioning, messaging, sales process, pipeline architecture. I've done this four times from a blank page." },
-            { icon: "▲", title: "Outbound Engine Design", desc: "Targeting, sequencing, cadences, scripts, enrichment, SDR hiring and enablement. The full stack for predictable pipeline generation." },
-            { icon: "●", title: "Channel & Partner GTM", desc: "Distribution agreements, integrator ecosystems, partner enablement, co-selling motions. Built from scratch at Defigo with Wesco and Everon." },
-            { icon: "◆", title: "Enterprise Deal Execution", desc: "Multi-stakeholder choreography, procurement navigation, pilot frameworks, ROI narratives. 6-12 month cycles with Fortune 500 accounts." },
-            { icon: "▬", title: "Sales Team Build & Coaching", desc: "Hiring profiles, onboarding, enablement, performance systems, coaching cadences. Turned average reps into top performers at Clearco." },
-            { icon: "★", title: "Revenue Operations", desc: "CRM architecture, pipeline standards, forecasting, unit economics, board reporting. The operating system behind every revenue engine I've built." },
-          ].map((c, i) => (
-            <Reveal key={i}>
-              <div
-                className="comp-card"
-                style={{
-                  background: "#FFFFFF",
-                  border: "1px solid rgba(66,11,49,0.10)",
-                  borderRadius: 12,
-                  padding: 32,
-                  cursor: "default",
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLDivElement).style.borderColor = "#F5AA1A";
-                  (e.currentTarget as HTMLDivElement).style.background = "#FFFBF2";
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(66,11,49,0.10)";
-                  (e.currentTarget as HTMLDivElement).style.background = "#FFFFFF";
-                }}
-              >
-                <div style={{ fontSize: "1.5rem", marginBottom: 16, color: "#F5AA1A" }}>{c.icon}</div>
-                <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "1.15rem", marginBottom: 8, color: "#1E0A15" }}>{c.title}</div>
-                <div style={{ fontSize: "0.85rem", color: "#7A5568", lineHeight: 1.6 }}>{c.desc}</div>
+      <section className="light-section section-pad" id="approach" style={{ padding: "160px 48px" }}>
+        <div className="paper-noise" />
+        <div style={{ maxWidth: 1200, margin: "0 auto", position: "relative", zIndex: 2 }}>
+          <Reveal>
+            <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 40 }}>
+              <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "0.85rem", color: "#E27C55" }}>05</span>
+              <div className="hairline" style={{ width: 40, background: "#E27C55" }} />
+              <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "0.75rem", color: "#E6A85C", letterSpacing: "0.18em", textTransform: "uppercase" }}>
+                How I Operate
               </div>
-            </Reveal>
-          ))}
+            </div>
+          </Reveal>
+
+          <Reveal>
+            <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(3rem, 6vw, 4.5rem)", letterSpacing: "-0.01em", lineHeight: 1.0, maxWidth: 800, marginBottom: 32 }}>
+              Systems over heroics. <em style={{ fontStyle: "italic", color: "#E27C55" }}>Process over luck.</em>
+            </h2>
+          </Reveal>
+
+          <Reveal>
+            <p style={{ fontSize: "1.15rem", color: "#1b2c4a", maxWidth: 640, lineHeight: 1.6, fontWeight: 400, marginBottom: 80 }}>
+              I architect the entire revenue machine. From ICP definition
+              through closed-won, every step is designed to be repeatable and measurable.
+            </p>
+          </Reveal>
+
+          <div style={{ borderTop: "1px solid rgba(27,44,74,0.15)" }}>
+            {[
+              { num: "01", title: "0-to-1 GTM Build", desc: "ICP discovery, positioning, messaging, sales process, pipeline architecture. I've done this four times from a blank page." },
+              { num: "02", title: "Outbound Engine Design", desc: "Targeting, sequencing, cadences, scripts, enrichment, SDR hiring and enablement. The full stack for predictable pipeline generation." },
+              { num: "03", title: "Channel & Partner GTM", desc: "Distribution agreements, integrator ecosystems, partner enablement, co-selling motions. Built from scratch at Defigo with Wesco and Everon." },
+              { num: "04", title: "Enterprise Deal Execution", desc: "Multi-stakeholder choreography, procurement navigation, pilot frameworks, ROI narratives. 6-12 month cycles with Fortune 500 accounts." },
+              { num: "05", title: "Sales Team Build & Coaching", desc: "Hiring profiles, onboarding, enablement, performance systems, coaching cadences. Turned average reps into top performers at Clearco." },
+              { num: "06", title: "Revenue Operations", desc: "CRM architecture, pipeline standards, forecasting, unit economics, board reporting. The operating system behind every revenue engine I've built." },
+            ].map((c, i) => (
+              <Reveal key={i}>
+                <div className="approach-row" style={{ 
+                  display: "grid", 
+                  gridTemplateColumns: "100px 300px 1fr", 
+                  gap: 40,
+                  padding: "40px 0",
+                  borderBottom: "1px solid rgba(27,44,74,0.15)",
+                  alignItems: "start"
+                }}>
+                  <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "1rem", color: "#E27C55" }}>
+                    {c.num}
+                  </div>
+                  <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "2rem", color: "#1b2c4a", lineHeight: 1.1 }}>
+                    {c.title}
+                  </div>
+                  <div style={{ fontSize: "1.05rem", color: "rgba(27,44,74,0.8)", lineHeight: 1.6, maxWidth: 500 }}>
+                    {c.desc}
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
-      <div className="divider-pad" style={{ height: 1, background: "rgba(66,11,49,0.08)", margin: "0 48px" }} />
-
       {/* TIMELINE */}
-      <section className="section-pad" id="timeline" style={{ padding: "96px 48px", background: "#F3EBF0" }}>
-        <Reveal>
-          <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.7rem", color: "#F5AA1A", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 16 }}>
-            Career Arc
-          </div>
-        </Reveal>
-        <Reveal>
-          <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(2.5rem, 5vw, 4rem)", letterSpacing: "-0.03em", lineHeight: 1.1, maxWidth: 700, marginBottom: 48, color: "#1E0A15" }}>
-            A pattern of building, scaling, and outcomes.
-          </h2>
-        </Reveal>
-
-        <div style={{ position: "relative" }}>
-          <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 2, background: "rgba(66,11,49,0.12)" }} />
-          {[
-            { date: "Nov 2023 - Mar 2026", company: "Defigo", role: "Vice President of Sales", desc: "Built the US business from zero. Full P&L ownership. National distribution, 16 buildings, 15+ dealer partners." },
-            { date: "Jun 2022 - Jul 2023", company: "Percy", role: "Co-Founder & Head of Sales", desc: "Co-founded and built GTM for a category-creating QSR automation startup. $0 to $331K live ARR." },
-            { date: "Jun 2021 - Jun 2022", company: "Lane Technologies", role: "Director of Enterprise Sales", desc: "Created first enterprise motion. Advanced Adidas + AmEx to proposal. Company acquired by VTS.", badge: { label: "Acquired by VTS", style: { background: "rgba(77,163,255,0.1)", color: "#4DA3FF", border: "1px solid rgba(77,163,255,0.2)" } } },
-            { date: "Nov 2020 - May 2021", company: "Relay Financial", role: "Head of Sales", desc: "Built foundational sales infrastructure, playbook, onboarding, enablement, and outbound engine during high-growth phase." },
-            { date: "Aug 2019 - Oct 2020", company: "Clearco", role: "Sales Manager", desc: "#1 pod company-wide. $5.7M single month. 57.3% contribution margin. Manager Award from Michele Romanow." },
-            { date: "Jul 2017 - Aug 2019", company: "Hubdoc", role: "AE → Sales Manager", desc: "Top-performing AE. $750K+ ARR generated. Built and managed 12-person team. Acquired by Xero.", badge: { label: "Acquired by Xero", style: { background: "rgba(77,163,255,0.1)", color: "#4DA3FF", border: "1px solid rgba(77,163,255,0.2)" } } },
-          ].map((item, i) => (
-            <Reveal key={i}>
-              <div className="timeline-content" style={{ paddingLeft: 48, paddingBottom: 32, position: "relative" }}>
-                <div
-                  style={{
-                    position: "absolute",
-                    left: -5,
-                    top: 20,
-                    width: 12,
-                    height: 12,
-                    borderRadius: "50%",
-                    background: "#420b31",
-                    border: "2px solid #F3EBF0",
-                  }}
-                />
-                <div
-                  style={{
-                    background: "#FFFFFF",
-                    border: "1px solid rgba(66,11,49,0.10)",
-                    borderRadius: 16,
-                    padding: "20px 24px 22px",
-                  }}
-                >
-                  <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.7rem", color: "#7A5568", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 8 }}>
-                    {item.date}
-                  </div>
-                  <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "1.4rem", marginBottom: 4, color: "#1E0A15" }}>{item.company}</div>
-                  <div style={{ fontSize: "0.85rem", color: "#4A2C3A", marginBottom: 8 }}>{item.role}</div>
-                  <div style={{ fontSize: "0.85rem", color: "#4A2C3A", lineHeight: 1.6, maxWidth: 500 }}>{item.desc}</div>
-                  {item.badge && (
-                    <span
-                      style={{
-                        display: "inline-block",
-                        fontFamily: "'JetBrains Mono', monospace",
-                        fontSize: "0.6rem",
-                        letterSpacing: "0.1em",
-                        textTransform: "uppercase",
-                        padding: "4px 10px",
-                        borderRadius: 100,
-                        marginTop: 10,
-                        ...item.badge.style,
-                      }}
-                    >
-                      {item.badge.label}
-                    </span>
-                  )}
-                </div>
+      <section className="light-section section-pad" id="timeline" style={{ padding: "160px 48px" }}>
+        <div className="paper-noise" />
+        <div style={{ maxWidth: 1200, margin: "0 auto", position: "relative", zIndex: 2 }}>
+          <Reveal>
+            <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 40 }}>
+              <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "0.85rem", color: "#E27C55" }}>06</span>
+              <div className="hairline" style={{ width: 40, background: "#E27C55" }} />
+              <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "0.75rem", color: "#E6A85C", letterSpacing: "0.18em", textTransform: "uppercase" }}>
+                Career Arc
               </div>
-            </Reveal>
-          ))}
+            </div>
+          </Reveal>
+
+          <Reveal>
+            <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(3rem, 6vw, 4.5rem)", letterSpacing: "-0.01em", lineHeight: 1.0, maxWidth: 800, marginBottom: 80 }}>
+              A pattern of building, scaling, and <em style={{ fontStyle: "italic", color: "#E27C55" }}>outcomes.</em>
+            </h2>
+          </Reveal>
+
+          <div style={{ position: "relative", maxWidth: 800 }}>
+            <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 1, background: "rgba(27,44,74,0.15)" }} />
+            {[
+              { date: "Nov 2023 - Mar 2026", company: "Defigo", role: "Vice President of Sales", desc: "Built the US business from zero. Full P&L ownership. National distribution, 16 buildings, 15+ dealer partners." },
+              { date: "Jun 2022 - Jul 2023", company: "Percy", role: "Co-Founder & Head of Sales", desc: "Co-founded and built GTM for a category-creating QSR automation startup. $0 to $331K live ARR." },
+              { date: "Jun 2021 - Jun 2022", company: "Lane Technologies", role: "Director of Enterprise Sales", desc: "Created first enterprise motion. Advanced Adidas + AmEx to proposal. Company acquired by VTS.", badge: { label: "Acquired by VTS", style: { border: "1px solid #E6A85C", color: "#E6A85C" } } },
+              { date: "Nov 2020 - May 2021", company: "Relay Financial", role: "Head of Sales", desc: "Built foundational sales infrastructure, playbook, onboarding, enablement, and outbound engine during high-growth phase." },
+              { date: "Aug 2019 - Oct 2020", company: "Clearco", role: "Sales Manager", desc: "#1 pod company-wide. $5.7M single month. 57.3% contribution margin. Manager Award from Michele Romanow." },
+              { date: "Jul 2017 - Aug 2019", company: "Hubdoc", role: "AE → Sales Manager", desc: "Top-performing AE. $750K+ ARR generated. Built and managed 12-person team. Acquired by Xero.", badge: { label: "Acquired by Xero", style: { border: "1px solid #E6A85C", color: "#E6A85C" } } },
+            ].map((item, i) => (
+              <Reveal key={i}>
+                <div className="timeline-content" style={{ paddingLeft: 48, paddingBottom: 64, position: "relative" }}>
+                  <div
+                    style={{
+                      position: "absolute",
+                      left: -3,
+                      top: 6,
+                      width: 7,
+                      height: 7,
+                      background: "#E27C55",
+                    }}
+                  />
+                  <div>
+                    <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "0.75rem", color: "#E27C55", letterSpacing: "0.05em", textTransform: "uppercase", marginBottom: 12 }}>
+                      {item.date}
+                    </div>
+                    <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "2rem", marginBottom: 8, color: "#1b2c4a", lineHeight: 1 }}>{item.company}</div>
+                    <div style={{ fontSize: "1rem", color: "#1b2c4a", fontWeight: 500, marginBottom: 12 }}>{item.role}</div>
+                    <div style={{ fontSize: "1.05rem", color: "rgba(27,44,74,0.8)", lineHeight: 1.6, maxWidth: 500 }}>{item.desc}</div>
+                    {item.badge && (
+                      <span
+                        style={{
+                          display: "inline-block",
+                          fontFamily: "'IBM Plex Mono', monospace",
+                          fontSize: "0.65rem",
+                          letterSpacing: "0.1em",
+                          textTransform: "uppercase",
+                          padding: "6px 12px",
+                          marginTop: 16,
+                          ...item.badge.style,
+                        }}
+                      >
+                        {item.badge.label}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* CTA */}
       <section
-        className="section-pad cta-pad"
+        className="dark-section section-pad cta-pad"
         style={{
-          textAlign: "center",
           padding: "160px 48px",
-          position: "relative",
-          background: "#420b31",
-          color: "#F0EDE6",
         }}
       >
-        <div
-          style={{
-            position: "absolute",
-            bottom: -200,
-            left: "50%",
-            transform: "translateX(-50%)",
-            width: 800,
-            height: 800,
-            background: "radial-gradient(circle, rgba(245,170,26,0.06) 0%, transparent 60%)",
-            pointerEvents: "none",
-          }}
-        />
-        <Reveal>
-          <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "0.7rem", color: "#F5AA1A", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: 16 }}>
-            Next Chapter
-          </div>
-        </Reveal>
-        <Reveal>
-          <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(2.5rem, 5vw, 4rem)", letterSpacing: "-0.03em", marginBottom: 20, color: "#FFFFFF" }}>
-            The next build.
-          </h2>
-        </Reveal>
-        <Reveal>
-          <p style={{ fontSize: "1.1rem", color: "#BEA7B7", maxWidth: 480, margin: "0 auto 40px", lineHeight: 1.7 }}>
-            I'm looking for my next operating role. VP Sales at a venture-backed B2B company.
-            If you need someone who can take you from zero to ten, or ten to a hundred,
-            let's talk.
-          </p>
-        </Reveal>
-        <Reveal>
-          <div className="cta-buttons-wrap" style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <a
-              href="mailto:umairadilahmed@gmail.com"
-              style={{
-                background: "#F5AA1A",
-                color: "#0A0A0C",
-                padding: "16px 36px",
-                borderRadius: 100,
-                fontWeight: 600,
-                fontSize: "0.9rem",
-                textDecoration: "none",
-                letterSpacing: "0.02em",
-                transition: "transform 0.2s, box-shadow 0.2s",
-                boxShadow: "0 4px 28px rgba(245,170,26,0.45)",
-                display: "inline-block",
-              }}
-            >
-              umairadilahmed@gmail.com
-            </a>
-            <a
-              href="https://www.linkedin.com/in/umairadilahmed/"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                background: "#F5AA1A",
-                color: "#0A0A0C",
-                padding: "16px 36px",
-                borderRadius: 100,
-                fontWeight: 600,
-                fontSize: "0.9rem",
-                textDecoration: "none",
-                letterSpacing: "0.02em",
-                transition: "transform 0.2s, box-shadow 0.2s",
-                boxShadow: "0 4px 28px rgba(245,170,26,0.45)",
-                display: "inline-block",
-              }}
-            >
-              LinkedIn
-            </a>
-            <a
-              className="cta-btn"
-              href={assetUrl("resume/Umair_Ahmed_Resume_2026.pdf")}
-              download
-              style={{
-                background: "transparent",
-                color: "#F5AA1A",
-                padding: "15px 36px",
-                borderRadius: 100,
-                fontWeight: 600,
-                fontSize: "0.9rem",
-                textDecoration: "none",
-                letterSpacing: "0.04em",
-                border: "1px solid rgba(245,170,26,0.50)",
-                display: "inline-block",
-                transition: "border-color 0.2s",
-              }}
-            >
-              Download Resume
-            </a>
-          </div>
-        </Reveal>
+        <div className="paper-noise" />
+        <div style={{ maxWidth: 800, margin: "0 auto", textAlign: "center", position: "relative", zIndex: 2 }}>
+          <Reveal>
+            <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "0.75rem", color: "#E6A85C", letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: 24 }}>
+              Next Chapter
+            </div>
+          </Reveal>
+          <Reveal>
+            <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(4rem, 8vw, 6rem)", letterSpacing: "-0.02em", marginBottom: 32, color: "#F4E8CF", lineHeight: 1 }}>
+              The next <em style={{ fontStyle: "italic", color: "#E27C55" }}>build.</em>
+            </h2>
+          </Reveal>
+          <Reveal>
+            <p style={{ fontSize: "1.15rem", color: "rgba(244,232,207,0.8)", maxWidth: 500, margin: "0 auto 56px", lineHeight: 1.6 }}>
+              I'm looking for my next operating role. VP Sales at a venture-backed B2B company.
+              If you need someone who can take you from zero to ten, or ten to a hundred,
+              let's talk.
+            </p>
+          </Reveal>
+          <Reveal>
+            <div className="cta-buttons-wrap" style={{ display: "flex", gap: 24, justifyContent: "center", flexWrap: "wrap" }}>
+              <a
+                href="mailto:umairadilahmed@gmail.com"
+                style={{
+                  background: "#E27C55",
+                  color: "#F4E8CF",
+                  padding: "18px 40px",
+                  borderRadius: 0,
+                  fontWeight: 500,
+                  fontSize: "0.95rem",
+                  textDecoration: "none",
+                  display: "inline-block",
+                  transition: "background 0.2s",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.background = "#d16842")}
+                onMouseLeave={(e) => (e.currentTarget.style.background = "#E27C55")}
+              >
+                umairadilahmed@gmail.com
+              </a>
+              <a
+                href="https://www.linkedin.com/in/umairadilahmed/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-hover"
+                style={{
+                  color: "#F4E8CF",
+                  padding: "18px 0",
+                  fontWeight: 500,
+                  fontSize: "0.95rem",
+                  textDecoration: "none",
+                  display: "inline-block",
+                }}
+              >
+                LinkedIn
+              </a>
+              <a
+                href={assetUrl("resume/Umair_Ahmed_Resume_2026.pdf")}
+                download
+                className="link-hover"
+                style={{
+                  color: "#F4E8CF",
+                  padding: "18px 0",
+                  fontWeight: 500,
+                  fontSize: "0.95rem",
+                  textDecoration: "none",
+                  display: "inline-block",
+                }}
+              >
+                Download Resume
+              </a>
+            </div>
+          </Reveal>
+        </div>
       </section>
 
       {/* FOOTER */}
       <footer
-        className="footer-pad"
+        className="dark-section footer-pad"
         style={{
-          padding: 48,
-          background: "#360928",
-          borderTop: "1px solid rgba(255,200,230,0.10)",
+          padding: "48px 48px",
+          borderTop: "1px solid rgba(244,232,207,0.14)",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          flexWrap: "wrap",
-          gap: 16,
         }}
       >
-        <div style={{ fontSize: "0.8rem", color: "#F5AA1A" }}>
+        <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "0.75rem", color: "rgba(244,232,207,0.5)" }}>
           Umair Ahmed · Toronto, ON · Open to relocation
         </div>
       </footer>

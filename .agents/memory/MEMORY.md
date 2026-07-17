@@ -1,0 +1,1 @@
+- [Portfolio redesign rules](portfolio-redesign-rules.md) — all copy must stay verbatim during restyles; banned: purple hues, glassmorphism, animated counters, deep shadows, rounded corners.

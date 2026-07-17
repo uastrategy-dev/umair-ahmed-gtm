@@ -1,0 +1,65 @@
+Full visual redesign of my portfolio site. Keep ALL copy, content, section order, and anchors exactly as they are (a copy update was just applied — do not reword anything). This is a restyle only.
+
+THE GOAL
+An editorial, print-inspired, art-directed personal site for a senior GTM operator. Think: beautifully typeset magazine dossier meets cinematic dusk landscape. It must NOT look like an AI-generated portfolio or a SaaS template.
+
+DESIGN TOKENS
+Colors (keep my existing brand palette, use it with more confidence):
+- Dusk navy #1b2c4a (primary dark surface + primary text on light)
+- Deep navy variant #223a5e (raised surfaces on dark)
+- Cream #F4E8CF (light surface + text on dark)
+- Coral #E27C55 (THE accent. Used sparingly: key metric numbers, italic accent words, links, one CTA)
+- Gold #E6A85C (secondary accent: eyebrow labels, small details only)
+- Hairlines: rgba(27,44,74,0.15) on light, rgba(244,232,207,0.14) on dark
+
+Typography (load from Google Fonts):
+- Display: "Instrument Serif" (400, normal + italic). ALL headlines. Big. Tracking -0.01em. Sentence case, never all-caps headlines.
+- Body/labels: "DM Sans" (400/500/600). Body 17-18px, line-height 1.6.
+- Micro-labels/eyebrows: DM Sans 11-12px, uppercase, letter-spacing 0.18em, gold or muted — OR a monospace (IBM Plex Mono) for section numbers and data labels to add technical texture. Pick monospace for eyebrows and stat labels.
+
+THE SIGNATURE TREATMENT (this is what makes it original)
+Halftone/dither engraving texture, like vintage letterpress prints:
+1. My portrait: convert to a DUOTONE HALFTONE treatment (dusk navy ink dots on cream, like an engraved print, visible dot pattern). CSS filter + SVG turbulence or a pre-processed image. It should look like a printed engraving, not a photo.
+2. Section dividers: fine hairline rules, like magazine column rules.
+3. A subtle paper-grain noise texture (very low opacity) on the cream background sections so flat areas feel printed, not rendered.
+4. Numbered sections: "01", "02", "03" in monospace, small, coral, next to each section heading.
+
+HERO (the section I most want fixed — currently everything is crammed left with dead space right)
+Full-bleed, full-viewport-height editorial composition:
+- Background: a dusk gradient field (deep navy at top through subtle warm coral horizon glow at the bottom edge), very dark, cinematic, like a sunset landscape abstracted. NO stock photo, NO generated landscape image — a pure crafted gradient with the paper-grain noise over it.
+- Headline "I build revenue engines from zero." spans 10-12 columns, Instrument Serif, huge (clamp to ~96-120px on desktop), cream, with "from zero." in italic coral.
+- Subhead below in DM Sans, cream at 80% opacity, max-width 55ch.
+- My halftone portrait: anchored to the right side, large, partially bleeding off the right edge, rendered in the cream-on-navy halftone treatment so it reads as art, not a headshot. On mobile it stacks below the headline, smaller.
+- The skills marquee: restyle as a single thin ticker strip along the bottom hero edge, monospace, small, cream 50% opacity, separated by coral dots.
+- Nav: minimal text links, cream, no pill backgrounds, no glassmorphism. Wordmark "Umair Ahmed" in Instrument Serif italic.
+
+SECTION RHYTHM (vary the layouts — uniform card grids are the #1 template tell)
+- Alternate cream sections and dusk navy sections. Not every section the same background.
+- "Two modes" section: two asymmetric columns (60/40), not two identical cards. Company names as a typeset list with hairline rules between rows, not chips.
+- "Where GTM is Going": full dusk-navy section, the thesis set LARGE in Instrument Serif like a magazine pull-quote spread, key phrases in italic coral. This section should feel like an op-ed page, not a feature block.
+- Case studies: editorial entries, not cards. Each one: monospace number + company name in big serif + role, then the metrics as a typeset table row (large serif numerals, monospace labels beneath, hairline rules between columns) — like a financial report, not stat chips. Alternate layout left/right per case study.
+- Testimonials: typeset as pull quotes — large serif quotation mark, quote in Instrument Serif italic, attribution in monospace. Vary sizes; consider a masonry/staggered arrangement rather than a uniform grid.
+- "How I Operate": kill the geometric icons (■▲●◆) — replace with monospace numbers 01-06. Single column or 2-col asymmetric list with hairline rules, generous whitespace.
+- Timeline: a true vertical rule with typeset entries, monospace dates, serif company names, acquisition badges as small gold-outlined text tags.
+- Closing CTA: dusk navy full-bleed, "The next build." huge in serif with "build" italic coral, then the contact line. One coral button max.
+
+BANNED (the AI-template tells — remove every instance)
+- No glassmorphism, no frosted cards, no backdrop-blur panels
+- No purple/indigo/violet anywhere, no neon gradients, no gradient text
+- No floating blob shapes, no glow effects, no drop shadows deeper than 2px
+- No emoji anywhere
+- No uniform 3-column feature card grids
+- No hover-lift-with-shadow card animations
+- No rounded-2xl on everything: corners are sharp (0px) or barely rounded (2-4px max)
+- No Inter/Poppins/system fonts
+- No scroll-jacking, no parallax, no animated counters
+- Motion: at most a subtle fade-up on section entry (100ms stagger, once), and coral underline animations on link hover. Nothing else.
+
+QUALITY BAR
+- Generous whitespace: sections breathe, 120-160px vertical padding on desktop
+- A consistent 12-column grid, content max-width ~1200px, but let hero type and rules break the grid deliberately
+- Text contrast must pass WCAG AA on both cream and navy surfaces
+- Fully responsive; the hero must look intentional on mobile (stacked, not shrunken)
+- Print-quality typographic details: real quotation marks, proper spacing, no orphan words in headlines
+
+Do not change any words, links, file structure, or the resume download. Restyle only.
