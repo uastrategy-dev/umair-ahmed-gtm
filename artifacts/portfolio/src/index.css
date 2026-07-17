@@ -9,8 +9,9 @@ html {
 }
 
 body {
-  background: #0A0A0C;
-  color: #F0EDE6;
+  background: #2A0E28;
+  color: #F5EADF;
+  font-family: 'Hanken Grotesk', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }

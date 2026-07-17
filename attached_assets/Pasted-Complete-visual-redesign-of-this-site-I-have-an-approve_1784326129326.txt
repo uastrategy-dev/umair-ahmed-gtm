@@ -1,0 +1,186 @@
+Complete visual redesign of this site. I have an approved, finished design. Your job is to REPRODUCE IT EXACTLY, not to interpret or improve it. The full CSS design system is provided below. Do not invent colors, fonts, spacing, or components that are not in it.
+
+SCOPE
+- Rebuild the homepage to match the reference structure and CSS below, adapting to whatever framework this project uses.
+- Apply the color/font tokens globally so subpages (writing, resume, case studies) inherit palette and typography, but do NOT restructure subpages.
+- Keep all existing routes, links, the resume download, and analytics working.
+- Copy is FINAL and included below. Use it verbatim. Do not reword anything.
+
+FONTS (load in <head>)
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Handjet:wght@500;700&family=Hanken+Grotesk:wght@400;600&family=Martian+Mono:wght@400;700&display=swap" rel="stylesheet">
+Roles: Young Serif = all headlines. Handjet = pixel accent word inside headlines, eyebrows, ticker, tags. Hanken Grotesk = body. Martian Mono = nav links, data labels, stats, dates, attributions.
+Remove every other font from the project (including Instrument Serif, DM Sans, Inter, and any previous serif).
+
+DESIGN SYSTEM CSS (use as-is; adapt selectors to your components but keep every value)
+:root{
+  --dusk-950:#1F0A1E; --dusk-900:#2A0E28; --dusk-800:#361232; --plum:#4A1943; --magenta:#7E2F5E;
+  --rose:#F2E3E6; --ink:#2A0E28;
+  --milk:#F5EADF; --milk-60:rgba(245,234,223,.62); --milk-40:rgba(245,234,223,.4);
+  --amber:#E29A46; --coral:#CE6B45;
+  --hairD:rgba(245,234,223,.14); --hairL:rgba(42,14,40,.16);
+  --serif:'Young Serif',Georgia,serif; --sans:'Hanken Grotesk',system-ui,sans-serif;
+  --mono:'Martian Mono',ui-monospace,monospace; --pixel:'Handjet',monospace;
+}
+body{margin:0;font-family:var(--sans);font-size:17px;line-height:1.62;color:var(--milk);background:var(--dusk-900)}
+.wrap{max-width:1240px;margin:0 auto;padding:0 44px}
+.eyebrow{font-family:var(--pixel);font-weight:700;font-size:17px;letter-spacing:.32em;text-transform:uppercase;color:var(--amber)}
+h2.d{font-family:var(--serif);font-weight:400;font-size:clamp(38px,4.8vw,62px);line-height:1.05;margin:14px 0 26px}
+h2.d .px{font-family:var(--pixel);font-weight:700;color:var(--amber);font-size:1.06em}
+.dither{position:relative}
+.dither::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.14;
+  background-image:radial-gradient(rgba(245,234,223,.5) .7px,transparent .8px),radial-gradient(rgba(245,234,223,.28) .7px,transparent .8px);
+  background-size:6px 6px,11px 11px;background-position:0 0,3px 5px}
+/* apply class "dither" to every dark section */
+.hero{position:relative;min-height:97vh;display:flex;flex-direction:column;overflow:hidden;background:
+  radial-gradient(150% 95% at 88% 118%, rgba(226,154,70,.34) 0%, rgba(206,107,69,.16) 30%, rgba(206,107,69,0) 55%),
+  linear-gradient(160deg,var(--dusk-950) 4%,var(--dusk-900) 38%,var(--plum) 72%,var(--magenta) 105%)}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:52px;height:180px;pointer-events:none;opacity:.20;
+  background:repeating-linear-gradient(90deg,rgba(245,234,223,.55) 0 1px,transparent 1px 7px);
+  -webkit-mask-image:linear-gradient(to top,black,transparent);mask-image:linear-gradient(to top,black,transparent)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:30px 46px;position:relative;z-index:3}
+.wordmark{font-family:var(--serif);font-size:22px;color:var(--milk);text-decoration:none}
+.nav a{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--milk-60);text-decoration:none}
+.nav a:hover{color:var(--amber)}
+.nav a.cta{color:var(--dusk-900);background:var(--amber);padding:11px 16px;border-radius:2px;font-weight:700}
+.hero-grid{flex:1;position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,58fr) minmax(0,42fr);gap:40px;align-items:center;padding:10px 46px 60px}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(54px,6.6vw,98px);line-height:1.01;margin:0 0 32px}
+.hero h1 .px{font-family:var(--pixel);font-weight:700;color:var(--amber);font-size:1.08em}
+.hero-copy .eyebrow{font-size:19px;display:block;margin-bottom:26px}
+.hero-copy p{max-width:50ch;font-size:18px;color:var(--milk-60);margin:0}
+.artifacts{position:relative;height:480px}
+.card{position:absolute;background:#20091F;border:1px solid rgba(226,154,70,.5);border-radius:3px;box-shadow:10px 10px 0 rgba(31,10,30,.55);padding:22px 24px}
+.card .t{font-family:var(--pixel);font-weight:700;font-size:15px;letter-spacing:.24em;text-transform:uppercase;color:var(--amber);margin-bottom:16px}
+.card .row{display:flex;justify-content:space-between;gap:26px;padding:8px 0;border-top:1px solid var(--hairD);font-family:var(--mono)}
+.card .row .k{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--milk-40);padding-top:3px}
+.card .row .v{font-size:14px;font-weight:700;color:var(--milk);font-variant-numeric:tabular-nums}
+.card .big{font-family:var(--serif);font-size:46px;line-height:1;color:var(--milk)}
+.card .big span{color:var(--amber)}
+.card.a{top:6%;right:4%;width:min(340px,88%);transform:rotate(2.2deg)}
+.card.b{bottom:8%;left:0;width:min(300px,80%);transform:rotate(-2.4deg)}
+.ticker{position:relative;z-index:2;border-top:1px solid var(--hairD);overflow:hidden;padding:13px 0}
+.tk{display:inline-block;white-space:nowrap;animation:tick 36s linear infinite}
+.tk span{font-family:var(--pixel);font-weight:500;font-size:16px;letter-spacing:.22em;text-transform:uppercase;color:var(--milk-40);padding:0 14px}
+.tk b{color:var(--coral);font-weight:500}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.tk{animation:none}}
+section{padding:118px 0}
+.dark-800{background:var(--dusk-800)} .dark-900{background:var(--dusk-900)}
+.lede{max-width:60ch;color:var(--milk-60);font-size:18px}
+.modes{display:grid;grid-template-columns:1.08fr .92fr;gap:70px;margin-top:54px}
+.mode h3{font-family:var(--serif);font-weight:400;font-size:29px;margin:0 0 10px}
+.mode>p{margin:0 0 26px;color:var(--milk-60)}
+.ledger{border-top:1px solid var(--hairD)}
+.lrow{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:baseline;padding:14px 2px;border-bottom:1px solid var(--hairD)}
+.lrow .co{font-family:var(--serif);font-size:20px;color:var(--milk)}
+.lrow .fact{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--coral)}
+.pov-cols{columns:2;column-gap:60px;max-width:1060px;margin-top:40px}
+.pov-cols p{break-inside:avoid;margin:0 0 22px;font-size:17.5px;line-height:1.72;color:var(--milk-60)}
+.pov-cols p b{color:var(--milk);font-weight:600}
+.rose{background:var(--rose);color:var(--ink)}
+.rose .eyebrow{color:var(--coral)} .rose h2.d .px{color:var(--coral)}
+.case{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;padding:62px 0;border-top:1px solid var(--hairL);align-items:start}
+.case:first-of-type{border-top:none;padding-top:44px}
+.case.flip .meta{order:2}
+.case.flip{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+.meta .kick{font-family:var(--pixel);font-weight:700;font-size:14px;letter-spacing:.26em;text-transform:uppercase;color:var(--coral);margin-bottom:12px}
+.meta h3{font-family:var(--serif);font-weight:400;font-size:42px;margin:0 0 4px;color:var(--ink)}
+.meta .role{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(42,14,40,.55);margin-bottom:18px}
+.meta p{margin:0;color:rgba(42,14,40,.82);max-width:46ch}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-left:1px solid var(--hairL);min-width:0}
+.stat{padding:8px 14px 4px;border-right:1px solid var(--hairL);min-width:0}
+.stat .k{overflow-wrap:break-word}
+.stat .v{font-family:var(--serif);font-size:clamp(26px,2.8vw,38px);line-height:1.08;font-variant-numeric:tabular-nums;color:var(--ink)}
+.stat .v em{font-style:normal;color:var(--coral)}
+.stat .k{font-family:var(--mono);font-size:8.8px;letter-spacing:.14em;text-transform:uppercase;color:rgba(42,14,40,.58);margin-top:8px;line-height:1.6}
+.quotes{column-count:2;column-gap:60px;margin-top:44px;max-width:1100px}
+.q{break-inside:avoid;margin:0 0 52px}
+.q blockquote{margin:0;font-family:var(--serif);line-height:1.34;color:var(--milk)}
+.q.big blockquote{font-size:29px} .q.mid blockquote{font-size:21.5px}
+.q blockquote::before{content:"\201C";color:var(--amber)}
+.q figcaption{margin-top:13px;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--milk-40)}
+.q figcaption b{color:var(--amber);font-weight:400}
+.op-grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:70px;align-items:center}
+.plate{position:relative;aspect-ratio:4/5;border:1px solid rgba(226,154,70,.55);border-radius:3px;box-shadow:12px 12px 0 rgba(31,10,30,.55);overflow:hidden}
+.plate img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.12) brightness(1.02)}
+.plate .tint{position:absolute;inset:0;background:linear-gradient(160deg,#B4749B 0%,#6E2A58 55%,#2A0E28 100%);mix-blend-mode:multiply}
+.plate .lift{position:absolute;inset:0;background:#F5EADF;mix-blend-mode:soft-light;opacity:.25}
+.plate .dots{position:absolute;inset:0;opacity:.5;mix-blend-mode:overlay;background-image:radial-gradient(rgba(31,10,30,.95) .9px,transparent 1px);background-size:5px 5px}
+.facts{display:flex;gap:34px;margin-top:30px;flex-wrap:wrap}
+.f .k{font-family:var(--pixel);font-weight:700;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber)}
+.f .v{font-family:var(--mono);font-size:12.5px;color:var(--milk);margin-top:6px}
+.ops{display:grid;grid-template-columns:1fr 1fr;gap:0 70px;margin-top:44px}
+.op{display:grid;grid-template-columns:auto 1fr;gap:20px;padding:25px 0;border-top:1px solid var(--hairD)}
+.op .g{font-family:var(--pixel);font-weight:700;color:var(--coral);font-size:18px;padding-top:4px}
+.op h3{font-family:var(--serif);font-weight:400;font-size:22.5px;margin:0 0 7px;color:var(--milk)}
+.op p{margin:0;font-size:15px;color:var(--milk-60)}
+.arc{position:relative;margin-top:52px;padding-left:44px}
+.arc::before{content:"";position:absolute;left:8px;top:8px;bottom:8px;width:1px;background:var(--hairD)}
+.ai{position:relative;padding-bottom:42px}
+.ai::before{content:"";position:absolute;left:-40px;top:8px;width:9px;height:9px;background:var(--amber)}
+.ai .when{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--milk-40)}
+.ai h3{font-family:var(--serif);font-weight:400;font-size:26px;margin:7px 0 3px;color:var(--milk)}
+.ai h3 .tag{font-family:var(--pixel);font-weight:700;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--amber);border:1px solid rgba(226,154,70,.55);padding:3px 8px;margin-left:12px;vertical-align:middle}
+.ai .role{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--coral)}
+.ai p{margin:9px 0 0;max-width:58ch;color:var(--milk-60)}
+.contact{padding:150px 0 110px;background:
+  radial-gradient(130% 100% at 12% 118%, rgba(226,154,70,.3) 0%, rgba(226,154,70,0) 48%),
+  linear-gradient(150deg,var(--dusk-950) 0%,var(--plum) 55%,var(--magenta) 110%)}
+.contact h2{font-family:var(--serif);font-weight:400;font-size:clamp(52px,7vw,94px);margin:12px 0 28px;color:var(--milk)}
+.contact h2 .px{font-family:var(--pixel);font-weight:700;color:var(--amber);font-size:1.06em}
+.contact p{max-width:54ch;font-size:18.5px;color:var(--milk-60)}
+a.mail{font-family:var(--serif);font-size:25px;color:var(--amber);text-decoration:none;border-bottom:1px solid var(--amber)}
+a.min{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--milk-60);text-decoration:none}
+.foot{margin-top:86px;padding-top:24px;border-top:1px solid var(--hairD);display:flex;justify-content:space-between;font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--milk-40)}
+Mobile (≤960px): hero-grid, modes, ops, op-grid collapse to 1 column; artifacts height 400px; pov-cols and quotes to 1 column; case grids stack to 1 column with .flip order reset (.case.flip .meta{order:0}); stats to repeat(2,minmax(0,1fr)); section padding 84px 0; nav links behind existing mobile menu if one exists.
+
+PAGE STRUCTURE AND FINAL COPY (verbatim)
+
+1. HERO (class "hero dither"): nav with wordmark "Umair Ahmed" (serif) and links Case Studies / Approach / Timeline / Writing / Resume plus amber CTA "Get in Touch". Left column: eyebrow "Revenue Operator · Toronto"; H1 "I build revenue engines " followed by pixel span "from zero."; paragraph: "Senior GTM operator. I build revenue engines for venture-backed B2B. Zero-to-one twice. Scale-and-professionalize four times. Across fintech, proptech, foodtech, and enterprise SaaS." Right column (class "artifacts"): two floating cards. Card A (class "card a") title "Pipeline · Live" with rows Coverage 3.2× / Meetings held · mo 41 / Win rate 32% and an amber polyline sparkline SVG (280x42, stroke #E29A46, stroke-width 2, points "0,34 30,30 60,31 90,24 120,26 150,18 180,20 210,12 240,13 280,4"). Card B (class "card b") title "Best Month" with big serif "$5.7M" plus amber period, then rows Contribution margin +57.3% / Pod rank #1. Bottom: ticker with class "tk" containing the ten skill phrases separated by coral ▪, and the whole span DUPLICATED twice inside .tk for a seamless loop: 0-to-1 GTM Build ▪ Pipeline Architecture ▪ Outbound Engine Design ▪ Channel & Partner GTM ▪ Enterprise Sales Cycles ▪ Revenue Forecasting ▪ ICP Discovery ▪ Pricing & Packaging ▪ Sales Hiring & Enablement ▪ Cross-Border Market Entry ▪
+
+2. THE RECORD (section class "dark-800 dither"): eyebrow "The Record"; H2 "Two modes. " + pixel "One system."; lede "Nine years across six B2B companies in SaaS, fintech, and proptech. Two of them (Hubdoc, Lane) were acquired during my time. The work splits into two modes." Two-column .modes: Mode 1 h3 "Build from zero", p "No team, no pipeline, no brand in market. ICP, pricing, outbound, channel, hiring, forecasting. All from a blank page." Ledger rows: Defigo / US market, $0 start · Percy / New category, bootstrapped · Lane / Enterprise motion, greenfield. Mode 2 h3 "Scale what exists", p "Walk into a live org and install the systems that make it perform. Process, unit economics, coaching frameworks." Ledger rows: Clearco / #1 pod, 57% CM · Hubdoc / $750K ARR, 12-person team · Relay / Sales infrastructure build.
+
+3. POINT OF VIEW (section class "dark-900 dither") — REPLACES the old "Where GTM is Going" section entirely: eyebrow "Point of View"; H2 "The tools changed. " + pixel "The job didn't."; three paragraphs in .pov-cols:
+"The cost of running go to market just collapsed. AI now does the mechanical layer for close to nothing. The research, the lists, the first drafts, the follow ups, the forecast deck. Most teams use that to do more of what already wasn't working. Louder outreach. Bigger dashboards. Faster noise."
+"The teams that win are doing the opposite. Smaller teams, higher output per person. Reps who spend their day on judgment. Which accounts, which conversations, what to say. Revenue orgs built like products. Instrumented, repeatable, better every cycle." (bold "Smaller teams, higher output per person.")
+"That's the operating model I build. It holds whether I'm running the team or carrying the bag, and it holds across outbound, channel, and enterprise. Know your buyer, earn the conversation, close with discipline." (bold the last sentence)
+
+4. CASE STUDIES (section class "rose"): eyebrow "Case Studies"; H2 "Four builds. " + pixel "Real numbers." Four .case articles, second and fourth get class "flip":
+- Clearco. Kicker "Fintech · Scale & Optimize". h3 "Clearco". Role "Sales Manager". p "Led the #1 performing sales pod at one of Canada's highest-profile fintechs. Flipped contribution margin from negative to 57%. Closed $5.7M in a single month. Recognized directly by co-founder Michele Romanow." Stats: $5.7M (em) / Monthly GP (record) · 57.3% / Contribution margin · 2.6% / CV rate (vs 1.3% avg) · #1 / Pod rank (company).
+- Defigo (flip). Kicker "Proptech · Zero to One". h3 "Defigo". Role "Vice President of Sales". p "Built Defigo's entire US business from zero. No brand, no pipeline, no channel. Designed the full GTM stack and signed national distribution with Wesco/Anixter." Stats: 16 (em) / Buildings deployed · 15+ / Integrator partners · $96K / Recurring ARR · 28mo / Tenure.
+- Percy. Kicker "Foodtech · Co-Founder". h3 "Percy". Role "Co-Founder & Head of Sales". p "Co-founded a virtual cashier SaaS during peak QSR labor crisis. No category existed. Bootstrapped. Engineered every GTM system the company used. Featured on NPR's Planet Money." Stats: $878K (em) / Booked ARR · $331K / Live ARR · 38 / Logos signed · 32% / Win rate (from 20%).
+- Lane (flip). Kicker "Enterprise SaaS · Zero to One". h3 "Lane". Role "Director of Enterprise Sales". p "Built Lane's first enterprise GTM motion from nothing. Zero ICP, zero outreach strategy, zero enterprise playbook. Advanced Adidas and American Express to proposal before VTS acquired the company." Stats: ~$500K (em) / Late-stage pipeline · F500 / Target accounts · 6-12mo / Enterprise cycles · VTS / Outcome · acquired.
+
+5. RECEIPTS (section class "dark-800 dither"): eyebrow "Receipts"; H2 "Direct from founders, execs, " + pixel "and teammates." Six quotes in .quotes; first is class "q big", the rest "q mid":
+- "What incredible leadership. I'm so proud of what you are doing. You have SUCH a bright future here." — Michele Romanow · Co-Founder, Clearco (Dragon's Den)
+- "Umair, holy shit dude, not just #1 in CM but ALSO IN GP, all while having the lowest tenure and fixed costs." — Nicole Nelson · Sales Leadership, Clearco
+- "Your constant dedication to coaching and improving your reps is truly the sign of a great leader." — Michele Romanow · Manager Award Presentation
+- "One word for you Umair: visionary. You led the team with a clear vision and undeniable belief in our abilities." — Max · Senior Rep, Clearco
+- "Massive shoutout to Umair on being an absolute LEGEND. Now we are making Clearbanc history and #1." — Vasiliki Belegrinis · Team Member, Clearco
+- "This is an important milestone in Defigo's success story in North America." — Hildur Smaradottir · Leadership, Defigo
+(Attribution names wrapped in <b> for amber.)
+
+6. THE OPERATOR (section class "dark-900 dither") — NEW SECTION: .op-grid with left = figure class "plate" containing my actual portrait photo as <img>, plus three overlay divs in order: <div class="tint"></div><div class="lift"></div><div class="dots"></div> (this produces the plum duotone dither treatment). Right: eyebrow "The Operator"; H2 "Behind " + pixel "the number."; paragraph: "Nine years in B2B go to market. Started on the phones, ended up owning a P&L. I've been the first sales hire, the co-founder, the manager, and the VP. The seat changes. The machine I build doesn't." Facts row (.facts): Base / Toronto, ON · Mobility / Open to relocation · Stack / AI-native, daily.
+
+7. HOW I OPERATE (section class "dark-800 dither"): eyebrow "How I Operate"; H2 "The entire revenue machine, " + pixel "ICP to closed-won." Six .op items in two columns, each with coral pixel ▪ marker (span class "g"), existing titles and descriptions:
+- 0-to-1 GTM Build / "ICP discovery, positioning, messaging, sales process, pipeline architecture. Four times from a blank page."
+- Outbound Engine Design / "Targeting, sequencing, cadences, scripts, enrichment, SDR hiring and enablement. Predictable pipeline generation."
+- Channel & Partner GTM / "Distribution agreements, integrator ecosystems, partner enablement, co-selling motions. Built from scratch at Defigo."
+- Enterprise Deal Execution / "Multi-stakeholder choreography, procurement navigation, pilot frameworks, ROI narratives. Fortune 500 cycles."
+- Sales Team Build & Coaching / "Hiring profiles, onboarding, enablement, performance systems, coaching cadences. Average reps into top performers."
+- Revenue Operations / "CRM architecture, pipeline standards, forecasting, unit economics, board reporting. The operating system underneath."
+No icons, no numbers.
+
+8. THE ARC (section class "dark-900 dither"): eyebrow "The Arc"; H2 "Building, scaling, " + pixel "outcomes." Vertical-rule timeline (.arc) with amber square markers, six entries:
+- Nov 2023 – Mar 2026 / Defigo / Vice President of Sales / "Built the US business from zero. Full P&L ownership. National distribution, 16 buildings, 15+ dealer partners."
+- Jun 2022 – Jul 2023 / Percy / Co-Founder & Head of Sales / "Co-founded and built GTM for a category-creating QSR automation startup. $0 to $331K live ARR."
+- Jun 2021 – Jun 2022 / Lane Technologies [pixel tag "Acquired · VTS"] / Director of Enterprise Sales / "Created first enterprise motion. Advanced Adidas + AmEx to proposal. Company acquired by VTS."
+- Nov 2020 – May 2021 / Relay Financial / Head of Sales / "Built foundational sales infrastructure, playbook, onboarding, enablement, and outbound engine during high-growth phase."
+- Aug 2019 – Oct 2020 / Clearco / Sales Manager / "#1 pod company-wide. $5.7M single month. 57.3% contribution margin. Manager Award from Michele Romanow."
+- Jul 2017 – Aug 2019 / Hubdoc [pixel tag "Acquired · Xero"] / AE → Sales Manager / "Top-performing AE. $750K+ ARR generated. Built and managed 12-person team. Acquired by Xero."
+
+9. CONTACT (footer, class "contact dither"): eyebrow "Contact"; H2 "The next " + pixel "build."; paragraph REPLACING the old one: "I'm looking for my next operating seat at a venture-backed B2B company. I can build the engine, run the team, or carry the number. If you need revenue, let's talk." Then mail link umairadilahmed@gmail.com (class mail), LinkedIn and Download Resume (class min), and .foot line "Umair Ahmed · Toronto, ON" / "Open to relocation".
+
+BANNED — remove every instance if present anywhere: glassmorphism/backdrop-blur, purple/indigo/blue accents, gradient text, glow effects, soft drop shadows (only the solid offset shadows specified above), emoji, rounded-2xl corners (2-3px max), hover-lift cards, scroll-jacking, parallax, animated counters, Inter/DM Sans/Instrument Serif. Motion allowed: the ticker marquee and amber underline on link hover. Nothing else.
+
+VERIFY BEFORE FINISHING: fonts actually render (Young Serif headlines, Handjet pixel accents visible in headlines and eyebrows); ticker animates in a seamless loop; all four case studies render with NO overlap between stats and company names (check Defigo and Lane specifically, at 1280px and 1024px widths); portrait duotone works on the real photo; mobile stacks cleanly with no horizontal scroll at any width; resume download still works.
