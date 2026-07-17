@@ -99,7 +99,7 @@ const CASES: CaseStudy[] = [
     desc: "Built Defigo's entire US business from zero. No brand, no pipeline, no channel, no product-market fit for the US. Designed the full GTM stack and signed national distribution with Wesco/Anixter.",
     metrics: [
       { value: "16", label: "Buildings Deployed" },
-      { value: "20+", label: "Integrator Partners" },
+      { value: "15+", label: "Integrator Partners" },
       { value: "$96K", label: "Recurring ARR" },
       { value: "28mo", label: "Tenure" },
     ],
@@ -139,7 +139,7 @@ const CASES: CaseStudy[] = [
     mode: "ZERO TO ONE",
     company: "Percy",
     role: "Co-Founder & Head of Sales",
-    desc: "Co-founded a virtual cashier SaaS during peak QSR labor crisis. No category existed. Bootstrapped. Engineered every GTM system the company used. Featured on NPR's Planet Money as the #1 business podcast episode.",
+    desc: "Co-founded a virtual cashier SaaS during peak QSR labor crisis. No category existed. Bootstrapped. Engineered every GTM system the company used. Featured on NPR's Planet Money.",
     metrics: [
       { value: "$331K", label: "Live ARR" },
       { value: "$878K", label: "Booked ARR" },
@@ -192,7 +192,7 @@ const CASES: CaseStudy[] = [
     mode: "ZERO TO ONE",
     company: "Lane",
     role: "Director of Enterprise Sales",
-    desc: "Built Lane's first enterprise GTM motion from nothing. Zero ICP, zero outreach strategy, zero enterprise playbook. Advanced Adidas and American Express to contract stage before VTS acquired the company.",
+    desc: "Built Lane's first enterprise GTM motion from nothing. Zero ICP, zero outreach strategy, zero enterprise playbook. Advanced Adidas and American Express to proposal before VTS acquired the company.",
     metrics: [
       { value: "~$500K", label: "Late-stage Pipeline" },
       { value: "F500", label: "Target Accounts" },
@@ -1269,7 +1269,7 @@ export default function Portfolio() {
         <Reveal>
           <div style={{ maxWidth: 640 }}>
             <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.1rem", color: "#4A2C3A", lineHeight: 1.7, fontWeight: 300, marginBottom: 20 }}>
-              Nine years across five venture-backed companies in B2B SaaS, fintech, and proptech. Two of them (Hubdoc, Lane) were acquired during my time. The work splits into two modes.
+              Nine years across six B2B companies in SaaS, fintech, and proptech. Two of them (Hubdoc, Lane) were acquired during my time. The work splits into two modes.
             </p>
             <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.1rem", color: "#4A2C3A", lineHeight: 1.7, fontWeight: 300 }}>
               Mode one: build the GTM engine from nothing. No team, no pipeline, no brand in market. ICP, pricing, outbound, channel, hiring, forecasting. All from a blank page. Mode two: walk into an existing revenue org and install the systems that make it perform. Redesign the sales process, tighten unit economics, build the coaching frameworks. The throughline is the same: repeatable revenue architecture that survives after I build it.
@@ -1358,13 +1358,16 @@ export default function Portfolio() {
         </Reveal>
         <Reveal>
           <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.2rem", color: "#1E0A15", lineHeight: 1.5, fontWeight: 400, marginBottom: 24, maxWidth: 640 }}>
-            The new build is AI-native by default.
+            Signals are splitting into two kinds.
           </p>
         </Reveal>
         <Reveal>
           <div style={{ maxWidth: 640 }}>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.1rem", color: "#4A2C3A", lineHeight: 1.7, fontWeight: 300, marginBottom: 20 }}>
+              Every sales team can now buy the same intent data, the same alerts, the same AI-written emails. When everyone gets the same signal the same morning, everyone sends the same email, and the signal stops working. Bought signals decay. The edge is moving to the signals only you can see. Your product usage, your community, your ecosystem, the pattern hiding in your own closed deals.
+            </p>
             <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.1rem", color: "#4A2C3A", lineHeight: 1.7, fontWeight: 300 }}>
-              The old playbook (hire 8 SDRs, build a sequence, pray for pipeline) is a relic. The new build is AI-native by default: targeting driven by data, outbound that doesn't waste signal, lean teams that outperform bloated ones by an order of magnitude on cost-per-dollar-of-pipeline. The companies that figure this out first win. I build that function.
+              That changes what a GTM leader is for. The tooling is plumbing. The scarce skill is the aim. Which accounts to watch, what actually predicts a buyer, and what to say when a signal fires. Lean teams with good aim beat big teams with good tools, and it isn't close. I build that function.
             </p>
           </div>
         </Reveal>
@@ -1479,7 +1482,7 @@ export default function Portfolio() {
         </Reveal>
         <Reveal>
           <p style={{ fontSize: "1.1rem", color: "#4A2C3A", maxWidth: 560, lineHeight: 1.7, fontWeight: 300, marginBottom: 48 }}>
-            I don't just "do sales." I architect the entire revenue machine. From ICP definition
+            I architect the entire revenue machine. From ICP definition
             through closed-won, every step is designed to be repeatable and measurable.
           </p>
         </Reveal>
@@ -1539,9 +1542,9 @@ export default function Portfolio() {
         <div style={{ position: "relative" }}>
           <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 2, background: "rgba(66,11,49,0.12)" }} />
           {[
-            { date: "Nov 2023 - Mar 2026", company: "Defigo", role: "Vice President of Sales", desc: "Built the US business from zero. Full P&L ownership. National distribution, 16 buildings, 20+ dealer partners." },
+            { date: "Nov 2023 - Mar 2026", company: "Defigo", role: "Vice President of Sales", desc: "Built the US business from zero. Full P&L ownership. National distribution, 16 buildings, 15+ dealer partners." },
             { date: "Jun 2022 - Jul 2023", company: "Percy", role: "Co-Founder & Head of Sales", desc: "Co-founded and built GTM for a category-creating QSR automation startup. $0 to $331K live ARR." },
-            { date: "Jun 2021 - Jun 2022", company: "Lane Technologies", role: "Director of Enterprise Sales", desc: "Created first enterprise motion. Advanced Adidas + AmEx to proposal. GTM informed acquisition by VTS.", badge: { label: "Acquired by VTS", style: { background: "rgba(77,163,255,0.1)", color: "#4DA3FF", border: "1px solid rgba(77,163,255,0.2)" } } },
+            { date: "Jun 2021 - Jun 2022", company: "Lane Technologies", role: "Director of Enterprise Sales", desc: "Created first enterprise motion. Advanced Adidas + AmEx to proposal. Company acquired by VTS.", badge: { label: "Acquired by VTS", style: { background: "rgba(77,163,255,0.1)", color: "#4DA3FF", border: "1px solid rgba(77,163,255,0.2)" } } },
             { date: "Nov 2020 - May 2021", company: "Relay Financial", role: "Head of Sales", desc: "Built foundational sales infrastructure, playbook, onboarding, enablement, and outbound engine during high-growth phase." },
             { date: "Aug 2019 - Oct 2020", company: "Clearco", role: "Sales Manager", desc: "#1 pod company-wide. $5.7M single month. 57.3% contribution margin. Manager Award from Michele Romanow." },
             { date: "Jul 2017 - Aug 2019", company: "Hubdoc", role: "AE → Sales Manager", desc: "Top-performing AE. $750K+ ARR generated. Built and managed 12-person team. Acquired by Xero.", badge: { label: "Acquired by Xero", style: { background: "rgba(77,163,255,0.1)", color: "#4DA3FF", border: "1px solid rgba(77,163,255,0.2)" } } },
@@ -1628,7 +1631,7 @@ export default function Portfolio() {
         </Reveal>
         <Reveal>
           <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: "clamp(2.5rem, 5vw, 4rem)", letterSpacing: "-0.03em", marginBottom: 20, color: "#FFFFFF" }}>
-            Let's build your revenue engine.
+            The next build.
           </h2>
         </Reveal>
         <Reveal>

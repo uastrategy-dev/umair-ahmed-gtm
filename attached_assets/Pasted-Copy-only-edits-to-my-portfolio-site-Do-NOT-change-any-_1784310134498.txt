@@ -1,0 +1,51 @@
+Copy-only edits to my portfolio site. Do NOT change any design, layout, styling, structure, or components. Find and replace the exact text below, nothing else.
+
+1. In the throughline section, find:
+"Nine years across five venture-backed companies in B2B SaaS, fintech, and proptech."
+Replace with:
+"Nine years across six B2B companies in SaaS, fintech, and proptech."
+
+2. In the Defigo case study card, find:
+"20+" (the INTEGRATOR PARTNERS metric tile)
+Replace with:
+"15+"
+Also in the Defigo timeline entry, find:
+"16 buildings, 20+ dealer partners"
+Replace with:
+"16 buildings, 15+ dealer partners"
+
+3. In the Lane case study card, find:
+"Advanced Adidas and American Express to contract stage before VTS acquired the company."
+Replace with:
+"Advanced Adidas and American Express to proposal before VTS acquired the company."
+
+4. In the Lane timeline entry, find:
+"Created first enterprise motion. Advanced Adidas + AmEx to proposal. GTM informed acquisition by VTS."
+Replace with:
+"Created first enterprise motion. Advanced Adidas + AmEx to proposal. Company acquired by VTS."
+
+5. In the Percy case study card, find:
+"Featured on NPR's Planet Money as the #1 business podcast episode."
+Replace with:
+"Featured on NPR's Planet Money."
+
+6. In the "How I Operate" section intro, find:
+"I don't just "do sales." I architect the entire revenue machine. From ICP definition through closed-won, every step is designed to be repeatable and measurable."
+Replace with:
+"I architect the entire revenue machine. From ICP definition through closed-won, every step is designed to be repeatable and measurable."
+
+7. Replace the entire "Where GTM is Going" section body text. Find the paragraph starting "The old playbook (hire 8 SDRs..." and ending "...I build that function." Replace the heading tagline "The new build is AI-native by default." and that paragraph with:
+
+Tagline: "Signals are splitting into two kinds."
+
+Body: "Every sales team can now buy the same intent data, the same alerts, the same AI-written emails. When everyone gets the same signal the same morning, everyone sends the same email, and the signal stops working. Bought signals decay. The edge is moving to the signals only you can see. Your product usage, your community, your ecosystem, the pattern hiding in your own closed deals.
+
+That changes what a GTM leader is for. The tooling is plumbing. The scarce skill is the aim. Which accounts to watch, what actually predicts a buyer, and what to say when a signal fires. Lean teams with good aim beat big teams with good tools, and it isn't close. I build that function."
+
+8. In the closing section, find the heading:
+"Let's build your revenue engine."
+Replace with:
+"The next build."
+Keep the paragraph under it exactly as is.
+
+Do not touch anything else. No reworded sentences beyond these, no added copy, no removed sections.
