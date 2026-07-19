@@ -265,7 +265,7 @@ export default function Portfolio() {
         .ledger{border-top:1px solid var(--hairD)}
         .lrow{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:baseline;padding:14px 2px;border-bottom:1px solid var(--hairD)}
         .lrow .co{font-family:var(--serif);font-size:20px;color:var(--milk)}
-        .lrow .fact{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--coral)}
+        .lrow .fact{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--coral);text-align:right}
         .pov-cols{columns:2;column-gap:60px;max-width:1060px;margin-top:40px}
         .pov-cols p{break-inside:avoid;margin:0 0 22px;font-size:17.5px;line-height:1.72;color:var(--milk-60)}
         .pov-cols p b{color:var(--milk);font-weight:600}
@@ -339,6 +339,11 @@ export default function Portfolio() {
           .wrap{padding:0 24px}
           .nav{padding:24px 24px}
           .hero-grid{padding:10px 24px 60px}
+          .lrow{grid-template-columns:1fr;gap:4px}
+          .lrow .fact{text-align:left}
+          a.mail{font-size:19px;overflow-wrap:anywhere}
+          .foot{flex-direction:column;gap:10px}
+          .foot span{white-space:nowrap}
         }
       `}</style>
 
