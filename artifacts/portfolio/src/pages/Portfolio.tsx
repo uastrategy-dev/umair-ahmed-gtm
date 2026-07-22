@@ -281,7 +281,7 @@ export default function Portfolio() {
         .meta p{margin:0;color:rgba(42,14,40,.82);max-width:46ch}
         .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-left:1px solid var(--hairL);min-width:0}
         .stat{padding:8px 14px 4px;border-right:1px solid var(--hairL);min-width:0}
-        .stat .v{font-family:var(--serif);font-size:clamp(26px,2.8vw,38px);line-height:1.08;font-variant-numeric:tabular-nums;color:var(--ink)}
+        .stat .v{font-family:var(--serif);font-size:clamp(22px,2.4vw,34px);line-height:1.08;font-variant-numeric:tabular-nums;color:var(--ink);white-space:nowrap}
         .stat .v em{font-style:normal;color:var(--coral)}
         .stat .k{font-family:var(--mono);font-size:8.8px;letter-spacing:.14em;text-transform:uppercase;color:rgba(42,14,40,.58);margin-top:8px;line-height:1.6;overflow-wrap:break-word}
         .quotes{column-count:2;column-gap:60px;margin-top:44px;max-width:1100px}
