@@ -373,16 +373,16 @@ export default function Portfolio() {
           <div className="artifacts">
             <div className="card a">
               <div className="t">Track Record</div>
-              <div className="row"><span className="k">Rep at Hubdoc · 22 of 24 months</span><span className="v">#1</span></div>
+              <div className="row"><span className="k">Rep at Hubdoc · 22 of 24 mo</span><span className="v">#1</span></div>
               <div className="row"><span className="k">Pod at Clearco · company-wide</span><span className="v">#1</span></div>
-              <div className="row"><span className="k">Contribution margin · from negative</span><span className="v">+57.3%</span></div>
+              <div className="row"><span className="k">Margin · from negative</span><span className="v">+57.3%</span></div>
             </div>
             <div className="card b">
-              <div className="t">Track Record</div>
+              <div className="t">Career Highs</div>
               <div className="big">$5.7M</div>
               <div className="row" style={{ marginTop: 4 }}><span className="k">Capital deployed · single month</span></div>
               <div className="row"><span className="k">Demo to signup · Relay</span><span className="v">80%</span></div>
-              <div className="row"><span className="k">Companies acquired in my tenure</span><span className="v">2</span></div>
+              <div className="row"><span className="k">Acquired during my tenure</span><span className="v">2</span></div>
             </div>
           </div>
         </div>
