@@ -564,7 +564,7 @@ export default function Portfolio() {
           </p>
           <div className="contact-links">
             <a className="mail" href="mailto:umairadilahmed@gmail.com">umairadilahmed@gmail.com</a>
-            <a className="min" href="https://www.linkedin.com/in/umairadilahmed/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a className="min" href="https://www.linkedin.com/in/umairaahmed/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a className="min" href={assetUrl("resume/Umair_Ahmed_General_Resume.pdf")} download>Download Resume</a>
           </div>
           <div className="foot">
