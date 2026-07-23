@@ -1,0 +1,114 @@
+Update the copy on my portfolio site. These are factual corrections following a full source-document audit of my career record, plus one rebuild of the hero stat block.
+
+IMPORTANT CONSTRAINTS:
+- Do NOT redesign anything. Do NOT change layout, styling, components, fonts, colors, or animations.
+- Only change the specific text and stat values listed below.
+- Keep all existing formatting conventions exactly as they are (capitalization style, the value/label arrangement in each card type, separators like "·").
+- Style rule for any copy you write: no em dashes (—) and no en dashes (–). Use commas or periods.
+
+=====================================
+A. HERO STAT BLOCK — FULL REBUILD
+=====================================
+
+The hero currently has a block labelled "PIPELINE · LIVE" with six stat cards. Two of those stats (COVERAGE 3.2× and MEETINGS HELD · MO 41) are not accurate and must be removed entirely. The block label is also misleading because it implies a current live pipeline.
+
+A1. Change the block label
+FIND:    PIPELINE · LIVE
+REPLACE: TRACK RECORD
+
+A2. Replace ALL SIX stat cards in that block. Keep the exact same card design and the same value/label arrangement already in use. New set, in this order:
+
+   Value: #1        Label: REP AT HUBDOC · 22 OF 24 MONTHS
+   Value: #1        Label: POD AT CLEARCO · COMPANY-WIDE
+   Value: +57.3%    Label: CONTRIBUTION MARGIN · FROM NEGATIVE
+   Value: $5.7M     Label: CAPITAL DEPLOYED · SINGLE MONTH
+   Value: 80%       Label: DEMO TO SIGNUP · RELAY
+   Value: 2         Label: COMPANIES ACQUIRED IN MY TENURE
+
+   Note: the existing hero value "$5.7M." has a trailing period. Remove it. It should read "$5.7M".
+   Note: the labels are intentionally longer than the old ones. Each card must be readable on its own. If a label wraps to two lines, that is fine, but keep all six cards visually consistent with each other.
+
+=====================================
+B. CRITICAL FACTUAL FIXES
+=====================================
+
+B1. Section "THE RECORD" → "Scale what exists" → Hubdoc chip
+FIND:    Hubdoc / $750K ARR, 12-PERSON TEAM
+REPLACE: Hubdoc / #1 REP 22 OF 24 MONTHS, 12-PERSON TEAM
+
+B2. Section "THE ARC" (timeline) → Hubdoc entry body
+FIND:    Top-performing AE. $750K+ ARR generated. Built and managed 12-person team. Acquired by Xero.
+REPLACE: #1 rep 22 of 24 months, averaging 90+ new subscriptions per month. Built and managed a 12-person team through the Xero acquisition.
+
+B3. Section "CASE STUDIES" → Clearco stat card 1
+This is a material error. $5.7M is capital DEPLOYED, not gross profit.
+FIND:    $5.7M / MONTHLY GP (RECORD)
+REPLACE: $5.7M / CAPITAL DEPLOYED (RECORD MO)
+
+B4. Section "CASE STUDIES" → Clearco description
+FIND:    Closed $5.7M in a single month.
+REPLACE: Deployed $5.7M in capital in a single month.
+
+B5. Section "CASE STUDIES" → Percy stat cards. Replace the full set of four:
+FIND:    $878K / BOOKED ARR    |    $331K / LIVE ARR    |    38 / LOGOS SIGNED    |    32% / WIN RATE (FROM 20%)
+REPLACE: $700K / SIGNED & LIVE ARR    |    $331K / LIVE ARR    |    13 / LOGOS (38 LOCATIONS)    |    32% / WIN RATE (FROM 20%)
+
+   Note: "38 LOGOS SIGNED" was factually wrong. It is 13 brands across 38 locations. The $878K figure included paused and unsold pipeline, so it cannot be described as "booked ARR".
+
+B6. Section "THE ARC" (timeline) → Percy entry body
+FIND:    Co-founded and built GTM for a category-creating QSR automation startup. $0 to $331K live ARR.
+REPLACE: Co-founded and built GTM for a category-creating QSR automation startup. Built to $331K live ARR, over $700K signed and live, entirely on cold outbound.
+
+B7. Section "CASE STUDIES" → Lane stat card 1
+FIND:    ~$500K / LATE-STAGE PIPELINE
+REPLACE: ~$500K / PIPELINE TO PROPOSAL
+
+   Note: no deal closed at Lane. "Late-stage" overstates it. "To proposal" is accurate and defensible.
+
+=====================================
+C. CONSISTENCY FIX
+=====================================
+
+C1. Section "THE ARC" (timeline) → Defigo entry body
+FIND:    15+ dealer partners
+REPLACE: 15+ integrator partners
+
+=====================================
+D. ADDITIONS THAT STRENGTHEN
+=====================================
+
+D1. Section "THE RECORD" → "Scale what exists" → Relay chip
+FIND:    Relay / SALES INFRASTRUCTURE BUILD
+REPLACE: Relay / BAIN SERIES A, NAMED IN IC MEMO
+
+D2. Section "THE ARC" (timeline) → Relay entry body
+FIND:    Built foundational sales infrastructure, playbook, onboarding, enablement, and outbound engine during high-growth phase.
+REPLACE: Built the sales function from zero, including the playbook, onboarding, enablement, and outbound engine. Head of Sales through the Bain Capital-led Series A and named in the investment memo. The accountant channel drove 40% of all customers.
+
+=====================================
+E. RESUME FILE
+=====================================
+
+E1. Replace the file behind the "DOWNLOAD RESUME" button with the PDF attached to this message (Umair_Ahmed_General_Resume.pdf). Keep the button text and link behaviour identical. Ensure the old resume file is fully replaced and not left cached or served alongside the new one.
+
+=====================================
+F. VERIFY BEFORE YOU FINISH
+=====================================
+
+Search the entire codebase and confirm ZERO remaining occurrences of:
+  "750K"
+  "$878K"
+  "BOOKED ARR"
+  "38 LOGOS"
+  "LATE-STAGE PIPELINE"
+  "MONTHLY GP"
+  "$0 to $331K"
+  "dealer partners"
+  "PIPELINE · LIVE"
+  "COVERAGE"
+  "MEETINGS HELD"
+
+Then report back:
+  1. The list of files you changed
+  2. Confirmation that the search above returned no matches
+  3. A screenshot or description of the rebuilt hero stat block so I can confirm the six cards render cleanly

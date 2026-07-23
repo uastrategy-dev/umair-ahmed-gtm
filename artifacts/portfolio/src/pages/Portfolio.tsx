@@ -32,10 +32,10 @@ const CASES = [
     kick: "Fintech · Scale & Optimize",
     company: "Clearco",
     role: "Sales Manager",
-    desc: "Led the #1 performing sales pod at one of Canada's highest-profile fintechs. Flipped contribution margin from negative to 57%. Closed $5.7M in a single month. Recognized directly by co-founder Michele Romanow.",
+    desc: "Led the #1 performing sales pod at one of Canada's highest-profile fintechs. Flipped contribution margin from negative to 57%. Deployed $5.7M in capital in a single month. Recognized directly by co-founder Michele Romanow.",
     flip: false,
     stats: [
-      { v: "$5.7M", em: true, k: "Monthly GP (record)" },
+      { v: "$5.7M", em: true, k: "Capital deployed (record mo)" },
       { v: "57.3%", em: false, k: "Contribution margin" },
       { v: "2.6%", em: false, k: "CV rate (vs 1.3% avg)" },
       { v: "#1", em: false, k: "Pod rank (company)" },
@@ -63,9 +63,9 @@ const CASES = [
     desc: "Co-founded a virtual cashier SaaS during peak QSR labor crisis. No category existed. Bootstrapped. Engineered every GTM system the company used. Featured on NPR's Planet Money.",
     flip: false,
     stats: [
-      { v: "$878K", em: true, k: "Booked ARR" },
+      { v: "$700K", em: true, k: "Signed & live ARR" },
       { v: "$331K", em: false, k: "Live ARR" },
-      { v: "38", em: false, k: "Logos signed" },
+      { v: "13", em: false, k: "Logos (38 locations)" },
       { v: "32%", em: false, k: "Win rate (from 20%)" },
     ],
   },
@@ -77,7 +77,7 @@ const CASES = [
     desc: "Built Lane's first enterprise GTM motion from nothing. Zero ICP, zero outreach strategy, zero enterprise playbook. Advanced Adidas and American Express to proposal before VTS acquired the company.",
     flip: true,
     stats: [
-      { v: "~$500K", em: true, k: "Late-stage pipeline" },
+      { v: "~$500K", em: true, k: "Pipeline to proposal" },
       { v: "F500", em: false, k: "Target accounts" },
       { v: "6-12mo", em: false, k: "Enterprise cycles" },
       { v: "VTS", em: false, k: "Outcome · acquired" },
@@ -157,14 +157,14 @@ const ARC = [
     company: "Defigo",
     tag: null,
     role: "Vice President of Sales",
-    desc: "Built the US business from zero. Full P&L ownership. National distribution, 16 buildings, 15+ dealer partners.",
+    desc: "Built the US business from zero. Full P&L ownership. National distribution, 16 buildings, 15+ integrator partners.",
   },
   {
     when: "Jun 2022 – Jul 2023",
     company: "Percy",
     tag: null,
     role: "Co-Founder & Head of Sales",
-    desc: "Co-founded and built GTM for a category-creating QSR automation startup. $0 to $331K live ARR.",
+    desc: "Co-founded and built GTM for a category-creating QSR automation startup. Built to $331K live ARR, over $700K signed and live, entirely on cold outbound.",
   },
   {
     when: "Jun 2021 – Jun 2022",
@@ -178,7 +178,7 @@ const ARC = [
     company: "Relay Financial",
     tag: null,
     role: "Head of Sales",
-    desc: "Built foundational sales infrastructure, playbook, onboarding, enablement, and outbound engine during high-growth phase.",
+    desc: "Built the sales function from zero, including the playbook, onboarding, enablement, and outbound engine. Head of Sales through the Bain Capital-led Series A and named in the investment memo. The accountant channel drove 40% of all customers.",
   },
   {
     when: "Aug 2019 – Oct 2020",
@@ -192,7 +192,7 @@ const ARC = [
     company: "Hubdoc",
     tag: "Acquired · Xero",
     role: "AE → Sales Manager",
-    desc: "Top-performing AE. $750K+ ARR generated. Built and managed 12-person team. Acquired by Xero.",
+    desc: "#1 rep 22 of 24 months, averaging 90+ new subscriptions per month. Built and managed a 12-person team through the Xero acquisition.",
   },
 ];
 
@@ -248,8 +248,8 @@ export default function Portfolio() {
         .card .row .v{font-size:14px;font-weight:700;color:var(--milk);font-variant-numeric:tabular-nums}
         .card .big{font-family:var(--serif);font-size:46px;line-height:1;color:var(--milk)}
         .card .big span{color:var(--amber)}
-        .card.a{top:6%;right:4%;width:min(340px,88%);transform:rotate(2.2deg)}
-        .card.b{bottom:8%;left:0;width:min(300px,80%);transform:rotate(-2.4deg)}
+        .card.a{top:0;right:4%;width:min(340px,88%);transform:rotate(2.2deg)}
+        .card.b{bottom:0;left:0;width:min(300px,80%);transform:rotate(-2.4deg)}
         .ticker{position:relative;z-index:2;border-top:1px solid var(--hairD);overflow:hidden;padding:13px 0}
         .tk{display:inline-block;white-space:nowrap;animation:tick 36s linear infinite}
         .tk span{font-family:var(--pixel);font-weight:500;font-size:16px;letter-spacing:.22em;text-transform:uppercase;color:var(--milk-40);padding:0 14px}
@@ -327,7 +327,7 @@ export default function Portfolio() {
         .foot{margin-top:86px;padding-top:24px;border-top:1px solid var(--hairD);display:flex;justify-content:space-between;font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--milk-40)}
         @media(max-width:960px){
           .hero-grid{grid-template-columns:1fr}
-          .artifacts{height:400px}
+          .artifacts{height:580px}
           .modes,.ops,.op-grid{grid-template-columns:1fr}
           .pov-cols{columns:1}
           .quotes{column-count:1}
@@ -356,7 +356,7 @@ export default function Portfolio() {
             <a href="#approach">Approach</a>
             <a href="#timeline">Timeline</a>
             <a href="https://gtmarabia.substack.com/" target="_blank" rel="noopener noreferrer">Writing</a>
-            <a href={assetUrl("resume/Umair_Ahmed_Resume_2026.pdf")} download>Resume</a>
+            <a href={assetUrl("resume/Umair_Ahmed_General_Resume.pdf")} download>Resume</a>
             <a className="cta" href="mailto:umairadilahmed@gmail.com">Get in Touch</a>
           </div>
         </nav>
@@ -372,24 +372,17 @@ export default function Portfolio() {
           </div>
           <div className="artifacts">
             <div className="card a">
-              <div className="t">Pipeline · Live</div>
-              <div className="row"><span className="k">Coverage</span><span className="v">3.2×</span></div>
-              <div className="row"><span className="k">Meetings held · mo</span><span className="v">41</span></div>
-              <div className="row"><span className="k">Win rate</span><span className="v">32%</span></div>
-              <svg width="280" height="42" viewBox="0 0 280 42" style={{ display: "block", marginTop: 14, maxWidth: "100%" }} aria-hidden="true">
-                <polyline
-                  points="0,34 30,30 60,31 90,24 120,26 150,18 180,20 210,12 240,13 280,4"
-                  fill="none"
-                  stroke="#E29A46"
-                  strokeWidth="2"
-                />
-              </svg>
+              <div className="t">Track Record</div>
+              <div className="row"><span className="k">Rep at Hubdoc · 22 of 24 months</span><span className="v">#1</span></div>
+              <div className="row"><span className="k">Pod at Clearco · company-wide</span><span className="v">#1</span></div>
+              <div className="row"><span className="k">Contribution margin · from negative</span><span className="v">+57.3%</span></div>
             </div>
             <div className="card b">
-              <div className="t">Best Month</div>
-              <div className="big">$5.7M<span>.</span></div>
-              <div className="row" style={{ marginTop: 16 }}><span className="k">Contribution margin</span><span className="v">+57.3%</span></div>
-              <div className="row"><span className="k">Pod rank</span><span className="v">#1</span></div>
+              <div className="t">Track Record</div>
+              <div className="big">$5.7M</div>
+              <div className="row" style={{ marginTop: 4 }}><span className="k">Capital deployed · single month</span></div>
+              <div className="row"><span className="k">Demo to signup · Relay</span><span className="v">80%</span></div>
+              <div className="row"><span className="k">Companies acquired in my tenure</span><span className="v">2</span></div>
             </div>
           </div>
         </div>
@@ -424,8 +417,8 @@ export default function Portfolio() {
               <p>Walk into a live org and install the systems that make it perform. Process, unit economics, coaching frameworks.</p>
               <div className="ledger">
                 <div className="lrow"><span className="co">Clearco</span><span className="fact">#1 pod, 57% CM</span></div>
-                <div className="lrow"><span className="co">Hubdoc</span><span className="fact">$750K ARR, 12-person team</span></div>
-                <div className="lrow"><span className="co">Relay</span><span className="fact">Sales infrastructure build</span></div>
+                <div className="lrow"><span className="co">Hubdoc</span><span className="fact">#1 rep 22 of 24 months, 12-person team</span></div>
+                <div className="lrow"><span className="co">Relay</span><span className="fact">Bain Series A, named in IC memo</span></div>
               </div>
             </div>
           </div>
@@ -572,7 +565,7 @@ export default function Portfolio() {
           <div className="contact-links">
             <a className="mail" href="mailto:umairadilahmed@gmail.com">umairadilahmed@gmail.com</a>
             <a className="min" href="https://www.linkedin.com/in/umairadilahmed/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a className="min" href={assetUrl("resume/Umair_Ahmed_Resume_2026.pdf")} download>Download Resume</a>
+            <a className="min" href={assetUrl("resume/Umair_Ahmed_General_Resume.pdf")} download>Download Resume</a>
           </div>
           <div className="foot">
             <span>Umair Ahmed · Toronto, ON</span>
